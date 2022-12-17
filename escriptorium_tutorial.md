@@ -94,30 +94,42 @@ operacyjnego dialog z możliwością wskazanie plików. Obsługiwane są standar
 
 Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi, przycisk rozwija się udostępniając 3 polecenia:
 - import obrazów z zewnętrznego serwera poprzez protokół IIIF, co jest przydatne gdy posiadamy już kolekcję skanów w repozytorium obsługującym ten protokół
-- import obrazów z pliku pdf - każda strona pliku zostanie zaimportowana jako osobny obraz
-- import transkrypcji w formacie xml (np. ALTO v. 4 lub PAGE XML), te nwariant umożliwia importowanie transkrypcji manualnej do wczytanych wcześniej skanów, w formie plików xml lub paczki zip zawierającej zestaw takich plików. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informację z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB.
-
 <figure>
   <img src="image/import_pdf.png" width="300" style="padding-top: 30px;">
-  <figcaption><em>Import z pliku PDF</em></figcaption>
 </figure>
 
+- import obrazów z pliku pdf - każda strona pliku zostanie zaimportowana jako osobny obraz
 <figure>
   <img src="image/import_iif.png" width="300" style="padding-top: 30px;">
-  <figcaption><em>Import poprzez protokół IIIF</em></figcaption>
 </figure>
 
+- import transkrypcji w formacie xml (np. ALTO v. 4 lub PAGE XML), te nwariant umożliwia importowanie transkrypcji manualnej do wczytanych wcześniej skanów, w formie plików xml lub paczki zip zawierającej zestaw takich plików. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informację z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB.
 <figure>
   <img src="image/import_xml.png" width="300" style="padding-top: 30px;">
-  <figcaption><em>Import plików XML</em></figcaption>
 </figure>
-<br>
 
 ## Lista obrazów/skanów
 
+Lista obrazów/skanów jest głównum miejscem szybkiego przeglądania kolekcji skanów
+w dokumencie, z poziomu listy skanów wywoływane jest też ich przetwarzanie: binaryzacja, segmentacja czy transkrypcja. Skany wyświetlane są w formie miniatur, jeżeli jest ich więcej niż kilka i nie mieszczą się na ekranie, aplikacja wyświetla poziomy pasek przewijania.
+
+<figure>
+  <img src="image/lista_skanow.png" width="600">
+  <figcaption><em>Lista skanów</em></figcaption>
+</figure>
+
+Powyżej listy skanów widoczny jest pasek narzędzi. Pierwsze dwa przyciski na pasku pozwalają za zaznaczenie (wybranie) lub odznaczenie wszystkich skanów - operacje przetwarzania skanów przeprowadzane są tylko na zaznaczoncych obrazach. Kolejne odpowiadają za import i eksport, trenowanie (możliwe jest trenowanie modelu segmentacji lub modelu transkrypcji), grupa przycisków z prawej strony odpowiada za przetwarzanie skanów: binaryzację, segmentację, transkrypcję oraz automatycznie wyrówananie ze wskazanym tekstem (np. transkrypcją manualną).
+
+<figure>
+  <img src="image/miniatury_skanow.png" width="300">
+  <figcaption><em>Miniatury skanów</em></figcaption>
+</figure>
+
+Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przycisków informujących o stanie danego skanu i pozwalających na wykonanie pewnych operacji na nim, na przykład pole wyboru w górnym lewym rogu miniatury zaznacza dany skan, mała ikonka z krzyżykiem umożliwia usunięcie skanu z dokumentu, zielone pole/przycisk wyświetla skan w trybie edycji, ikony pod miniaturą informują czy dla skanu przeprowadzono jedną z operacji przeywarzania, wówczas przybierają kolor zielony. Okrągła czarno biała ikona odpowiada za binaryzację, ikona ze schematycznymi liniami za segmentację, ikona będąca białym pustym prostokątem dotyczy transkrypcji zaś ikona symbol pliku/dokumetu odpowiada funkcji Align (automatycznemu wyrównaniu tekstu). Chwycenie i przemieszczenie całej miniatury pozwala zmienić kolejność skanów w dokumencie.
+
 ## Segmentacja
 
-Przed uruchomieniem automatycznej transkrypcji skanów (OCR/HTR) niezbędne jest prawidłowe podzielenie pisma lub druku na regiony i wiersze. Można to zrobić manualnie, jednak w przypadku większej kolekcji skanów byłby to zbyt czasochłonne. eScriptorium posiada mechanizm automatycznej segmentacji, wykorzystujący model uczenia głębokiego. Aby go uruchomić należy najpierw zaznaczyć jeden lub więcej obrazów na liście a następnie kliknąć przycisk 'Segment' na pasku narzędzi. Wyświetlone zostanie okno z opcjami segmentacji, w którym należy wybrać model, zakres pracy, układ elementów na stronie itp.
+Przed uruchomieniem automatycznej transkrypcji skanów (OCR/HTR) niezbędne jest prawidłowe podzielenie pisma lub druku na regiony i wiersze. Można to zrobić manualnie, jednak w przypadku większej kolekcji skanów byłby to zbyt czasochłonne. eScriptorium posiada mechanizm automatycznej segmentacji, wykorzystujący model uczenia głębokiego. Aby go uruchomić należy najpierw zaznaczyć jeden lub więcej skanów/obrazów na liście a następnie kliknąć przycisk 'Segment' na pasku narzędzi. Wyświetlone zostanie okno z opcjami segmentacji, w którym należy wybrać model, zakres pracy, układ elementów na stronie itp.
 <figure>
   <img src="image/segmentacja.png" width="450">
   <figcaption><em>Segmentacja</em></figcaption>
@@ -127,13 +139,9 @@ W obecnej wersji dostępny jest jeden domyślny model: blla.mlmodel, dający sk�
 Pojawią się wówczas opcje: 'Lines Baselines and mask' (wyznaczanie linii i masek linii),
 'only line Mask' - tylko maski wierszy, 'Regions' - wyznaczanie regionów.
 
-Trzecie z pól okna parametrów segmentacji określa układ elementów na stronach, domyślnie wybrany jest 'Horizontal l2r', dostępne są także 'Horizontal r2l', 'Vertical l2r' oraz 'Vertical r2l'. Pole wyboru 'Override' u dołu okna oznacza, że istnejąca wcześniej segmentacja dla przetwarzanych skanów zostanie usunięta, usunięta zostanie także transkrypcja.
+Trzecie z pól okna parametrów segmentacji określa układ elementów na stronach, domyślnie wybrany jest 'Horizontal l2r', dostępne są także 'Horizontal r2l', 'Vertical l2r' oraz 'Vertical r2l'. Pole wyboru 'Override' u dołu okna oznacza, że istniejąca wcześniej segmentacja dla przetwarzanych skanów zostanie usunięta, usunięta zostanie także transkrypcja.
 
-Procedura segmentacji może być czasochłonna, w jej trakcie aplikcja wyświetla dyskretną animację dla przetwarzanych obrazów - na zaznaczonych do przetworzenia skanach (poniżej miniaturki skanu) mruga mała ikonka z liniami. Po zakończeniu procedury wyświetlane jest powiadomienie w górnym prawym roku ekranu. Można także uruchomić segmentację dla konkretnego skanu, klikając właśnie tą małą ikonkę pod miniaturą.
-<figure>
-  <img src="image/miniatury_skanow.png" width="300">
-  <figcaption><em>Miniatury skanów</em></figcaption>
-</figure>
+Procedura segmentacji może być czasochłonna, w jej trakcie aplikcja wyświetla dyskretną animację dla przetwarzanych obrazów - na zaznaczonych do przetworzenia skanach (poniżej miniaturki skanu) mruga mała ikonka z liniami. Wyświetlany jest także źółty przycisk na tle miniatury skanu, pozwalający na rezygnację z przeprowadzanej właśnie segmentacji.   Po zakończeniu procedury wyświetlane jest powiadomienie w górnym prawym roku ekranu, a wspomniana ikona przybiera kolor zielony. Ikona pełni jednocześnie rolę przycisku - można uruchomić segmentację klikając właśnie tą małą ikonkę pod miniaturą.
 
 Aby zobaczyć utworzoną przez model segmentację strony/skanu, należy wejść w edycję danej strony - po najechaniu kursorem myszy na miniaturkę skau wyświetli się niebieski pasek z białą ikoną symbolizującą edycję, oraz dymek z podpowiedzią 'Edit', kliknięcie w pasek otworzy skan w trybie edycji. Alternatywnie, jedna z zakładek w dokumencie do zakładka 'Edit', która uruchamia tryb edycji dla pierwszego skanu z dokumentu, tryb edycji posiada możliwość nawigacji do kolejnego/poprzedniego skanu, można więc odnaleźć właściwy skan.
 
