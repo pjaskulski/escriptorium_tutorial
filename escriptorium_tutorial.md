@@ -98,17 +98,17 @@ Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi,
 - import transkrypcji w formacie xml (np. ALTO v. 4 lub PAGE XML), te nwariant umożliwia importowanie transkrypcji manualnej do wczytanych wcześniej skanów, w formie plików xml lub paczki zip zawierającej zestaw takich plików. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informację z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB.
 
 <figure>
-  <img src="image/import_pdf.png" width="300">
+  <img src="image/import_pdf.png" width="300" style="padding-top: 30px;">
   <figcaption><em>Import z pliku PDF</em></figcaption>
 </figure>
 
 <figure>
-  <img src="image/import_iif.png" width="300">
+  <img src="image/import_iif.png" width="300" style="padding-top: 30px;">
   <figcaption><em>Import poprzez protokół IIIF</em></figcaption>
 </figure>
 
 <figure>
-  <img src="image/import_xml.png" width="300">
+  <img src="image/import_xml.png" width="300" style="padding-top: 30px;">
   <figcaption><em>Import plików XML</em></figcaption>
 </figure>
 <br>
