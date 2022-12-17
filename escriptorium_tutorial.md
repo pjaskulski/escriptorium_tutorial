@@ -4,8 +4,8 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 
 ## Podziękowania
 
-Stworzenie tego opisu nie byłoby możliwe bez lektury wcześniej powstałych materiałów np.
-tutoriala [eScriptorium Tutorial (en)](https://lectaurep.hypotheses.org/documentation/escriptorium-tutorial-en), licznych materiałów video np. [vimeo](https://vimeo.com/user130532566) i [youtube](https://www.youtube.com/watch?v=tut007D6w3o) czy wreszcie artykułów na stronie [LECTAUREP](https://lectaurep.hypotheses.org/articles). Liczne cenne informacje zostały także zaczerpnięte z dokumentacji systemu Kraken - [Training](https://kraken.re/master/ketos.html).
+Stworzenie tego opisu nie byłoby możliwe bez lektury wcześniej powstałych materiałów i
+tutoriali np. [eScriptorium Tutorial (en)](https://lectaurep.hypotheses.org/documentation/escriptorium-tutorial-en), licznych materiałów video dostępnych w serwisach [vimeo](https://vimeo.com/user130532566) i [youtube](https://www.youtube.com/watch?v=tut007D6w3o) czy wreszcie artykułów na stronie [LECTAUREP](https://lectaurep.hypotheses.org/articles). Wiele cennych informacji zostało także zaczerpniętych z dokumentacji systemu Kraken - [Training](https://kraken.re/master/ketos.html).
 
 ## Wersja
 
