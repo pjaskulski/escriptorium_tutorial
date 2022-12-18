@@ -103,7 +103,7 @@ Lista obrazów/skanów jest głównum miejscem szybkiego przeglądania kolekcji 
 w dokumencie, z poziomu listy skanów wywoływane jest też ich przetwarzanie: binaryzacja, segmentacja czy transkrypcja. Skany wyświetlane są w formie miniatur, jeżeli jest ich więcej niż kilka i nie mieszczą się na ekranie, aplikacja wyświetla poziomy pasek przewijania.
 
 <figure>
-  <img src="image/lista_skanow.png" width="600">
+  <img src="image/lista_skanow.png" width="750">
 </figure>
 
 Powyżej listy skanów widoczny jest pasek narzędzi. Pierwsze dwa przyciski na pasku pozwalają za zaznaczenie (wybranie) lub odznaczenie wszystkich skanów - operacje przetwarzania skanów przeprowadzane są tylko na zaznaczoncych obrazach. Kolejne odpowiadają za import i eksport, trenowanie (możliwe jest trenowanie modelu segmentacji lub modelu transkrypcji), grupa przycisków z prawej strony odpowiada za przetwarzanie skanów: binaryzację, segmentację, transkrypcję oraz automatycznie wyrówananie ze wskazanym tekstem (np. transkrypcją manualną).
