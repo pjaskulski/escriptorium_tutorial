@@ -92,7 +92,7 @@ Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi,
   <img src="image/import_iif.png" width="300" style="padding-top: 30px;">
 </figure>
 
-- import transkrypcji w formacie xml (np. ALTO v. 4 lub PAGE XML), te nwariant umożliwia importowanie transkrypcji manualnej do wczytanych wcześniej skanów, w formie plików xml lub paczki zip zawierającej zestaw takich plików. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informację z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB.
+- import transkrypcji w formacie xml (np. ALTO v. 4 lub PAGE XML), ten wariant umożliwia importowanie transkrypcji manualnej do wczytanych wcześniej skanów, w formie plików xml lub w formie paczki zip zawierającej zestaw takich plików. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informacje z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB.
 <figure>
   <img src="image/import_xml.png" width="300" style="padding-top: 30px;">
 </figure>
@@ -129,13 +129,40 @@ Trzecie z pól okna parametrów segmentacji określa układ elementów na strona
 
 Procedura segmentacji może być czasochłonna, w jej trakcie aplikacja wyświetla dyskretną animację dla przetwarzanych obrazów - na zaznaczonych do przetworzenia skanach (poniżej miniaturki skanu) mruga mała ikonka z liniami (ikona segmentacji skanu). Wyświetlany jest także źółty przycisk na tle miniatury skanu, pozwalający na rezygnację z przeprowadzanej właśnie segmentacji. Po zakończeniu procedury wyświetlane jest powiadomienie w górnym prawym roku ekranu, a wspomniana ikona przybiera kolor zielony. Pełni onajednocześnie rolę przycisku - można uruchomić segmentację klikając właśnie tą małą ikonkę pod miniaturą.
 
-Aby zobaczyć utworzoną przez model segmentację strony/skanu, należy wejść w edycję danej strony - po najechaniu kursorem myszy na miniaturkę skanu wyświetli się niebieski pasek z białą ikoną symbolizującą edycję, oraz dymek z podpowiedzią 'Edit', kliknięcie w pasek otworzy skan w trybie edycji. Alternatywnie, jedna z zakładek w dokumencie to zakładka 'Edit', która uruchamia tryb edycji dla pierwszego skanu z dokumentu, tryb edycji posiada możliwość nawigacji do kolejnego/poprzedniego skanu, przesuwając się w lewo/prawo można odnaleźć właściwy skan.
-
-Uwaga: w przypadku importu skanów i transkrypcji z programu Transkribus w zalecanym formacie PAGE XML, konieczne jest także przeprowadzenie segmentacji, ale tylko z użyciem opcji 'only line Mask'.
+Uwaga: w przypadku importu skanów i transkrypcji z programu Transkribus w zalecanym formacie PAGE XML, zalecane jest przeprowadzenie segmentacji, ale tylko z użyciem opcji 'only line Mask'.
 
 ## Okno edycji skanu, segmentacji, transkrypcji
 
+Aby zobaczyć utworzoną przez model segmentację strony/skanu, należy wejść w edycję danej strony - po najechaniu kursorem myszy na miniaturkę skanu wyświetli się pasek z białą ikoną symbolizującą edycję, oraz dymek z podpowiedzią 'Edit', kliknięcie w pasek otworzy skan w trybie edycji. Alternatywnie, jedna z zakładek w dokumencie to zakładka 'Edit', która uruchamia tryb edycji dla pierwszego skanu z dokumentu, tryb edycji posiada możliwość nawigacji do kolejnego/poprzedniego skanu, przesuwając się w lewo/prawo można odnaleźć właściwy skan.
+
+Okno edycji skanu może wyświetlać od 1 do 5 paneli.
+
+- 'Text'(?)-  Metadane strony/skanu, gdzie można zapisać tytuł strony, komentarz oraz metadane w formie par klucz - wartość.
+<figure>
+  <img src="image/skan_metadane.png" width="450">
+</figure>
+- 'Source Image' - Oryginalny obraz/skan
+<figure>
+  <img src="image/skan_org.png" width="450">
+</figure>
+- 'Segmentation' - Segmentacja, gdzie widoczna jest manualna lub automatyczna segmentacja: linie bazowe, maski linii i regiony.
+<figure>
+  <img src="image/skan_segmentation.png" width="450">
+</figure>
+- 'Transcription' - Transkrypcja, po przeprowadzaniu automatyczniej transkrypcji panel ten wyświela jej wyniki w graficznej formie, opcjonalne może też wyświetlać 'confidence visualizations' - jeżeli zostało to włączonew parametrach dokumentu (zakładka Description) poprzez kolorowania wierszy od pomrańczowego poprzez żółty do odcieni zieleni - im większa pewność transkrypcji tym bliżej do soczystej zieleni.
+<figure>
+  <img src="image/skan_confidence.png" width="450">
+</figure>
+- 'Text' - Tekst transkrypcji manualnej lub automatycznych (jeżeli dany skan był już rozpoznawany przez model/modele), u góry okna można wybrać z listy rozwijanej, która transkrypcja ma być wyświetlana.
+<figure>
+  <img src="image/skan_text.png" width="450">
+</figure>
+
 ## Weryfikacja i korekta segmentacji
+
+Aczkolwiek możliwe jest korygowanie zarówno linii bazowych jak i masek linii, ręczna
+koretka masek nie jest zalecana, raczej należy starać się poprawiać długość i kształt linii bazowych, zaś maski linii są wówczas (z 1-2 sekundowych opóźnieniem) automatycznie
+dostosowywane przez aplikację.
 
 ## Wprowadzanie transkrypcji manualnej
 
