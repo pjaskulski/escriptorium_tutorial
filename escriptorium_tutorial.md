@@ -177,9 +177,15 @@ dostosowywane przez aplikację.
 
 ## Trenowanie modelu bezpośrednio w Krakenie
 
+Oprócz trenowania modelu z poziomu eScriptorium możliwe jest uruchomienie tego procesu z bezpośrednim użyciem programu Kraken z linii komend. Trzeba jednak pamiętać, że Kraken działa na systemach Linux i MacOS (na procesorach x64 i ARM, aczkolwiek w przypadku nowych komputerów Apple z procesorami M1 czyli z architekturą ARM Kraken nie umie na rzie wykorzystać ich procesora graficznego), w przypadku systemu Windows można ewentualnie wypróbować WSL - Windows Subsystem for Linux.
+
+Kraken jest aplikacją napisaną w języku Python i potrzebuje do działania zainstalowanej wersji 3 tego interpretera (najlepiej 3.8 lub nowszą). Instalacja opisana została na stronie programu: https://kraken.re/master/index.html
+
+Po zainstalowaniu użytkownik dysponuje poleceniami: `kraken` i `ketos` do rozpoznawania OCR/HTR i trenowania modeli.
+
 Dane do uczenia można pobrać z eScriptorium (skany oraz pliki XML), mogą też pochodzić z Transkribusa - w tym przypadku zalecany format to PAGE XML a przed trenowaniem zalecane jest przetworzenie segmentacji w eSCriptorium (opcja Segmention steps = 'Only Line Mask')
 
-Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem ketos compile (parametr --random-split descyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test):
+Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem `ketos compile` (parametr `--random-split` descyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test):
 
     ketos compile --workers 3 --random-split 0.8 0.1 0.1 -f page -o name_dataset.arrow *.xml
 
@@ -197,6 +203,12 @@ Przykładowy wynik:
     84685     Characters
     1142      Errors
     98.65%    Accuracy``
+
+Szczegółówy opis procesu i parametrów trenowania znajduje się na stronie:
+https://kraken.re/master/training.html
+
+Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org, Kraken umożliwia publikowanie
+modlu z poziomu linii komend: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
 
 ## Eksport modelu z eScriptorium
 
