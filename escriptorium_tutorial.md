@@ -177,6 +177,27 @@ dostosowywane przez aplikację.
 
 ## Trenowanie modelu bezpośrednio w Krakenie
 
+Dane do uczenia można pobrać z eScriptorium (skany oraz pliki XML), mogą też pochodzić z Transkribusa - w tym przypadku zalecany format to PAGE XML a przed trenowaniem zalecane jest przetworzenie segmentacji w eSCriptorium (opcja Segmention steps = 'Only Line Mask')
+
+Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem ketos compile (parametr --random-split descyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test):
+
+    ketos compile --workers 3 --random-split 0.8 0.1 0.1 -f page -o name_dataset.arrow *.xml
+
+Przygotowany w ten sposób plik *.arrow posłuży np. do douczania (fine tuning - https://kraken.re/4.2.0/ketos.html#fine-tuning) istniejącego modelu:
+
+    ketos train -i base_model.mlmodel --resize add --workers 3 --output new_model_name -f binary name_dataset.arrow
+
+Do przetestowania modelu można użyć polecenia: ketos test, podając jako parametry model do testów i np. binarny dataset (taki zestaw danych zwiera zwykle zarówno dane treningowe, walidacyjne jak i dane testowe, nie używane podczas trenowania):
+
+    ketos test -m name_model.mlmodel -f binary name_dataset.arrow
+
+Przykładowy wynik:
+
+    === report  ===
+    84685     Characters
+    1142      Errors
+    98.65%    Accuracy``
+
 ## Eksport modelu z eScriptorium
 
 ## Eksport transkrypcji z eScriptorium
