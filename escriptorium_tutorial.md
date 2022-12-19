@@ -167,11 +167,23 @@ Aczkolwiek możliwe jest korygowanie zarówno linii bazowych jak i masek linii, 
 koretka masek nie jest zalecana, raczej należy starać się poprawiać długość i kształt linii bazowych, zaś maski linii są wówczas (z 1-2 sekundowych opóźnieniem) automatycznie
 dostosowywane przez aplikację.
 
+<figure>
+  <img src="image/modyfikacja_linii_bazowej.png" width="450">
+</figure>
+
+Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić uwagę że edycja maski działa nieco inaczej, po włączeniu widoczności masek linii, zaznaczeniu linii do modyfikacji należy kliknąć nie tyle w węzeł maski co w jego pobliże a przesuwając kursor myszy zobaczymy iż podąża za nim węzeł maski linii.
+
+<figure>
+  <img src="image/modyfkacja_maski_linii.png" width="450">
+</figure>
+
 ## Wprowadzanie transkrypcji manualnej
 
 ## Modele, import modeli dostępnych publicznie
 
 ## Transkrypcja automatyczna
+
+## Automatic alignment - funkcja wyrównywania tekstu
 
 ## Trenowanie własnego modelu w eScriptorium
 
@@ -233,11 +245,11 @@ eScriptorium posiada interfejs API (wykorzystuje Django REST framework), który 
 
 ## Fora dyskusyjne, kody źródłowe, licencje
 
-Techniczne forum eScriptorium, związane bardziej z rozwojem tej aplikacji, dostępne jest na gitterze: https://gitter.im/escripta/escriptorium Dość często jednak zdarzają się tam pytania (i odpowiedzi) zwykłych użytkowników systemu.
+Techniczne forum eScriptorium, związane bardziej z rozwojem tej aplikacji, dostępne jest na gitterze: https://gitter.im/escripta/escriptorium , dość często jednak zdarzają się tam pytania (i odpowiedzi) zwykłych użytkowników systemu.
 
 Kod źródłowy aplikacji przechowywany jest w serwisie gitlab, tam też znajduje się lista błędów i propozycji rozwojowych: https://gitlab.com/scripta/escriptorium/-/issues/?sort=created_date&state=opened&first_page_size=100
 
 eScriptorium udostępnione zostało na licencji własnej: https://gitlab.com/scripta/escriptorium/-/blob/develop/LICENSE
 
 Program Kraken rozwijany jest na innej platformie - github: https://github.com/mittagessen/
-a udostępniony została na licencji Apache 2.0.
+a udostępniony został na licencji Apache 2.0.
