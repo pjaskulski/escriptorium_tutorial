@@ -175,9 +175,20 @@ dostosowywane przez aplikację.
 
 ## Trenowanie własnego modelu w eScriptorium
 
+eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train',
+umożliwia trenowanie modelu segmentacji lub, co jest częściej wykorzystywane, modelu transkrycji. Pierwszym krokiem jest zaznaczenie conajmniej jednego skanu. Wybór narzędzia
+Train->Recognizer wyświetla okno parametrów trenowania modelu transkrypcji.
+
+<figure>
+  <img src="image/trenowanie_w_escriptorium.png" width="300">
+</figure>
+
+Należy w nim wskazać warstwę transkrypcji, która będzie użyta w procesie uczenia,
+model bazowy (jeżeli chcemy oprzeć się na istniejącym modelu, który będzie douczany), nazwę wynikowego modelu. Trenowanie z poziomu eScriptorium nie pozwala na ustanienie bardziej zaawansowanych opcji uczenia, które są dostępne podczas trenowania bezpośrednio w aplikacji Kraken.
+
 ## Trenowanie modelu bezpośrednio w Krakenie
 
-Oprócz trenowania modelu z poziomu eScriptorium możliwe jest uruchomienie tego procesu z bezpośrednim użyciem programu Kraken z linii komend. Trzeba jednak pamiętać, że Kraken działa na systemach Linux i MacOS (na procesorach x64 i ARM, aczkolwiek w przypadku nowych komputerów Apple z procesorami M1 czyli z architekturą ARM Kraken nie umie na rzie wykorzystać ich procesora graficznego), w przypadku systemu Windows można ewentualnie wypróbować WSL - Windows Subsystem for Linux.
+Oprócz trenowania modelu z poziomu eScriptorium możliwe jest uruchomienie tego procesu z bezpośrednim użyciem programu Kraken z linii komend. Trzeba jednak pamiętać, że Kraken działa na systemach Linux i MacOS (na procesorach x64 i ARM, aczkolwiek w przypadku nowych komputerów Apple z procesorami M1 czyli z architekturą ARM Kraken nie umie na razie wykorzystać ich procesora graficznego), w przypadku systemu Windows można ewentualnie wypróbować WSL - Windows Subsystem for Linux.
 
 Kraken jest aplikacją napisaną w języku Python i potrzebuje do działania zainstalowanej wersji 3 tego interpretera (najlepiej 3.8 lub nowszą). Instalacja opisana została na stronie programu: https://kraken.re/master/index.html
 
@@ -188,6 +199,8 @@ Dane do uczenia można pobrać z eScriptorium (skany oraz pliki XML), mogą te�
 Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem `ketos compile` (parametr `--random-split` descyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test):
 
     ketos compile --workers 3 --random-split 0.8 0.1 0.1 -f page -o name_dataset.arrow *.xml
+
+zakładając, że polecenie uruchamiane jest w katalogu z plikami xml i skanami.
 
 Przygotowany w ten sposób plik *.arrow posłuży np. do douczania (fine tuning - https://kraken.re/4.2.0/ketos.html#fine-tuning) istniejącego modelu:
 
