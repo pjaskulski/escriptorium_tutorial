@@ -220,11 +220,24 @@ Przykładowy wynik:
 Szczegółówy opis procesu i parametrów trenowania znajduje się na stronie:
 https://kraken.re/master/training.html
 
-Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org, Kraken umożliwia publikowanie
-modlu z poziomu linii komend: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
+Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org, Kraken umożliwia opublikowanie
+modelu z poziomu linii komend: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
 
 ## Eksport modelu z eScriptorium
 
 ## Eksport transkrypcji z eScriptorium
 
 ## eScriptorium API
+
+eScriptorium posiada interfejs API (wykorzystuje Django REST framework), który widoczny jest pod adresem https://{SERWER}/api/ (gdzie {SERWER} to domena lub ip serwera na którym działa eScriptorium). Robocza wersja dokumentacji API dostępna jest w formie dokumentu google: https://docs.google.com/document/d/1tl48eXHq36KJ1zyXq0dMwYEzdnQYUm_MKfzMat9vjPc/edit#heading=h.j2ygnbgnoruv
+
+## Fora dyskusyjne, kody źródłowe, licencje
+
+Techniczne forum eScriptorium, związane bardziej z rozwojem tej aplikacji, dostępne jest na gitterze: https://gitter.im/escripta/escriptorium Dość często jednak zdarzają się tam pytania (i odpowiedzi) zwykłych użytkowników systemu.
+
+Kod źródłowy aplikacji przechowywany jest w serwisie gitlab, tam też znajduje się lista błędów i propozycji rozwojowych: https://gitlab.com/scripta/escriptorium/-/issues/?sort=created_date&state=opened&first_page_size=100
+
+eScriptorium udostępnione zostało na licencji własnej: https://gitlab.com/scripta/escriptorium/-/blob/develop/LICENSE
+
+Program Kraken rozwijany jest na innej platformie - github: https://github.com/mittagessen/
+a udostępniony została na licencji Apache 2.0.
