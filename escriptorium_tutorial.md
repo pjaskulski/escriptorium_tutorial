@@ -164,11 +164,16 @@ Okno edycji skanu może wyświetlać od 1 do 5 paneli. Panele mogą być włąc
 ## Weryfikacja i korekta segmentacji
 
 Aczkolwiek możliwe jest korygowanie zarówno linii bazowych jak i masek linii, ręczna
-koretka masek nie jest zalecana, raczej należy starać się poprawiać długość i kształt linii bazowych, zaś maski linii są wówczas (z 1-2 sekundowych opóźnieniem) automatycznie
-dostosowywane przez aplikację.
+koretka masek nie jest zalecana, raczej należy starać się poprawiać długość i kształt linii bazowych, zaś maski linii są wówczas (zwykle z 1-2 sekundowych opóźnieniem) automatycznie dostosowywane przez aplikację.
 
 <figure>
   <img src="image/modyfikacja_linii_bazowej.png" width="450">
+</figure>
+
+W przypadku problemów z zaznaczeniem właściwego węzła, można skorzystać z tzw. 'lassa',
+czyli z wciśniętym klawiszem Shift i lewym przyciskiem myszy zaznaczyć obszar z interesującym nas węzłem. Zaznaczony węzeł zmieni kolor na czarny. Zaznaczony węzeł można przesunąć, kursor myszy ustawiony nad zaznaczonym węzłem zmienia kształt na 'łapkę'.
+<figure>
+  <img src="image/lasso.png" width="600">
 </figure>
 
 Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić uwagę że edycja maski działa nieco inaczej, po włączeniu widoczności masek linii, zaznaczeniu linii do modyfikacji należy kliknąć nie tyle w węzeł maski co w jego pobliże a przesuwając kursor myszy zobaczymy iż podąża za nim węzeł maski linii.
