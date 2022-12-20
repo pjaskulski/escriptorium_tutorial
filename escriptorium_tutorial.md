@@ -116,7 +116,7 @@ Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przyciskó
 
 ## Binaryzacja
 
-Binaryzacja jest w obecnej wersji procedurą niezalecaną do przeprowadzania, dokumentacja systemu ostrzega że może to nawet prowadzić do pogorszenia jakości wyników. 
+Binaryzacja jest w obecnej wersji procedurą niezalecaną do przeprowadzania, dokumentacja systemu ostrzega że może to prowadzić nawet do pogorszenia jakości wyników. 
 <figure>
   <img src="image/binaryzacja.png" width="450">
 </figure>
@@ -183,8 +183,9 @@ czyli z wciśniętym klawiszem Shift i lewym przyciskiem myszy zaznaczyć obszar
   <img src="image/lasso.png" width="600">
 </figure>
 
-Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić uwagę że edycja maski działa nieco inaczej, po włączeniu widoczności masek linii, zaznaczeniu linii do modyfikacji należy kliknąć nie tyle w węzeł maski co w jego pobliże a przesuwając kursor myszy zobaczymy, iż podąża za nim węzeł maski linii.
 
+
+Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić uwagę że edycja maski działa nieco inaczej, po włączeniu widoczności masek linii, zaznaczeniu linii do modyfikacji należy kliknąć nie tyle w węzeł maski co w jego pobliże a przesuwając kursor myszy zobaczymy, iż podąża za nim węzeł maski linii.
 <figure>
   <img src="image/modyfkacja_maski_linii.png" width="450">
 </figure>
@@ -253,16 +254,33 @@ Modele przechowywane w eScriptorium można wyeksportować, np. w celu umieszczen
   <img src="image/export_modelu.png" width="600">
 </figure>   
 
-Z kolei udostępnianie modelu wyświetla dodatkowe okno programu w którym możena zdecydować którym użytkownikom lub grupom użytkowników udostępniamy nasz model, można też udostępnienie dla danego użytkownika/grupy usunąć. 
+Z kolei udostępnianie modelu wyświetla dodatkowe okno programu, w którym można zdecydować którym użytkownikom lub grupom użytkowników udostępniamy nasz model, można też udostępnienie dla danego użytkownika/grupy usunąć. 
 <figure>
   <img src="image/udostepnianie_modelu.png" width="600">
 </figure>  
 
 ## Eksport transkrypcji
 
-## eScriptorium API
+Przygotowane w eScriptorium transkrypcje skanów można zapisać w formie plików XML, w formatach ALTO lub PAGE, a także w postaci zwykłego pliku TXT. Eksport dostępny jest podczas pracy z dokumentem, w zakładce 'Images' po zaznaczeniu choć jednego skanu/obrazu. Przycisk 'Export' w pasku narzędzi (powyżej listy miniatur skanów) wyświetla okno dialogowe, w którym należy okreslić warstwę transkrypcji (skany mogły być rozpoznawane przez wiele modeli OCR/HTR), oczekiwany format danych (ALTO, PAGE. TXT), czy eksport ma zawierać oryginalne skany/obrazy. Po zatwierdzeniu okna system wygeneruje paczkę zip z plikami i wyświetli w górnym prawym roku ekranu powiadomienie. Powiadomienie będzie zawierało link do pobrania pliku zip z danymi. Jeżeli system został poprawnie skonfigurowany eScriptorium wyśle także użytkownikowi e-mail z informacją o przygotowaniu pliku zip i linkiem do pobrania (w przypadku większych kolekcji skanów, przygotowanie danych może zająć dłuższą chwilę).
+<figure>
+  <img src="image/escriptorium_export.png" width="450">
+</figure>  
+
+## Administracja systemem eScriptorium
+
+Administrator eScriptorium i każdy użytkownik o odpowiednich uprawnieniach ma dostęp do panelu administracyjnego systemu poprzez menu 'Hello {USER}' -> Site administration w górnym prawym rogu aplikacji eScriptorium. Uruchomienie tej funkcji wyświetla typowy dla aplikacji stwrzonych w technologii Django panel w którym można zarządzać użytkownikami systemu, ich uprawnieniami, tworzyć nowe konta, grupy użytkowników, tokeny do współpracy z eScriptorium przez API. Administrator z poziomu panelu może nadawać lub odbierać uprawnienia do modeli OCR/HTR a także do dokumentów ze skanami i transkrypcjami, może również usuwać dokumenty i projekty.
+<figure>
+  <img src="image/site_administration.png" width="500">
+</figure>     
+
+## API (REST) eScriptorium
 
 eScriptorium posiada interfejs API (wykorzystuje Django REST framework), który widoczny jest pod adresem https://{SERWER}/api/ (gdzie {SERWER} to domena lub ip serwera, na którym działa eScriptorium). Robocza wersja dokumentacji API dostępna jest w formie dokumentu google: https://docs.google.com/document/d/1tl48eXHq36KJ1zyXq0dMwYEzdnQYUm_MKfzMat9vjPc/edit#heading=h.j2ygnbgnoruv
+
+Użytkownik posiadający uprawnienia i wygenerowany token (w panelu administracyjnym aplikacji) może poprzez API, np. z wykorzystaniem connectora dla języka python (https://gitlab.com/sofer_mahir/escriptorium_python_connector) uruchomić niektóre funkcje eScriptorium. Przykłady we wspomnianej wyżej dokumentacji. 
+<figure>
+  <img src="image/api.png" width="450">
+</figure>
 
 ## Fora dyskusyjne, kody źródłowe, licencje
 
