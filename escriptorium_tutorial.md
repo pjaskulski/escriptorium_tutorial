@@ -84,12 +84,12 @@ operacyjnego dialog z możliwością wskazanie plików. Obsługiwane są typowe 
 Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi, przycisk rozwija się udostępniając 3 polecenia:
 - import obrazów z zewnętrznego serwera poprzez protokół IIIF, co jest przydatne gdy posiadamy już kolekcję skanów w repozytorium obsługującym ten protokół
 <figure>
-  <img src="image/import_pdf.png" width="300" style="padding-top: 30px;">
+  <img src="image/import_iif.png" width="300" style="padding-top: 30px;">
 </figure>
 
 - import obrazów z pliku pdf - każda strona pliku zostanie zaimportowana jako osobny obraz
 <figure>
-  <img src="image/import_iif.png" width="300" style="padding-top: 30px;">
+  <img src="image/import_pdf.png" width="300" style="padding-top: 30px;">
 </figure>
 
 - import transkrypcji w formacie xml (np. ALTO v.4 lub PAGE XML), ten wariant umożliwia importowanie transkrypcji i segmentacji do wczytanych wcześniej skanów, transkrypcje mogą być grupą plików xml lub mogą być spakowane w formie pliku zip. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informacje z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB.
