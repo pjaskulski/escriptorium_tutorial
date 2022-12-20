@@ -117,6 +117,9 @@ Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przyciskó
 ## Binaryzacja
 
 Binaryzacja jest w obecnej wersji procedurą niezalecaną do przeprowadzania, dokumentacja systemu ostrzega że może to nawet prowadzić do pogorszenia jakości wyników. 
+<figure>
+  <img src="image/binaryzacja.png" width="450">
+</figure>
 
 ## Segmentacja
 
@@ -196,8 +199,7 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 
 ## Trenowanie własnego modelu w eScriptorium
 
-eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train',
-umożliwia trenowanie modelu segmentacji lub, co jest częściej wykorzystywane, modelu transkrycji. Pierwszym krokiem jest zaznaczenie conajmniej jednego skanu. Wybór narzędzia
+eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train', uruchamia trenowanie modelu segmentacji, lub - co jest częściej wykorzystywane - modelu transkrypcji. Pierwszym krokiem jest zaznaczenie conajmniej jednego skanu. Wybór narzędzia
 Train->Recognizer wyświetla okno parametrów trenowania modelu transkrypcji.
 
 <figure>
@@ -215,7 +217,7 @@ Kraken jest aplikacją napisaną w języku Python i potrzebuje do działania za
 
 Po zainstalowaniu użytkownik dysponuje poleceniami: `kraken` i `ketos` do rozpoznawania OCR/HTR i trenowania modeli.
 
-Dane do uczenia można pobrać z eScriptorium (skany oraz pliki XML), mogą też pochodzić z Transkribusa - w tym przypadku zalecany format to PAGE XML a przed trenowaniem zalecane jest przetworzenie segmentacji w eSCriptorium (opcja Segmention steps = 'Only Line Mask')
+Dane do uczenia można pobrać z eScriptorium (skany oraz pliki XML), mogą też pochodzić z Transkribusa - w tym przypadku zalecany format to PAGE XML a przed trenowaniem zalecane jest przetworzenie segmentacji w eScriptorium (opcja Segmentation steps = 'Only Line Mask')
 
 Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem `ketos compile` (parametr `--random-split` descyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test):
 
@@ -227,7 +229,7 @@ Przygotowany w ten sposób plik *.arrow posłuży np. do douczania (fine tuning 
 
     ketos train -i base_model.mlmodel --resize add --workers 3 --output new_model_name -f binary name_dataset.arrow
 
-Do przetestowania modelu można użyć polecenia: ketos test, podając jako parametry model do testów i np. binarny dataset (taki zestaw danych zwiera zwykle zarówno dane treningowe, walidacyjne jak i dane testowe, nie używane podczas trenowania):
+Do przetestowania modelu można użyć polecenia: `ketos test`, podając jako parametry model do testów i dane trenowania np. w formie binarnego datasetu - pliku *.arrow utworzonego powyżej (taki zestaw danych zawiera zwykle zarówno dane treningowe, walidacyjne jak i dane testowe, nie używane podczas trenowania):
 
     ketos test -m name_model.mlmodel -f binary name_dataset.arrow
 
@@ -242,23 +244,34 @@ Szczegółówy opis procesu i parametrów trenowania znajduje się na stronie:
 https://kraken.re/master/training.html
 
 Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org, Kraken umożliwia opublikowanie
-modelu z poziomu linii komend: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
+modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
 
-## Eksport modelu z eScriptorium
+## Eksport, udostępnienie i usunięcie modelu
 
-## Eksport transkrypcji z eScriptorium
+Modele przechowywane w eScriptorium można wyeksportować, np. w celu umieszczenia w repozytorium zenodo.org lub użycia bezpośrednio w programie Kraken. Na liście modeli (menu 'My Models'), z prawej strony okna widoczne są kolorowe ikony pozwalające na eksport (pobranie) modelu - zielona ikona pliku ze strzałką w dół, usunięcie modelu - czerowona ikona z symbolem kosza, oraz udostępnienie modelu - niebieska ikona z zakrzywioną strzałką. Uwaga: usuwanie modelu następuje natychmiast, bez dodatkowego pytania, podobnie pobranie (eksport) modelu od razy uruchamia procedurę pobiernia pliku *.mlmodel.  
+<figure>
+  <img src="image/export_modelu.png" width="600">
+</figure>   
+
+Z kolei udostępnianie modelu wyświetla dodatkowe okno programu w którym możena zdecydować którym użytkownikom lub grupom użytkowników udostępniamy nasz model, można też udostępnienie dla danego użytkownika/grupy usunąć. 
+<figure>
+  <img src="image/udostepnianie_modelu.png" width="600">
+</figure>  
+
+## Eksport transkrypcji
 
 ## eScriptorium API
 
-eScriptorium posiada interfejs API (wykorzystuje Django REST framework), który widoczny jest pod adresem https://{SERWER}/api/ (gdzie {SERWER} to domena lub ip serwera na którym działa eScriptorium). Robocza wersja dokumentacji API dostępna jest w formie dokumentu google: https://docs.google.com/document/d/1tl48eXHq36KJ1zyXq0dMwYEzdnQYUm_MKfzMat9vjPc/edit#heading=h.j2ygnbgnoruv
+eScriptorium posiada interfejs API (wykorzystuje Django REST framework), który widoczny jest pod adresem https://{SERWER}/api/ (gdzie {SERWER} to domena lub ip serwera, na którym działa eScriptorium). Robocza wersja dokumentacji API dostępna jest w formie dokumentu google: https://docs.google.com/document/d/1tl48eXHq36KJ1zyXq0dMwYEzdnQYUm_MKfzMat9vjPc/edit#heading=h.j2ygnbgnoruv
 
 ## Fora dyskusyjne, kody źródłowe, licencje
 
-Techniczne forum eScriptorium, związane bardziej z rozwojem tej aplikacji, dostępne jest na gitterze: https://gitter.im/escripta/escriptorium , dość często jednak zdarzają się tam pytania (i odpowiedzi) zwykłych użytkowników systemu.
+Techniczne forum eScriptorium, związane bardziej z rozwojem tej aplikacji, dostępne jest na gitterze: 
+https://gitter.im/escripta/escriptorium , dość często jednak zdarzają się tam pytania (i odpowiedzi) zwykłych użytkowników systemu.
 
 Kod źródłowy aplikacji przechowywany jest w serwisie gitlab, tam też znajduje się lista błędów i propozycji rozwojowych: https://gitlab.com/scripta/escriptorium/-/issues/?sort=created_date&state=opened&first_page_size=100
 
-eScriptorium udostępnione zostało na licencji własnej: https://gitlab.com/scripta/escriptorium/-/blob/develop/LICENSE
+eScriptorium udostępnione zostało na otwartej licencji własnej (https://gitlab.com/scripta/escriptorium/-/blob/develop/LICENSE), kod źródłowy programu przechowywany jest w serwisie gitlab - (https://gitlab.com/scripta/escriptorium/  
 
 Program Kraken rozwijany jest na innej platformie - github: https://github.com/mittagessen/
 a udostępniony został na licencji Apache 2.0.
