@@ -217,6 +217,26 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 
 ## Wprowadzanie transkrypcji manualnej
 
+eScriptorium może posłużyć jako środowisko przygotowania materiału treningowego (_ground truth_) do stworzenia nowego modelu. Wymaga to posiadania obrazów (skanów) rękopisów w dobrej jakości, oraz tekstów odczytanych z rękopisów przez ekspertów. Mając takie materiały można wczytać serię skanów do nowego dokumentu, następnie dla każdego ze skanów uzupełnić warstwę transkrypcji 'manual' - przygotowując odpowiednio dane tekstowe odpowiadające stronie skanu, z podziałem na wiersze zgodnym z podziałem w rękopisie. W trybie edycji dla obrazu należy wyświetlić panel 3 = 'Segmentation' oraz  panel 4 - 'Text', w którym można wprowadzić tekst danej strony. Dla skanu rękopisu należy wcześniej przeprowadzić segmentację, tak by były wyznaczone region i linie tekstu oraz ich kolejność. Ważne jest uzgodnienie właściwego układu wierszy, tak by tekst wiersza w panelu Text odpowiadał właściwemu wierszowi rękopisu wyznaczonemu przez segmentację.
+
+Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i edycji pojedynczych wierszy transkrypcji -> w panelu segmentacji należy kliknąć w dowolną linię, wyświetlony zostanie wówczas fragment skanu rękopisu z danym wierszem oraz edytowalne pole tekstowe.  
+<figure>
+  <img src="image/linia_transkrypcji.png" width="500">
+</figure>
+
+### Kolejność wierszy
+
+Kolejność wierszy wyznaczona automatycznie może być wyświetlona w panelu segmentacji przez ikonę ze strzałką w dół i cyframi 1-9.
+<figure>
+  <img src="image/kolejnosc_wierszy_segmentacja.png" width="450">
+</figure>
+
+Kolejność wierszy można modyfikować po włączeniu trybu sortowania ikoną ze strzałkami w panelu 4 - Text. 
+<figure>
+  <img src="image/sortowanie_panel_text.png" width="450">
+</figure>
+  
+
 ## Modele, import modeli dostępnych publicznie
 
 Po zainstalowaniu eScriptorium nie posiada żadnego domyślnego modelu OCR/HTR. Można na podstawie posiadanych materiałów (_ground truth_ - kolekcji obrazów i pasujących do nich w 100% zweryfikowanych tesktów) wytrenować własny. Kolekcje publicznie dostępnych materiałów na otwartych licencjach można znaleźć w katalogu [HTR-United](https://htr-united.github.io/), podobne kolekcje lecz głównie dla materiałów OCR zebrane zostały na stronie [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/). 
