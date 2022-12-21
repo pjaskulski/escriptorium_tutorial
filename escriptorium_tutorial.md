@@ -226,7 +226,7 @@ Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i ed
 
 Między kolejnymi wierszami w obrębie strony można przemieszczać się dzięki ikonom w górnej części okna. Jeżeli aktywnym elementem jest edycyjne pole tekstowe nawigację między poprzednią i kolejną stroną zapewniają też klawisze strzałek góra/dół, do kolejnego wiersza przenosi nas także klawisz Enter. 
 
-Okno pojedycznego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history' (link pojawi się tylko wówczas gdy dana linia była modyfikowana). {Po wyświetleniu historii zmian użytkownik może przywrócić jeden z poprzednich stanów wiersza za pomocą zielonych ikonek z prawej strony listy zmian. 
+Okno pojedycznego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history' (link pojawi się tylko wówczas gdy dana linia była modyfikowana). Po wyświetleniu historii zmian użytkownik może przywrócić jeden z poprzednich stanów wiersza za pomocą zielonych ikonek z prawej strony listy zmian. 
 <figure>
   <img src="image/linia_historia.png" width="600">
 </figure>
@@ -239,7 +239,7 @@ Kolejność wierszy wyznaczona automatycznie może być wyświetlona w panelu se
   <img src="image/kolejnosc_wierszy_segmentacja.png" width="450">
 </figure>
 
-Kolejność wierszy można modyfikować po włączeniu trybu sortowania ikoną ze strzałkami w panelu 4 - Text. 
+Kolejność wierszy można modyfikować po włączeniu trybu sortowania ikoną ze strzałkami w panelu 4 - Text. Aplikacja umożliwia wówczas przesuwanie wierszy w panelu tesktowym za pomocą myszy. Należy zwrócić uwagę, że eScriptorium ma skłonność do automatycznego korygowania kolejności po dodaniu linii manualnie przez użytkownika, a przypadkowe dodanie linii zdarza się dość łatwo.
 <figure>
   <img src="image/sortowanie_panel_text.png" width="450">
 </figure>
