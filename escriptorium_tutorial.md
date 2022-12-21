@@ -210,8 +210,6 @@ czyli z wciśniętym klawiszem Shift i lewym przyciskiem myszy zaznaczyć obszar
   <img src="image/lasso.png" width="600">
 </figure>
 
-
-
 Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić uwagę że edycja maski działa nieco inaczej, po włączeniu widoczności masek linii, zaznaczeniu linii do modyfikacji należy kliknąć nie tyle w węzeł maski co w jego pobliże a przesuwając kursor myszy zobaczymy, iż podąża za nim węzeł maski linii.
 <figure>
   <img src="image/modyfkacja_maski_linii.png" width="450">
@@ -220,6 +218,14 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 ## Wprowadzanie transkrypcji manualnej
 
 ## Modele, import modeli dostępnych publicznie
+
+Po zainstalowaniu eScriptorium nie posiada żadnego domyślnego modelu OCR/HTR. Można na podstawe posiadanych materiałów (_ground truth_ - kolekcji obrazów i pasujących do nich w 100% zweryfikowanych tesktów) wytrenować własny. Kolekcje publicznie dostępnych materiałów na otwartych licencjach można znaleźć w katalogu [HTR-United](https://htr-united.github.io/), podobne kolekcje lecz głównie dla materiałów OCR zebrane zostały na stronie [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/). 
+
+Istnieje jednakże kolekcja gotowych wytrenowanych modeli przechowywanych w serwisie [zenodo.org](https://zenodo.org/communities/ocr_models?page=1&size=20). Obecnie dostępnych jest kilkanaście modeli, od łacińskiego i francuskiego pisma średniowiecznego VIII-XV w., poprzez modele wytrenowane na rękopisach francuskich z XVIII-XX wieku, do modeli dla rękopisów arabskich, hebrajskich czy wietnamskich. Wśród modeli znajsdują się też modele OCR dla starych druków perskich czy otomańskich. Wszystkie modele dostępne są bezpłatnie, zwykle na licencji Creative Commons Attribution 4.0 International. Możena oczywiście także udostępnić w tym katalogu swój model, jeżeli tylko będzie on przydatny dla innych użytkowników.
+
+Każdy model w kolekcji posiada swoją podstronę, często z informacjami na temat zbioru rękopisów na bazie których został wytrenowany. Np. model 'HTR-United - Manu McFrench V1 (Manuscripts of Modern and Contemporaneous French)' (https://zenodo.org/record/6657809#.Y6LfDtLMJKs) został przygotowany na podstawie francuskiej kolekcji z lat XVII-XXI wieku ze wspomnianego wyżej zbioru HTR-United, z dodatkiem małej próbki hiszpańskich listów z XIX wieku i XX wiecznych rękopisów angielskich. 
+
+Modele przechowywane są w plikach binarnych z rozszerzeniem *.mlmodel i można je pobrać z sekcji 'Files' podstrony danego modelu. Wielkość modelu to zazwyczaj od kilkunastu do parudziesięciu megabajtów. Po pobraniu na dysk lokalny można taki model zaimportować do eScriptorium, korzystając z funkcji 'Upload a model' w oknie z listą modeli widoczną po przejściu do menu 'My Models' u góry ekranu aplikacji.   
 
 ## Transkrypcja automatyczna
 
@@ -330,9 +336,9 @@ Użytkownik posiadający uprawnienia i wygenerowany token (w panelu administracy
 Techniczne forum eScriptorium, związane bardziej z rozwojem tej aplikacji, dostępne jest na gitterze: 
 https://gitter.im/escripta/escriptorium , dość często jednak zdarzają się tam pytania (i odpowiedzi) zwykłych użytkowników systemu.
 
-Kod źródłowy aplikacji przechowywany jest w serwisie gitlab, tam też znajduje się lista błędów i propozycji rozwojowych: https://gitlab.com/scripta/escriptorium/-/issues/?sort=created_date&state=opened&first_page_size=100
+Kod źródłowy aplikacji przechowywany jest w serwisie gitlab - https://gitlab.com/scripta/escriptorium/ , tam też znajduje się lista błędów i propozycji rozwojowych: https://gitlab.com/scripta/escriptorium/-/issues/?sort=created_date&state=opened&first_page_size=100
 
-eScriptorium udostępnione zostało na otwartej licencji własnej (https://gitlab.com/scripta/escriptorium/-/blob/develop/LICENSE), kod źródłowy programu przechowywany jest w serwisie gitlab - (https://gitlab.com/scripta/escriptorium/  
+eScriptorium udostępnione zostało na otwartej licencji własnej (https://gitlab.com/scripta/escriptorium/-/blob/develop/LICENSE).
 
 Program Kraken rozwijany jest na innej platformie - github: https://github.com/mittagessen/
 a udostępniony został na licencji Apache 2.0.
