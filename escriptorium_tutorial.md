@@ -7,26 +7,26 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Podziękowania](podziękowania)
 - [Wersja](#wersja)
 - [Logowanie i główne okno aplikacji](#logowanie-i-g%C5%82%C3%B3wne-okno-aplikacji)
-- [Utworzenie nowego projektu]()
-- [Utworzenie nowego dokumentu]()
-  - [Import skanów]()
-  - [Import transkrypcji i skanów]()
-- [Lista obrazów/skanów]()
-- [Binaryzacja]()
-- [Segmentacja]()
-  - [Okno edycji skanu, segmentacji, transkrypcji]()
-  - [Weryfikacja i korekta segmentacji]()
-- [Wprowadzanie transkrypcji manualnej]()
-- [Modele, import modeli dostępnych publicznie]()
-- [Transkrypcja automatyczna]()
-- [Automatic alignment - funkcja wyrównywania tekstu]()
-- [Trenowanie własnego modelu w eScriptorium]()
-- [Trenowanie modelu bezpośrednio w Krakenie]()
-- [Eksport, udostępnienie i usunięcie modelu]()
-- [Eksport transkrypcji]()
-- [Administracja systemem eScriptorium]()
-- [API (REST) eScriptorium]()
-- [Fora dyskusyjne, kody źródłowe, licencje]()
+- [Utworzenie nowego projektu](#utworzenie-nowego-projektu)
+- [Utworzenie nowego dokumentu](#utworzenie-nowego-dokumentu)
+  - [Import skanów](#import-skan%C3%B3w)
+  - [Import transkrypcji i skanów](#import-transkrypcji-i-skan%C3%B3w)
+- [Lista obrazów/skanów](#lista-obraz%C3%B3wskan%C3%B3w)
+- [Binaryzacja](#binaryzacja)
+- [Segmentacja](#segmentacja)
+  - [Okno edycji skanu, segmentacji, transkrypcji](#okno-edycji-skanu-segmentacji-transkrypcji)
+  - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
+- [Wprowadzanie transkrypcji manualnej](#wprowadzanie-transkrypcji-manualnej)
+- [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
+- [Transkrypcja automatyczna](#transkrypcja-automatyczna)
+- [Automatic alignment - funkcja wyrównywania tekstu](#automatic-alignment---funkcja-wyr%C3%B3wnywania-tekstu)
+- [Trenowanie własnego modelu w eScriptorium](#trenowanie-w%C5%82asnego-modelu-w-escriptorium)
+- [Trenowanie modelu bezpośrednio w Krakenie](#trenowanie-modelu-bezpo%C5%9Brednio-w-krakenie)
+- [Eksport, udostępnienie i usunięcie modelu](#eksport-udost%C4%99pnienie-i-usuni%C4%99cie-modelu)
+- [Eksport transkrypcji](#eksport-transkrypcji)
+- [Administracja systemem eScriptorium](#administracja-systemem-escriptorium)
+- [API (REST) eScriptorium](#api-rest-escriptorium)
+- [Fora dyskusyjne, kody źródłowe, licencje](#fora-dyskusyjne-kody-%C5%BAr%C3%B3d%C5%82owe-licencje)
 
 
 ## Podziękowania
@@ -221,11 +221,13 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 
 Po zainstalowaniu eScriptorium nie posiada żadnego domyślnego modelu OCR/HTR. Można na podstawe posiadanych materiałów (_ground truth_ - kolekcji obrazów i pasujących do nich w 100% zweryfikowanych tesktów) wytrenować własny. Kolekcje publicznie dostępnych materiałów na otwartych licencjach można znaleźć w katalogu [HTR-United](https://htr-united.github.io/), podobne kolekcje lecz głównie dla materiałów OCR zebrane zostały na stronie [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/). 
 
-Istnieje jednakże kolekcja gotowych wytrenowanych modeli przechowywanych w serwisie [zenodo.org](https://zenodo.org/communities/ocr_models?page=1&size=20). Obecnie dostępnych jest kilkanaście modeli, od łacińskiego i francuskiego pisma średniowiecznego VIII-XV w., poprzez modele wytrenowane na rękopisach francuskich z XVIII-XX wieku, do modeli dla rękopisów arabskich, hebrajskich czy wietnamskich. Wśród modeli znajsdują się też modele OCR dla starych druków perskich czy otomańskich. Wszystkie modele dostępne są bezpłatnie, zwykle na licencji Creative Commons Attribution 4.0 International. Możena oczywiście także udostępnić w tym katalogu swój model, jeżeli tylko będzie on przydatny dla innych użytkowników.
+Istnieje jednakże kolekcja gotowych wytrenowanych modeli przechowywanych w serwisie [zenodo.org](https://zenodo.org/communities/ocr_models?page=1&size=20). Obecnie dostępnych jest kilkanaście modeli, od łacińskiego i francuskiego pisma średniowiecznego VIII-XV w., poprzez modele wytrenowane na rękopisach francuskich z XVIII-XX wieku, do modeli dla rękopisów arabskich, hebrajskich czy wietnamskich. Wśród modeli znajdują się też modele OCR dla starych druków perskich czy otomańskich. Wszystkie dostępne są bezpłatnie, zwykle na licencji Creative Commons Attribution 4.0 International. Można oczywiście także udostępnić w tym katalogu swój model, jeżeli tylko będzie on przydatny dla innych użytkowników.
 
 Każdy model w kolekcji posiada swoją podstronę, często z informacjami na temat zbioru rękopisów na bazie których został wytrenowany. Np. model 'HTR-United - Manu McFrench V1 (Manuscripts of Modern and Contemporaneous French)' (https://zenodo.org/record/6657809#.Y6LfDtLMJKs) został przygotowany na podstawie francuskiej kolekcji z lat XVII-XXI wieku ze wspomnianego wyżej zbioru HTR-United, z dodatkiem małej próbki hiszpańskich listów z XIX wieku i XX wiecznych rękopisów angielskich. 
 
-Modele przechowywane są w plikach binarnych z rozszerzeniem *.mlmodel i można je pobrać z sekcji 'Files' podstrony danego modelu. Wielkość modelu to zazwyczaj od kilkunastu do parudziesięciu megabajtów. Po pobraniu na dysk lokalny można taki model zaimportować do eScriptorium, korzystając z funkcji 'Upload a model' w oknie z listą modeli widoczną po przejściu do menu 'My Models' u góry ekranu aplikacji.   
+Modele przechowywane są w plikach binarnych z rozszerzeniem *.mlmodel i można je pobrać z sekcji 'Files' podstrony danego modelu. Wielkość modelu to zazwyczaj od kilkunastu do parudziesięciu megabajtów. Po pobraniu na dysk lokalny można taki model zaimportować do eScriptorium, korzystając z funkcji 'Upload a model' w oknie z listą modeli widoczną po przejściu do menu 'My Models' u góry ekranu aplikacji.
+
+Program Kraken posiada wbudowaną obsługę pobierania modeli z repozytorium zenodo, służą do tego polecenia `kraken list`, `kraken show` i `kraken get`.
 
 ## Transkrypcja automatyczna
 
