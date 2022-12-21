@@ -221,7 +221,7 @@ eScriptorium może posłużyć jako środowisko przygotowania materiału trenin
 
 Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i edycji pojedynczych wierszy transkrypcji -> w panelu segmentacji należy kliknąć w dowolną linię, wyświetlony zostanie wówczas fragment skanu rękopisu z danym wierszem oraz edytowalne pole tekstowe.  
 <figure>
-  <img src="image/linia_transkrypcji.png" width="500">
+  <img src="image/linia_transkrypcji.png" width="600">
 </figure>
 
 Między kolejnymi wierszami w obrębie strony można przemieszczać się dzięki ikonom w górnej części okna. Jeżeli aktywnym elementem jest edycyjne pole tekstowe nawigację między poprzednią i kolejną stroną zapewniają też klawisze strzałek góra/dół.
