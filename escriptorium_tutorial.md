@@ -4,9 +4,30 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 
 ## Spis treści
 
-[Podziękowania](#podziekowania)
+- [Podziękowania](podziękowania)
+- [Wersja](#wersja)
+- [Logowanie i główne okno aplikacji](#logowanie-i-g%C5%82%C3%B3wne-okno-aplikacji)
+- [Utworzenie nowego projektu]()
+- [Utworzenie nowego dokumentu]()
+  - [Import skanów]()
+  - [Import transkrypcji i skanów]()
+- [Lista obrazów/skanów]()
+- [Binaryzacja]()
+- [Segmentacja]()
+  - [Okno edycji skanu, segmentacji, transkrypcji]()
+  - [Weryfikacja i korekta segmentacji]()
+- [Wprowadzanie transkrypcji manualnej]()
+- [Modele, import modeli dostępnych publicznie]()
+- [Transkrypcja automatyczna]()
+- [Automatic alignment - funkcja wyrównywania tekstu]()
+- [Trenowanie własnego modelu w eScriptorium]()
+- [Trenowanie modelu bezpośrednio w Krakenie]()
+- [Eksport, udostępnienie i usunięcie modelu]()
+- [Eksport transkrypcji]()
+- [Administracja systemem eScriptorium]()
+- [API (REST) eScriptorium]()
+- [Fora dyskusyjne, kody źródłowe, licencje]()
 
-[Wersja](#wersja)
 
 ## Podziękowania
 
@@ -144,7 +165,7 @@ Procedura segmentacji może być czasochłonna, w jej trakcie aplikacja wyświet
 
 Uwaga: w przypadku importu skanów i transkrypcji z programu Transkribus w zalecanym formacie PAGE XML, zalecane jest przeprowadzenie segmentacji, ale tylko z użyciem opcji 'only line Mask'.
 
-## Okno edycji skanu, segmentacji, transkrypcji
+### Okno edycji skanu, segmentacji, transkrypcji
 
 Aby zobaczyć utworzoną przez model segmentację strony/skanu, należy wejść w edycję danej strony - po najechaniu kursorem myszy na miniaturkę skanu wyświetli się pasek z białą ikoną symbolizującą edycję, oraz dymek z podpowiedzią 'Edit', kliknięcie w pasek otworzy skan w trybie edycji. Alternatywnie, jedna z zakładek w dokumencie to zakładka 'Edit', która uruchamia tryb edycji dla pierwszego skanu z dokumentu, tryb edycji posiada możliwość nawigacji do kolejnego/poprzedniego skanu, przesuwając się w lewo/prawo można odnaleźć właściwy skan.
 
@@ -174,7 +195,7 @@ Okno edycji skanu może wyświetlać od 1 do 5 paneli. Panele mogą być włąc
   <img src="image/skan_text.png" width="450">
 </figure>
 
-## Weryfikacja i korekta segmentacji
+### Weryfikacja i korekta segmentacji
 
 Aczkolwiek możliwe jest korygowanie zarówno linii bazowych jak i masek linii, ręczna
 korekta masek nie jest zalecana, raczej należy starać się poprawiać długość i kształt linii bazowych, zaś maski linii są wówczas (zwykle z 1-2 sekundowych opóźnieniem) automatycznie dostosowywane przez aplikację.
