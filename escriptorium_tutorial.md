@@ -23,8 +23,8 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Automatic alignment - funkcja wyrównywania tekstu](#automatic-alignment---funkcja-wyr%C3%B3wnywania-tekstu)
 - [Trenowanie własnego modelu w eScriptorium](#trenowanie-w%C5%82asnego-modelu-w-escriptorium)
 - [Trenowanie modelu bezpośrednio w Krakenie](#trenowanie-modelu-bezpo%C5%9Brednio-w-krakenie)
-- [Współpraca z innymi użytkownikami]()
-  - [Udostępnianie projektów]()
+- [Współpraca z innymi użytkownikami](#wsp%C3%B3%C5%82praca-z-innymi-u%C5%BCytkownkami)
+  - [Udostępnianie projektów](#udost%C4%99pnianie-projekt%C3%B3w)
   - [Eksport, udostępnienie i usunięcie modelu](#eksport-udost%C4%99pnienie-i-usuni%C4%99cie-modelu)
 - [Eksport transkrypcji](#eksport-transkrypcji)
 - [Raporty](#raporty)
@@ -345,11 +345,19 @@ https://kraken.re/master/training.html
 Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org, Kraken umożliwia opublikowanie
 modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
 
+
 ## Współpraca z innymi użytkownkami
 
 Aplikacja posiada możliwość współdzielenia zarówno projektów jak i modeli z innymi użytkownikami.
 
+
 ### Udostępnianie projektów
+
+Aby udostępnić projekt innemu użytkownikowi należy w oknie projektu odnaleźć niebieską ikonę 'Share this Project' w górnym prawym rogu okna. Wyświetlone zostanie wówczas okno dlalogowe w którym należy wprowadzić login użytkownika, któremu chcemy udostępnić projekt. Po zatwierdzeniu system wyświetli powiadomienie o udanym udostępnieniu a docelowy użytkownik powinien zobaczyć projekt na swojej liście.
+<figure>
+  <img src="image/share_project.png" width="400">
+</figure>   
+    
 
 ### Eksport, udostępnienie i usunięcie modelu
 
