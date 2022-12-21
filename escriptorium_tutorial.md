@@ -65,13 +65,13 @@ Powyżej listy projektów widoczne jest podstawowe menu aplikacji:
 
 ## Utworzenie nowego projektu
 
-Widoczny w górnym prawym rogu ekranu (powyżej tabeli projektów) przcisk 'Create new Project'
+Widoczny w górnym prawym rogu ekranu (powyżej tabeli projektów) przycisk 'Create new Project'
 pozwala na utworzenie nowego projektu. Jedynym polem, które można i należy wypełnić jest tytuł projektu - maksymalnie 512 znaków. Uwaga: w opisywanej wersji nie można zmienić nazwy projektu po jego utworzeniu, warto więc wprowadzić tytuł przemyślany, który w przyszłości pozwoli na wyszukanie naszego projektu z wielu innych.
 <figure>
   <img src="image/utworzenie_nowego_projektu.png" width="600">
 </figure>
 
-Aplikacja wyświetla notyfikację (powidomienie, zielony komunikat w górnym lewym rogu) z informacją o prawidłowym utworzeniu projektu, który pojawi się też od razu na liście projektów.
+Aplikacja wyświetla notyfikację (powiadomienie, zielony komunikat w górnym lewym rogu) z informacją o prawidłowym utworzeniu projektu, który pojawi się też od razu na liście projektów.
 <figure>
   <img src="image/notyfikacja_utworzenie_projektu.png" width="300">
 </figure>
@@ -87,7 +87,7 @@ Okno definiowania dokumentu zawiera dużo więcej pól niż w przypadku projektu
 
 W kolejnym polu należy wskazać pozycję linii w stosunku do wielokąta (kształtu) wiersza tekstu: 'Baseline', 'Topline', 'Centered'. Aplikacja pozwala opcjonalnie na wyświetlanie stopnia zaufania dla poszczególnych fragmentów automatycznej transkrypcji, jeżeli chcemy wyświetlać taką informację należy zaznaczyć pole wyboru 'Show confidence visualizations' (wizualizacja pojawi się w panelu Transcription w trybie edycji skanu/obrazu).
 
-Sekcja Metadata pozwala na wprowadzenie własnych metadanych opisujących dokument (można wprowdzić informacje dotyczące np. okresu chronologicznego czy pochodzenia geograficznego). Po zakończeniu wprowadzania tych podstawowych danych przycisk 'Create' na dole okna utworzy nasz nowy dokument, wyświetlając stosowny komunikat (powiadomienie) w górnym prawym roku ekranu.
+Sekcja Metadata pozwala na wprowadzenie własnych metadanych opisujących dokument (można wprowadzić informacje dotyczące np. okresu chronologicznego czy pochodzenia geograficznego). Po zakończeniu wprowadzania tych podstawowych danych przycisk 'Create' na dole okna utworzy nasz nowy dokument, wyświetlając stosowny komunikat (powiadomienie) w górnym prawym roku ekranu.
 Wszystkie wprowadzone informacje będą mogły być w przyszłości uzupełnione i poprawione.
 Zapisanie dokumentu odbezpiecza dostęp do podstawowej zakładki: 'Images' - tam będą znajdować się przetwarzane skany rękopisów i druków.
 <figure>
@@ -103,7 +103,7 @@ Zakładka 'Images' składa się z trzech głównych elementów: pola do importu
 
 Najprostszą metodą importu jest zaznaczenie pliku lub grupy plików w dowolnej aplikacji
 zarządzającej plikami w danym systemie operacyjnym (Explorator w Windows, czy Files w Ubuntu) i przeciągnięcie ich na obszar pola importu skanów. Spowoduje to uruchomienie procesu importowania - skany pojawią się w polu importu i stopniowo będą przechodzić do listy skanów. Można w ten sposób importować całkiem duże kolekcje, nawet kilkaset obrazów.
-Można także kliknać w obrębie pola importu, co wywoła standardowy dla danego systemu
+Można także kliknąć w obrębie pola importu, co wywoła standardowy dla danego systemu
 operacyjnego dialog z możliwością wskazanie plików. Obsługiwane są typowe formaty plików graficznych np. jpeg, png, tiff. 
  
 ### Import transkrypcji i skanów
@@ -126,20 +126,20 @@ Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi,
 
 ## Lista obrazów/skanów
 
-Lista obrazów/skanów jest głównum miejscem szybkiego przeglądania kolekcji skanów
+Lista obrazów/skanów jest głównym miejscem szybkiego przeglądania kolekcji skanów
 w dokumencie, z poziomu listy skanów wywoływane jest też ich przetwarzanie: binaryzacja, segmentacja czy transkrypcja. Skany wyświetlane są w formie miniatur, jeżeli jest ich więcej niż kilka i nie mieszczą się na ekranie, aplikacja wyświetla poziomy pasek przewijania.
 
 <figure>
   <img src="image/lista_skanow.png" width="750">
 </figure>
 
-Powyżej listy skanów widoczny jest pasek narzędzi. Pierwsze dwa przyciski na pasku pozwalają na zaznaczenie (wybranie) lub odznaczenie wszystkich skanów - operacje przetwarzania skanów przeprowadzane są tylko na zaznaczoncych obrazach. Kolejne przyciski odpowiadają za import i eksport, trenowanie (możliwe jest trenowanie modelu segmentacji lub modelu transkrypcji), grupa przycisków z prawej strony pozwala na przetwarzanie skanów: binaryzację, segmentację, transkrypcję oraz automatycznie wyrówananie (Align) ze wskazanym tekstem (np. transkrypcją manualną).
+Powyżej listy skanów widoczny jest pasek narzędzi. Pierwsze dwa przyciski na pasku pozwalają na zaznaczenie (wybranie) lub odznaczenie wszystkich skanów - operacje przetwarzania skanów przeprowadzane są tylko na zaznaczonych obrazach. Kolejne przyciski odpowiadają za import i eksport, trenowanie (możliwe jest trenowanie modelu segmentacji lub modelu transkrypcji), grupa przycisków z prawej strony pozwala na przetwarzanie skanów: binaryzację, segmentację, transkrypcję oraz automatycznie wyrównanie (Align) ze wskazanym tekstem (np. transkrypcją manualną).
 
 <figure>
   <img src="image/miniatury_skanow.png" width="300">
 </figure>
 
-Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przycisków informujących o stanie danego skanu i pozwalających na wykonanie pewnych operacji na nim, na przykład pole wyboru w górnym lewym rogu miniatury zaznacza dany skan, mała ikonka z krzyżykiem (w górnym orawym rogu) umożliwia usunięcie skanu z dokumentu, zielone pole/przycisk na środku miniatury wyświetla skan w trybie edycji, ikony pod miniaturą informują czy dla skanu przeprowadzono jedną z operacji przetwarzania, wówczas przybierają kolor zielony. Np. okrągła czarno-biała ikona odpowiada za binaryzację, ikona ze schematycznymi liniami za segmentację, ikona będąca białym pustym prostokątem dotyczy transkrypcji zaś ikona wyglądająca jak symbol pliku/dokumetu odpowiada funkcji Align (automatycznemu wyrównaniu tekstu). Chwycenie i przemieszczenie całej miniatury pozwala natomiast zmienić kolejność skanów w dokumencie.
+Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przycisków informujących o stanie danego skanu i pozwalających na wykonanie pewnych operacji na nim, na przykład pole wyboru w górnym lewym rogu miniatury zaznacza dany skan, mała ikonka z krzyżykiem (w górnym prawym rogu) umożliwia usunięcie skanu z dokumentu, zielone pole/przycisk na środku miniatury wyświetla skan w trybie edycji, ikony pod miniaturą informują czy dla skanu przeprowadzono jedną z operacji przetwarzania, wówczas przybierają kolor zielony. Np. okrągła czarno-biała ikona odpowiada za binaryzację, ikona ze schematycznymi liniami za segmentację, ikona będąca białym pustym prostokątem dotyczy transkrypcji zaś ikona wyglądająca jak symbol pliku/dokumetu odpowiada funkcji Align (automatycznemu wyrównaniu tekstu). Chwycenie i przemieszczenie całej miniatury pozwala natomiast zmienić kolejność skanów w dokumencie.
 
 ## Binaryzacja
 
@@ -161,7 +161,7 @@ Pojawią się wówczas opcje: 'Lines Baselines and mask' (wyznaczanie linii i ma
 
 Trzecie z pól okna parametrów segmentacji określa układ elementów na stronach, domyślnie wybrany jest 'Horizontal l2r', dostępne są także 'Horizontal r2l', 'Vertical l2r' oraz 'Vertical r2l'. Pole wyboru 'Override' u dołu okna oznacza, że istniejąca wcześniej segmentacja dla przetwarzanych skanów zostanie usunięta, usunięta zostanie także transkrypcja.
 
-Procedura segmentacji może być czasochłonna, w jej trakcie aplikacja wyświetla dyskretną animację dla przetwarzanych obrazów - na zaznaczonych do przetworzenia skanach (poniżej miniaturki skanu) mruga mała ikonka z liniami (ikona segmentacji skanu). Wyświetlany jest także źółty przycisk na tle miniatury skanu, pozwalający na rezygnację z przeprowadzanej właśnie segmentacji. Po zakończeniu procedury wyświetlane jest powiadomienie w górnym prawym roku ekranu, a wspomniana ikona przybiera kolor zielony. Pełni ona jednocześnie rolę przycisku - można uruchomić segmentację klikając właśnie tą małą ikonkę pod miniaturą.
+Procedura segmentacji może być czasochłonna, w jej trakcie aplikacja wyświetla dyskretną animację dla przetwarzanych obrazów - na zaznaczonych do przetworzenia skanach (poniżej miniaturki skanu) mruga mała ikonka z liniami (ikona segmentacji skanu). Wyświetlany jest także żółty przycisk na tle miniatury skanu, pozwalający na rezygnację z przeprowadzanej właśnie segmentacji. Po zakończeniu procedury wyświetlane jest powiadomienie w górnym prawym roku ekranu, a wspomniana ikona przybiera kolor zielony. Pełni ona jednocześnie rolę przycisku - można uruchomić segmentację klikając właśnie tą małą ikonkę pod miniaturą.
 
 Uwaga: w przypadku importu skanów i transkrypcji z programu Transkribus w zalecanym formacie PAGE XML, zalecane jest przeprowadzenie segmentacji, ale tylko z użyciem opcji 'only line Mask'.
 
@@ -186,7 +186,7 @@ Okno edycji skanu może wyświetlać od 1 do 5 paneli. Panele mogą być włąc
 <figure>
   <img src="image/skan_segmentation.png" width="450">
 </figure>
-- 'Transcription' - Transkrypcja, po przeprowadzaniu automatycznej transkrypcji panel ten wyświela jej wyniki w graficznej formie, opcjonalne może też wyświetlać 'confidence visualizations' - jeżeli zostało to włączone w parametrach dokumentu (zakładka Description), poprzez kolorowanie wierszy od pomrańczowego poprzez żółty do odcieni zieleni - im większa pewność transkrypcji tym bliżej do soczystej zieleni.
+- 'Transcription' - Transkrypcja, po przeprowadzaniu automatycznej transkrypcji panel ten wyświetla jej wyniki w graficznej formie, opcjonalne może też wyświetlać 'confidence visualizations' - jeżeli zostało to włączone w parametrach dokumentu (zakładka Description), poprzez kolorowanie wierszy od pomarańczowego poprzez żółty do odcieni zieleni - im większa pewność transkrypcji tym bliżej do soczystej zieleni.
 <figure>
   <img src="image/skan_confidence.png" width="450">
 </figure>
@@ -219,7 +219,7 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 
 ## Modele, import modeli dostępnych publicznie
 
-Po zainstalowaniu eScriptorium nie posiada żadnego domyślnego modelu OCR/HTR. Można na podstawe posiadanych materiałów (_ground truth_ - kolekcji obrazów i pasujących do nich w 100% zweryfikowanych tesktów) wytrenować własny. Kolekcje publicznie dostępnych materiałów na otwartych licencjach można znaleźć w katalogu [HTR-United](https://htr-united.github.io/), podobne kolekcje lecz głównie dla materiałów OCR zebrane zostały na stronie [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/). 
+Po zainstalowaniu eScriptorium nie posiada żadnego domyślnego modelu OCR/HTR. Można na podstawie posiadanych materiałów (_ground truth_ - kolekcji obrazów i pasujących do nich w 100% zweryfikowanych tesktów) wytrenować własny. Kolekcje publicznie dostępnych materiałów na otwartych licencjach można znaleźć w katalogu [HTR-United](https://htr-united.github.io/), podobne kolekcje lecz głównie dla materiałów OCR zebrane zostały na stronie [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/). 
 
 Istnieje jednakże kolekcja gotowych wytrenowanych modeli przechowywanych w serwisie [zenodo.org](https://zenodo.org/communities/ocr_models?page=1&size=20). Obecnie dostępnych jest kilkanaście modeli, od łacińskiego i francuskiego pisma średniowiecznego VIII-XV w., poprzez modele wytrenowane na rękopisach francuskich z XVIII-XX wieku, do modeli dla rękopisów arabskich, hebrajskich czy wietnamskich. Wśród modeli znajdują się też modele OCR dla starych druków perskich czy otomańskich. Wszystkie dostępne są bezpłatnie, zwykle na licencji Creative Commons Attribution 4.0 International. Można oczywiście także udostępnić w tym katalogu swój model, jeżeli tylko będzie on przydatny dla innych użytkowników.
 
@@ -227,9 +227,18 @@ Każdy model w kolekcji posiada swoją podstronę, często z informacjami na tem
 
 Modele przechowywane są w plikach binarnych z rozszerzeniem *.mlmodel i można je pobrać z sekcji 'Files' podstrony danego modelu. Wielkość modelu to zazwyczaj od kilkunastu do parudziesięciu megabajtów. Po pobraniu na dysk lokalny można taki model zaimportować do eScriptorium, korzystając z funkcji 'Upload a model' w oknie z listą modeli widoczną po przejściu do menu 'My Models' u góry ekranu aplikacji.
 
-Program Kraken posiada wbudowaną obsługę pobierania modeli z repozytorium zenodo, służą do tego polecenia `kraken list`, `kraken show` i `kraken get`.
+W przypadku bezpośredniego korzystania z program Kraken posiada on wbudowaną obsługę pobierania modeli z repozytorium zenodo, służą do tego polecenia `kraken list`, `kraken show` i `kraken get`, opisane w dokumentacji w sekcji [Model Repository](https://kraken.re/master/advanced.html#querying-and-model-retrieval).
 
 ## Transkrypcja automatyczna
+
+Po zaimportowaniu plików z obrazami (skanami), wykonaniu segmentacji, zweryfikowaniu segmentacji i zakładając że istnieje model (zaimportowany lub wytrenowany) pasujący do rękopisów w obrazach, można przystąpić do wykorzystania jednej z najważniejszych funkcji eScriptorium czyli automatycznej transkrypcji. Aplikacja wykorzystuje w tym celu program Kraken. Do przeprowadzenia transkrypcji należy uprzednio zaznaczyć choć jeden obraz z listy obrazów bieżącego dokumentu. Przycisk 'Transcribe' w pasku narzędzi uruchamia procedurę wyświetlając okno dialogowe z parametrami transkrypcji - właściwie jednym parametrem, należy bowiem wybrać model z listy dostępnych. 
+<figure>
+  <img src="image/transcribe.png" width="400">
+</figure>
+
+Proces transkrypcji, zależnie od zakresu (jeden czy kilkaset obrazów) może zająć dłuższą chwilę i odbywa się w tle, na serwerze z eScritptorium. Po zakończeniu transkrypcji aplikacja wyświetla odpowiednie powiadomienie w górnym prawym rogu ekranu.
+Aby ocenić jakość transkrypcji należy wówczas wejść w tryb edycji obrazu (poprzez ikonę na tle miniatury skanu) lub wejść w zakładkę Edit w oknie dokumentu.  
+  
 
 ## Automatic alignment - funkcja wyrównywania tekstu
 
@@ -243,7 +252,7 @@ Przed uruchomieniem funkcji należy przede wszystkim zaznaczyć 1 lub więcej s
   <img src="image/align_techniczne.png" width="400">
 </figure>
 
-Warto zauważyć, że 'wyrównywany' tekst np. z edycji krytycznej może nie tylko nie zachowywać podziału na strony i wiersze, ale również zawierać więcej tesktu niż poddane przetwarzaniu skany. Np. przy przetwarzaniu skanu z listem Corticellego poddanego transkrypcji modelem o 89% dokładności i 'wyrównywanego' z tekstem przygotowanym manualnie przez ekspertów zawierającym treść wielu listów, funkcja _Align_ dopasowała praktycznie idealnie właściwy fragment, podzieliła go też poprawnie na wiersze.
+Warto zauważyć, że 'wyrównywany' tekst np. z edycji krytycznej może nie tylko nie zachowywać podziału na strony i wiersze, ale również zawierać więcej tekstu niż poddane przetwarzaniu skany. Np. przy przetwarzaniu skanu z listem Corticellego poddanego transkrypcji modelem o 89% dokładności i 'wyrównywanego' z tekstem przygotowanym manualnie przez ekspertów zawierającym treść wielu listów, funkcja _Align_ dopasowała praktycznie idealnie właściwy fragment, podzieliła go też poprawnie na wiersze.
 <figure>
   <img src="image/aling_dzialanie.png" width="600">
 </figure>
@@ -251,7 +260,7 @@ Warto zauważyć, że 'wyrównywany' tekst np. z edycji krytycznej może nie ty
 
 ## Trenowanie własnego modelu w eScriptorium
 
-eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train', uruchamia trenowanie modelu segmentacji, lub - co jest częściej wykorzystywane - modelu transkrypcji. Pierwszym krokiem jest zaznaczenie conajmniej jednego skanu. Wybór narzędzia
+eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train', uruchamia trenowanie modelu segmentacji, lub - co jest częściej wykorzystywane - modelu transkrypcji. Pierwszym krokiem jest zaznaczenie co najmniej jednego skanu. Wybór narzędzia
 Train -> Recognizer wyświetla okno parametrów trenowania modelu transkrypcji.
 
 <figure>
@@ -271,7 +280,7 @@ Po zainstalowaniu użytkownik dysponuje poleceniami: `kraken` i `ketos` do rozpo
 
 Dane do uczenia można pobrać z eScriptorium (skany oraz pliki XML), mogą też pochodzić z Transkribusa - w tym przypadku zalecany format to PAGE XML a przed trenowaniem zalecane jest przetworzenie segmentacji w eScriptorium (opcja Segmentation steps = 'Only Line Mask')
 
-Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem `ketos compile` (parametr `--random-split` descyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test):
+Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem `ketos compile` (parametr `--random-split` decyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test):
 
     ketos compile --workers 3 --random-split 0.8 0.1 0.1 -f page -o name_dataset.arrow *.xml
 
@@ -292,7 +301,7 @@ Przykładowy wynik:
     1142      Errors
     98.65%    Accuracy``
 
-Szczegółówy opis procesu i parametrów trenowania znajduje się na stronie:
+Szczegółowy opis procesu i parametrów trenowania znajduje się na stronie:
 https://kraken.re/master/training.html
 
 Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org, Kraken umożliwia opublikowanie
@@ -300,7 +309,7 @@ modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posi
 
 ## Eksport, udostępnienie i usunięcie modelu
 
-Modele przechowywane w eScriptorium można wyeksportować, np. w celu umieszczenia w repozytorium zenodo.org lub użycia bezpośrednio w programie Kraken. Na liście modeli (menu 'My Models'), z prawej strony okna widoczne są kolorowe ikony pozwalające na eksport (pobranie) modelu - zielona ikona pliku ze strzałką w dół, usunięcie modelu - czerowona ikona z symbolem kosza, oraz udostępnienie modelu - niebieska ikona z zakrzywioną strzałką. Uwaga: usuwanie modelu następuje natychmiast, bez dodatkowego pytania, podobnie pobranie (eksport) modelu od razy uruchamia procedurę pobiernia pliku *.mlmodel.  
+Modele przechowywane w eScriptorium można wyeksportować, np. w celu umieszczenia w repozytorium zenodo.org lub użycia bezpośrednio w programie Kraken. Na liście modeli (menu 'My Models'), z prawej strony okna widoczne są kolorowe ikony pozwalające na eksport (pobranie) modelu - zielona ikona pliku ze strzałką w dół, usunięcie modelu - czerwona ikona z symbolem kosza, oraz udostępnienie modelu - niebieska ikona z zakrzywioną strzałką. Uwaga: usuwanie modelu następuje natychmiast, bez dodatkowego pytania, podobnie pobranie (eksport) modelu od razy uruchamia procedurę pobierania pliku *.mlmodel.  
 <figure>
   <img src="image/export_modelu.png" width="600">
 </figure>   
@@ -312,7 +321,7 @@ Z kolei udostępnianie modelu wyświetla dodatkowe okno programu, w którym moż
 
 ## Eksport transkrypcji
 
-Przygotowane w eScriptorium transkrypcje skanów można zapisać w formie plików XML, w formatach ALTO lub PAGE, a także w postaci zwykłego pliku TXT. Eksport dostępny jest podczas pracy z dokumentem, w zakładce 'Images' po zaznaczeniu choć jednego skanu/obrazu. Przycisk 'Export' w pasku narzędzi (powyżej listy miniatur skanów) wyświetla okno dialogowe, w którym należy okreslić warstwę transkrypcji (skany mogły być rozpoznawane przez wiele modeli OCR/HTR), oczekiwany format danych (ALTO, PAGE. TXT), czy eksport ma zawierać oryginalne skany/obrazy. Po zatwierdzeniu okna system wygeneruje paczkę zip z plikami i wyświetli w górnym prawym roku ekranu powiadomienie. Powiadomienie będzie zawierało link do pobrania pliku zip z danymi. Jeżeli system został poprawnie skonfigurowany eScriptorium wyśle także użytkownikowi e-mail z informacją o przygotowaniu pliku zip i linkiem do pobrania (w przypadku większych kolekcji skanów, przygotowanie danych może zająć dłuższą chwilę).
+Przygotowane w eScriptorium transkrypcje skanów można zapisać w formie plików XML, w formatach ALTO lub PAGE, a także w postaci zwykłego pliku TXT. Eksport dostępny jest podczas pracy z dokumentem, w zakładce 'Images' po zaznaczeniu choć jednego skanu/obrazu. Przycisk 'Export' w pasku narzędzi (powyżej listy miniatur skanów) wyświetla okno dialogowe, w którym należy określić warstwę transkrypcji (skany mogły być rozpoznawane przez wiele modeli OCR/HTR), oczekiwany format danych (ALTO, PAGE. TXT), czy eksport ma zawierać oryginalne skany/obrazy. Po zatwierdzeniu okna system wygeneruje paczkę zip z plikami i wyświetli w górnym prawym roku ekranu powiadomienie. Powiadomienie będzie zawierało link do pobrania pliku zip z danymi. Jeżeli system został poprawnie skonfigurowany eScriptorium wyśle także użytkownikowi e-mail z informacją o przygotowaniu pliku zip i linkiem do pobrania (w przypadku większych kolekcji skanów, przygotowanie danych może zająć dłuższą chwilę).
 <figure>
   <img src="image/escriptorium_export.png" width="450">
 </figure>  
