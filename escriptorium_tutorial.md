@@ -4,15 +4,16 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 
 ## Spis treści
 
-[Podziekowania](#podziekowania)
+[Podziękowania](#podziekowania)
+
 [Wersja](#wersja)
 
-## Podziękowania {#podziekowania}
+## Podziękowania
 
 Stworzenie tego opisu nie byłoby możliwe bez lektury wcześniej powstałych materiałów i
 tutoriali np. [eScriptorium Tutorial (en)](https://lectaurep.hypotheses.org/documentation/escriptorium-tutorial-en), bez obejrzenia licznych materiałów video dostępnych w serwisach [vimeo](https://vimeo.com/user130532566) i [youtube](https://www.youtube.com/watch?v=tut007D6w3o) czy wreszcie bez przeczytania artykułów na stronie [LECTAUREP](https://lectaurep.hypotheses.org/articles). Wiele cennych informacji zostało także zaczerpniętych z dokumentacji systemu Kraken - [Training](https://kraken.re/master/ketos.html). Podziękowania należą się oczywiście przede wszystkim osobom rozwijającym aplikacje eScriptorium i Kraken, za przygotowanie i udostępnienie na otwartych licencjach narzędzi otwierających nowe możliwości w dziedzinie cyfrowej humanistyki. 
 
-## Wersja {#wersja}
+## Wersja
 
 Aktualna wersja aplikacji to 0.13.2 i taką opisuje niniejszy tutorial (stan na 16.12.2022).
 <figure>
