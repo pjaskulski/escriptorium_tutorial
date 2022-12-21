@@ -217,12 +217,14 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 
 ## Wprowadzanie transkrypcji manualnej
 
-eScriptorium może posłużyć jako środowisko przygotowania materiału treningowego (_ground truth_) do stworzenia nowego modelu. Wymaga to posiadania obrazów (skanów) rękopisów w dobrej jakości, oraz tekstów odczytanych z rękopisów przez ekspertów. Mając takie materiały można wczytać serię skanów do nowego dokumentu, następnie dla każdego ze skanów uzupełnić warstwę transkrypcji 'manual' - przygotowując odpowiednio dane tekstowe odpowiadające stronie skanu, z podziałem na wiersze zgodnym z podziałem w rękopisie. W trybie edycji dla obrazu należy wyświetlić panel 3 = 'Segmentation' oraz  panel 4 - 'Text', w którym można wprowadzić tekst danej strony. Dla skanu rękopisu należy wcześniej przeprowadzić segmentację, tak by były wyznaczone region i linie tekstu oraz ich kolejność. Ważne jest uzgodnienie właściwego układu wierszy, tak by tekst wiersza w panelu Text odpowiadał właściwemu wierszowi rękopisu wyznaczonemu przez segmentację.
+eScriptorium może posłużyć jako środowisko przygotowania materiału treningowego (_ground truth_) do stworzenia nowego modelu. Wymaga to posiadania obrazów (skanów) rękopisów w dobrej jakości, oraz tekstów odczytanych z rękopisów przez ekspertów. Mając takie materiały można wczytać serię skanów do nowego dokumentu, następnie dla każdego ze skanów uzupełnić warstwę transkrypcji 'manual' - przygotowując odpowiednio dane tekstowe odpowiadające stronie skanu, z podziałem na wiersze zgodnym z podziałem w rękopisie. W trybie edycji dla obrazu należy wyświetlić panel 3 = 'Segmentation' oraz  panel 4 - 'Text', w którym można wprowadzić tekst danej strony. Dla skanu rękopisu należy wcześniej przeprowadzić segmentację, tak by były wyznaczone regiony i linie tekstu oraz ich kolejność. Ważne jest uzgodnienie właściwego układu wierszy, tak by tekst wiersza w panelu Text odpowiadał właściwemu wierszowi rękopisu wyznaczonemu przez segmentację.
 
 Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i edycji pojedynczych wierszy transkrypcji -> w panelu segmentacji należy kliknąć w dowolną linię, wyświetlony zostanie wówczas fragment skanu rękopisu z danym wierszem oraz edytowalne pole tekstowe.  
 <figure>
   <img src="image/linia_transkrypcji.png" width="500">
 </figure>
+
+Między kolejnymi wierszami w obrębie strony można przemieszczać się dzięki ikonom w górnej części okna. Jeżeli aktywnym elementem jest edycyjne pole tekstowe nawigację między poprzednią i kolejną stroną zapewniają też klawisze strzałek góra/dół.
 
 ### Kolejność wierszy
 
