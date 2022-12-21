@@ -210,7 +210,7 @@ Przed uruchomieniem funkcji należy przede wszystkim zaznaczyć 1 lub więcej s
 
 Warto zauważyć, że 'wyrównywany' tekst np. z edycji krytycznej może nie tylko nie zachowywać podziału na strony i wiersze, ale również zawierać więcej tesktu niż poddane przetwarzaniu skany. Np. przy przetwarzaniu skanu z listem Corticellego poddanego transkrypcji modelem o 89% dokładności i 'wyrównywanego' z tekstem przygotowanym manualnie przez ekspertów zawierającym treść wielu listów, funkcja _Align_ dopasowała praktycznie idealnie właściwy fragment, podzieliła go też poprawnie na wiersze.
 <figure>
-  <img src="image/align_dzialanie.png" width="600">
+  <img src="image/aling_dzialanie.png" width="600">
 </figure>
 
 
