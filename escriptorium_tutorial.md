@@ -17,13 +17,17 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
   - [Okno edycji skanu, segmentacji, transkrypcji](#okno-edycji-skanu-segmentacji-transkrypcji)
   - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
 - [Wprowadzanie transkrypcji manualnej](#wprowadzanie-transkrypcji-manualnej)
+  - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
 - [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
 - [Transkrypcja automatyczna](#transkrypcja-automatyczna)
 - [Automatic alignment - funkcja wyrównywania tekstu](#automatic-alignment---funkcja-wyr%C3%B3wnywania-tekstu)
 - [Trenowanie własnego modelu w eScriptorium](#trenowanie-w%C5%82asnego-modelu-w-escriptorium)
 - [Trenowanie modelu bezpośrednio w Krakenie](#trenowanie-modelu-bezpo%C5%9Brednio-w-krakenie)
-- [Eksport, udostępnienie i usunięcie modelu](#eksport-udost%C4%99pnienie-i-usuni%C4%99cie-modelu)
+- [Współpraca z innymi użytkownikami]()
+  - [Udostępnianie projektów]()
+  - [Eksport, udostępnienie i usunięcie modelu](#eksport-udost%C4%99pnienie-i-usuni%C4%99cie-modelu)
 - [Eksport transkrypcji](#eksport-transkrypcji)
+- [Raporty](#raporty)
 - [Administracja systemem eScriptorium](#administracja-systemem-escriptorium)
 - [API (REST) eScriptorium](#api-rest-escriptorium)
 - [Fora dyskusyjne, kody źródłowe, licencje](#fora-dyskusyjne-kody-%C5%BAr%C3%B3d%C5%82owe-licencje)
@@ -217,7 +221,7 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 
 ## Wprowadzanie transkrypcji manualnej
 
-eScriptorium może posłużyć jako środowisko przygotowania materiału treningowego (_ground truth_) do stworzenia nowego modelu. Wymaga to posiadania obrazów (skanów) rękopisów w dobrej jakości, oraz tekstów odczytanych z rękopisów przez ekspertów. Mając takie materiały można wczytać serię skanów do nowego dokumentu, następnie dla każdego ze skanów uzupełnić warstwę transkrypcji 'manual' - przygotowując odpowiednio dane tekstowe odpowiadające stronie skanu, z podziałem na wiersze zgodnym z podziałem w rękopisie. W trybie edycji dla obrazu należy wyświetlić panel 3 = 'Segmentation' oraz  panel 4 - 'Text', w którym można wprowadzić tekst danej strony. Dla skanu rękopisu należy wcześniej przeprowadzić segmentację, tak by były wyznaczone regiony i linie tekstu oraz ich kolejność. Ważne jest uzgodnienie właściwego układu wierszy, tak by tekst wiersza w panelu Text odpowiadał właściwemu wierszowi rękopisu wyznaczonemu przez segmentację.
+eScriptorium może posłużyć jako środowisko przygotowania materiału treningowego (_ground truth_) do stworzenia nowego modelu. Wymaga to posiadania obrazów (skanów) rękopisów w dobrej jakości, oraz tekstów odczytanych z rękopisów przez ekspertów. Mając takie materiały można wczytać serię skanów do nowego dokumentu, następnie dla każdego ze skanów uzupełnić warstwę transkrypcji 'manual' - przygotowując odpowiednio dane tekstowe odpowiadające stronie skanu, z podziałem na wiersze zgodnym z podziałem w rękopisie. W trybie edycji dla obrazu należy wyświetlić panel 3 = 'Segmentation' oraz panel 4 - 'Text', w którym można wprowadzić tekst danej strony. Dla skanu rękopisu należy wcześniej przeprowadzić segmentację, tak by były wyznaczone regiony i linie tekstu oraz ich kolejność. Ważne jest uzgodnienie właściwego układu wierszy, tak by tekst wiersza w panelu Text odpowiadał właściwemu wierszowi rękopisu wyznaczonemu przez segmentację.
 
 Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i edycji pojedynczych wierszy transkrypcji -> w panelu segmentacji należy kliknąć w dowolną linię, wyświetlony zostanie wówczas fragment skanu rękopisu z danym wierszem oraz edytowalne pole tekstowe.  
 <figure>
@@ -257,6 +261,7 @@ Modele przechowywane są w plikach binarnych z rozszerzeniem *.mlmodel i można
 
 W przypadku bezpośredniego korzystania z program Kraken posiada on wbudowaną obsługę pobierania modeli z repozytorium zenodo, służą do tego polecenia `kraken list`, `kraken show` i `kraken get`, opisane w dokumentacji w sekcji [Model Repository](https://kraken.re/master/advanced.html#querying-and-model-retrieval).
 
+
 ## Transkrypcja automatyczna
 
 Po zaimportowaniu plików z obrazami (skanami), wykonaniu segmentacji, zweryfikowaniu segmentacji i zakładając że istnieje model (zaimportowany lub wytrenowany) pasujący do rękopisów w obrazach, można przystąpić do wykorzystania jednej z najważniejszych funkcji eScriptorium czyli automatycznej transkrypcji. Aplikacja wykorzystuje w tym celu program Kraken. Do przeprowadzenia transkrypcji należy uprzednio zaznaczyć choć jeden obraz z listy obrazów bieżącego dokumentu. Przycisk 'Transcribe' w pasku narzędzi uruchamia procedurę wyświetlając okno dialogowe z parametrami transkrypcji - właściwie jednym parametrem, należy bowiem wybrać jeden z listy dostępnych modeli. 
@@ -270,6 +275,7 @@ W górnym prawym rogu ekranu, powyżej ikon włączających/wyłączających pan
 <figure>
   <img src="image/lista_transkrypcji_skanu.png" width="500">
 </figure>  
+
 
 ## Automatic alignment - funkcja wyrównywania tekstu
 
@@ -300,6 +306,7 @@ Train -> Recognizer wyświetla okno parametrów trenowania modelu transkrypcji.
 
 Należy w nim wskazać warstwę transkrypcji, która będzie użyta w procesie uczenia,
 model bazowy (jeżeli chcemy oprzeć się na istniejącym modelu, który będzie douczany) oraz nazwę wynikowego modelu. Trenowanie z poziomu eScriptorium nie pozwala na ustawienie bardziej zaawansowanych opcji uczenia, które są dostępne podczas trenowania bezpośrednio w aplikacji Kraken.
+
 
 ## Trenowanie modelu bezpośrednio w Krakenie
 
@@ -338,7 +345,13 @@ https://kraken.re/master/training.html
 Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org, Kraken umożliwia opublikowanie
 modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
 
-## Eksport, udostępnienie i usunięcie modelu
+## Współpraca z innymi użytkownkami
+
+Aplikacja posiada możliwość współdzielenia zarówno projektów jak i modeli z innymi użytkownikami.
+
+### Udostępnianie projektów
+
+### Eksport, udostępnienie i usunięcie modelu
 
 Modele przechowywane w eScriptorium można wyeksportować, np. w celu umieszczenia w repozytorium zenodo.org lub użycia bezpośrednio w programie Kraken. Na liście modeli (menu 'My Models'), z prawej strony okna widoczne są kolorowe ikony pozwalające na eksport (pobranie) modelu - zielona ikona pliku ze strzałką w dół, usunięcie modelu - czerwona ikona z symbolem kosza, oraz udostępnienie modelu - niebieska ikona z zakrzywioną strzałką. Uwaga: usuwanie modelu następuje natychmiast, bez dodatkowego pytania, podobnie pobranie (eksport) modelu od razy uruchamia procedurę pobierania pliku *.mlmodel.  
 <figure>
@@ -350,6 +363,7 @@ Z kolei udostępnianie modelu wyświetla dodatkowe okno programu, w którym moż
   <img src="image/udostepnianie_modelu.png" width="600">
 </figure>  
 
+
 ## Eksport transkrypcji
 
 Przygotowane w eScriptorium transkrypcje skanów można zapisać w formie plików XML, w formatach ALTO lub PAGE, a także w postaci zwykłego pliku TXT. Eksport dostępny jest podczas pracy z dokumentem, w zakładce 'Images' po zaznaczeniu choć jednego skanu/obrazu. Przycisk 'Export' w pasku narzędzi (powyżej listy miniatur skanów) wyświetla okno dialogowe, w którym należy określić warstwę transkrypcji (skany mogły być rozpoznawane przez wiele modeli OCR/HTR), oczekiwany format danych (ALTO, PAGE. TXT), czy eksport ma zawierać oryginalne skany/obrazy. Po zatwierdzeniu okna system wygeneruje paczkę zip z plikami i wyświetli w górnym prawym roku ekranu powiadomienie. Powiadomienie będzie zawierało link do pobrania pliku zip z danymi. Jeżeli system został poprawnie skonfigurowany eScriptorium wyśle także użytkownikowi e-mail z informacją o przygotowaniu pliku zip i linkiem do pobrania (w przypadku większych kolekcji skanów, przygotowanie danych może zająć dłuższą chwilę).
@@ -357,12 +371,22 @@ Przygotowane w eScriptorium transkrypcje skanów można zapisać w formie plikó
   <img src="image/escriptorium_export.png" width="450">
 </figure>  
 
+
+## Raporty
+
+Zarówno projekty jak i dokumenty posiadają zakładki 'Reports' z informacjami statystycznymi na temat zawartości projektu czy dokumentu. Dotyczą one np. liczby obrazów, liczby rozpoznanych regionów  i wierszy, liczby słów i znaków w transkrypcjach. Odobną część stanowi sekcja Vocabulary gdzie po odświeżeniu wyświetlana jest aktualna częstotliwość występowania poszczególnych znaków. W zakładce 'Reports' dla dokumentu podawana jest także przeciętna pewność transkrypcji.
+<figure>
+  <img src="image/projekt_raporty.png" width="600">
+</figure>  
+
+
 ## Administracja systemem eScriptorium
 
 Administrator eScriptorium i każdy użytkownik o odpowiednich uprawnieniach ma dostęp do panelu administracyjnego systemu poprzez menu 'Hello {USER}' -> Site administration w górnym prawym rogu okna eScriptorium. Uruchomienie tej funkcji wyświetla typowy dla aplikacji stworzonych w technologii Django panel w którym można zarządzać użytkownikami systemu, ich uprawnieniami, tworzyć nowe konta, grupy użytkowników, tokeny do współpracy z eScriptorium przez API. Administrator z poziomu panelu może nadawać lub odbierać uprawnienia do modeli OCR/HTR a także do dokumentów ze skanami i transkrypcjami, może również usuwać dokumenty i projekty.
 <figure>
   <img src="image/site_administration.png" width="500">
 </figure>     
+
 
 ## API (REST) eScriptorium
 
@@ -372,6 +396,7 @@ Użytkownik posiadający uprawnienia i wygenerowany token (w panelu administracy
 <figure>
   <img src="image/api.png" width="450">
 </figure>
+
 
 ## Fora dyskusyjne, kody źródłowe, licencje
 
