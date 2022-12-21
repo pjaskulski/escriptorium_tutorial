@@ -208,7 +208,7 @@ korekta masek nie jest zalecana, raczej należy starać się poprawiać długo�
   <img src="image/modyfikacja_linii_bazowej.png" width="450">
 </figure>
 
-W przypadku problemów z zaznaczeniem właściwego węzła, można skorzystać z tzw. 'lassa',
+W przypadku problemów z zaznaczeniem właściwego węzła, można skorzystać z tzw. **lassa**,
 czyli z wciśniętym klawiszem Shift i lewym przyciskiem myszy zaznaczyć obszar z interesującym nas węzłem. Zaznaczony węzeł zmieni kolor na czarny i można go przesunąć, kursor myszy ustawiony nad takim węzłem zmienia kształt na 'łapkę'.
 <figure>
   <img src="image/lasso.png" width="600">
@@ -243,7 +243,7 @@ Kolejność wierszy wyznaczona automatycznie może być wyświetlona w panelu se
   <img src="image/kolejnosc_wierszy_segmentacja.png" width="450">
 </figure>
 
-Kolejność wierszy można modyfikować po włączeniu trybu sortowania ikoną ze strzałkami w panelu 4 - Text. Aplikacja umożliwia wówczas przesuwanie wierszy w panelu tesktowym za pomocą myszy. Należy zwrócić uwagę, że eScriptorium ma skłonność do automatycznego korygowania kolejności po dodaniu linii manualnie przez użytkownika, a przypadkowe dodanie linii zdarza się dość łatwo.
+Kolejność wierszy można modyfikować po włączeniu trybu sortowania ikoną ze strzałkami w panelu 4 - Text. Aplikacja umożliwia wówczas przesuwanie wierszy w panelu tekstowym za pomocą myszy. Należy zwrócić uwagę, że eScriptorium ma skłonność do automatycznego korygowania kolejności po dodaniu linii manualnie przez użytkownika, a przypadkowe dodanie linii zdarza się dość łatwo.
 <figure>
   <img src="image/sortowanie_panel_text.png" width="450">
 </figure>
@@ -251,7 +251,7 @@ Kolejność wierszy można modyfikować po włączeniu trybu sortowania ikoną z
 
 ## Modele, import modeli dostępnych publicznie
 
-Po zainstalowaniu eScriptorium nie posiada żadnego domyślnego modelu OCR/HTR. Można na podstawie posiadanych materiałów (_ground truth_ - kolekcji obrazów i pasujących do nich w 100% zweryfikowanych tesktów) wytrenować własny. Kolekcje publicznie dostępnych materiałów na otwartych licencjach można znaleźć w katalogu [HTR-United](https://htr-united.github.io/), podobne kolekcje lecz głównie dla materiałów OCR zebrane zostały na stronie [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/). 
+Po zainstalowaniu eScriptorium nie posiada żadnego domyślnego modelu OCR/HTR. Można na podstawie posiadanych materiałów (_ground truth_ - kolekcji obrazów i pasujących do nich w 100% zweryfikowanych tekstów) wytrenować własny. Kolekcje publicznie dostępnych materiałów na otwartych licencjach można znaleźć w katalogu [HTR-United](https://htr-united.github.io/), podobne kolekcje lecz głównie dla materiałów OCR zebrane zostały na stronie [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/). 
 
 Istnieje jednakże kolekcja gotowych wytrenowanych modeli przechowywanych w serwisie [zenodo.org](https://zenodo.org/communities/ocr_models?page=1&size=20). Obecnie dostępnych jest kilkanaście modeli, od łacińskiego i francuskiego pisma średniowiecznego VIII-XV w., poprzez modele wytrenowane na rękopisach francuskich z XVIII-XX wieku, do modeli dla rękopisów arabskich, hebrajskich czy wietnamskich. Wśród modeli znajdują się też modele OCR dla starych druków perskich czy otomańskich. Wszystkie dostępne są bezpłatnie, zwykle na licencji Creative Commons Attribution 4.0 International. Można oczywiście także udostępnić w tym katalogu swój model, jeżeli tylko będzie on przydatny dla innych użytkowników.
 
@@ -284,7 +284,7 @@ Funkcja Align jest nowością wprowadzoną w wersji 0.13 eScriptorium, mechaniz
   <img src="image/align.png" width="400">
 </figure>
 
-Przed uruchomieniem funkcji należy przede wszystkim zaznaczyć 1 lub więcej skanów, które będą podlegały przetwarzaniu, w innym przypadku kliknięcie przycisku 'Align' na pasku narzędzi wywoła przypominający o tym komunikat. Okno parametrów funkcji 'Align' jest jednym z bardziej rozbudowanych w aplikacji eScriptorium. Należy w nim wskazać warstwę transkrypcji, z którą będzie porównywany plik tekstowy, wskazać lokalny plik tekstowy (lub wybrać z listy jeżeli był już użyty - eScriptorium zapamiętuje pliki). W sekcji 'Settings' okna należy wprowadzić nazwę nowej warstwy, parametr 'Use full transcribed document' określa czy porównywana będzie cała zawartość warstwy transkrypcji, czy każda strona osobo. Można też wskazać jakie typy regionów skanu będą brane pod uwagę (domyślnie wszystkie). Domyślnie odznaczona jest opcja 'Merge aligned text with existing transcription', która powoduje uzupełnienie wynikowej warstwy tekstem wskazanej warstwy transkrypcji gdy system nie zdoła dopasować odpowiednich fragmentów (jeżeli opcja nie jest użyta takie niedopasowane wiersze tekstu będą puste). Możliwe jest ograniczenie analizy do wskazanych typów regionów - domyślnie wybrane są wszystkie. Okno posiada jeszcze grupę parametrów ukrytych - zaawansowanych: kliknięcie 'Show/hide advanced settigns' wyświetla blok technicznych parametrów funkcji Align, ich opis znajduje się w dokumentacji programu Passim (https://github.com/dasmiq/passim).
+Przed uruchomieniem funkcji należy przede wszystkim zaznaczyć 1 lub więcej skanów, które będą podlegały przetwarzaniu, w innym przypadku kliknięcie przycisku 'Align' na pasku narzędzi wywoła przypominający o tym komunikat. Okno parametrów funkcji 'Align' jest jednym z bardziej rozbudowanych w aplikacji eScriptorium. Należy w nim wskazać warstwę transkrypcji, z którą będzie porównywany plik tekstowy, wskazać lokalny plik tekstowy (lub wybrać z listy jeżeli był już użyty - eScriptorium zapamiętuje pliki). W sekcji 'Settings' okna należy wprowadzić nazwę nowej warstwy, parametr 'Use full transcribed document' określa czy porównywana będzie cała zawartość warstwy transkrypcji, czy każda strona osobo. Można też wskazać jakie typy regionów skanu będą brane pod uwagę (domyślnie wszystkie). Domyślnie odznaczona jest opcja 'Merge aligned text with existing transcription', która powoduje uzupełnienie wynikowej warstwy tekstem wskazanej warstwy transkrypcji gdy system nie zdoła dopasować odpowiednich fragmentów (jeżeli opcja nie jest użyta takie niedopasowane wiersze tekstu będą puste). Możliwe jest ograniczenie analizy do wskazanych typów regionów - domyślnie wybrane są wszystkie. Okno posiada jeszcze grupę parametrów ukrytych - zaawansowanych: kliknięcie 'Show/hide advanced settigns' wyświetla blok technicznych parametrów funkcji Align, ich krótki opis znajduje się w tym samym oknie poniżej każdego z nich, dodatkowych informacji należy szukać w dokumentacji programu Passim (https://github.com/dasmiq/passim).
 <figure>
   <img src="image/align_techniczne.png" width="400">
 </figure>
@@ -318,13 +318,13 @@ Po zainstalowaniu użytkownik dysponuje poleceniami: `kraken` i `ketos` do rozpo
 
 Dane do uczenia można pobrać z eScriptorium (skany oraz pliki XML), mogą też pochodzić z Transkribusa - w tym przypadku zalecany format to PAGE XML a przed trenowaniem zalecane jest przetworzenie segmentacji w eScriptorium (opcja Segmentation steps = 'Only Line Mask')
 
-Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem `ketos compile` (parametr `--random-split` decyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test):
+Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem `ketos compile` (parametr `--random-split` decyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test; parametr `-f page` informuje o formacie plików wejściowych: PAGE XML; parametr `--workers` określa ile wątków - rdzeni CPU może być zajęte przez proces kompilacji, praca wielowątkowa znacznie przyspiesza przetwarzanie):
 
     ketos compile --workers 3 --random-split 0.8 0.1 0.1 -f page -o name_dataset.arrow *.xml
 
 zakładając, że polecenie uruchamiane jest w katalogu z plikami xml i skanami.
 
-Przygotowany w ten sposób plik *.arrow posłuży np. do douczania (fine tuning - https://kraken.re/4.2.0/ketos.html#fine-tuning) istniejącego modelu:
+Przygotowany w ten sposób plik *.arrow posłuży np. do douczania (fine tuning - https://kraken.re/4.2.0/ketos.html#fine-tuning) istniejącego modelu (parametr `-i` wskazuje nazwę pliku z modelem bazowym, bez podania tego parametru kraken będzie trenował model od podstaw; parametr `--resise` jest istotny w przypadku różnicy alfabetu, informuje Krakena co zrobić w przypadku napotkania nieznanych znaków w materiale treningowym):
 
     ketos train -i base_model.mlmodel --resize add --workers 3 --output new_model_name -f binary name_dataset.arrow
 
@@ -350,6 +350,13 @@ Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać późn
 modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
 
 
+## Strategia trenowania modeli
+
+Utworzenie i wytrenowanie nowego modelu od podstaw wymaga solidnej wielkości materiału treningowego a także sporej ilości czasu i mocy komputera do przeprowadzenia procesu uczenia. Typowe, dostępne publicznie modele pisma ręcznego zostały utworzone na podstawie kilkunastu do kilkudziesięciu tysięcy wierszy 'ground truth'. Przygotowanie takiego materiału (o 100% poprawności zweryfikowanej przez ekspertów) jest najbardziej pracochłonnym etapem pracy nad modelem. 
+
+Procedura uczenia może być szybsza i prostsza jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. transfer learning, przy użyciu dużo mniejszej liczby wierszy _ground truth_, od kilkuset do paru tysięcy wierszy. Douczanie modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw. 
+
+
 ## Współpraca z innymi użytkownkami
 
 Aplikacja posiada możliwość współdzielenia zarówno projektów jak i modeli z innymi użytkownikami.
@@ -361,6 +368,8 @@ Aby udostępnić projekt innemu użytkownikowi należy w oknie projektu odnaleź
 <figure>
   <img src="image/share_project.png" width="400">
 </figure>   
+
+Alternatywnie, jeżeli w naszej instancji eScriptorium utowrzone zostały grupy użytkowników, zamiast udostępniać projekt pojedynczym osobom można udostępnić go całej grupie (tworzenie grup i przypisywanie użytkowników do grup jest dostępne w panelu administracyjnym aplikacji). 
     
 
 ### Eksport, udostępnienie i usunięcie modelu
