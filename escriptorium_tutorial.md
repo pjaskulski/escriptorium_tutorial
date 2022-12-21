@@ -224,7 +224,13 @@ Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i ed
   <img src="image/linia_transkrypcji.png" width="600">
 </figure>
 
-Między kolejnymi wierszami w obrębie strony można przemieszczać się dzięki ikonom w górnej części okna. Jeżeli aktywnym elementem jest edycyjne pole tekstowe nawigację między poprzednią i kolejną stroną zapewniają też klawisze strzałek góra/dół.
+Między kolejnymi wierszami w obrębie strony można przemieszczać się dzięki ikonom w górnej części okna. Jeżeli aktywnym elementem jest edycyjne pole tekstowe nawigację między poprzednią i kolejną stroną zapewniają też klawisze strzałek góra/dół, do kolejnego wiersza przenosi nas także klawisz Enter. 
+
+Okno pojedycznego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history'.
+<figure>
+  <img src="image/linia_historia.png" width="600">
+</figure>
+
 
 ### Kolejność wierszy
 
