@@ -226,7 +226,7 @@ Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i ed
 
 Między kolejnymi wierszami w obrębie strony można przemieszczać się dzięki ikonom w górnej części okna. Jeżeli aktywnym elementem jest edycyjne pole tekstowe nawigację między poprzednią i kolejną stroną zapewniają też klawisze strzałek góra/dół, do kolejnego wiersza przenosi nas także klawisz Enter. 
 
-Okno pojedycznego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history'.
+Okno pojedycznego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history' (link pojawi się tylko wówczas gdy dana linia była modyfikowana). {Po wyświetleniu historii zmian użytkownik może przywrócić jeden z poprzednich stanów wiersza za pomocą zielonych ikonek z prawej strony listy zmian. 
 <figure>
   <img src="image/linia_historia.png" width="600">
 </figure>
