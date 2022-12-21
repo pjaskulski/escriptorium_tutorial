@@ -328,6 +328,10 @@ Przygotowany w ten sposób plik *.arrow posłuży np. do douczania (fine tuning 
 
     ketos train -i base_model.mlmodel --resize add --workers 3 --output new_model_name -f binary name_dataset.arrow
 
+<figure>
+  <img src="image/trenowanie_kraken.png" width="600">
+</figure>
+
 Do przetestowania modelu można użyć polecenia: `ketos test`, podając jako parametry model do testów i dane trenowania np. w formie binarnego datasetu - pliku *.arrow utworzonego powyżej (taki zestaw danych zawiera zwykle zarówno dane treningowe, walidacyjne jak i dane testowe, nie używane podczas trenowania):
 
     ketos test -m name_model.mlmodel -f binary name_dataset.arrow
