@@ -30,6 +30,8 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Strategia trenowania modeli](#strategia-trenowania-modeli)
 - [Współpraca z innymi użytkownikami](#wsp%C3%B3%C5%82praca-z-innymi-u%C5%BCytkownkami)
   - [Udostępnianie projektów](#udost%C4%99pnianie-projekt%C3%B3w)
+  - [Udostępnianie dokumentu]()
+  - [Przenoszenie dokumentu do innego projektu]()
   - [Eksport, udostępnienie i usunięcie modelu](#eksport-udost%C4%99pnienie-i-usuni%C4%99cie-modelu)
 - [Eksport transkrypcji](#eksport-transkrypcji)
 - [Raporty](#raporty)
@@ -442,9 +444,29 @@ Użytkownik może zrezygnować z projektu który został mu udostępniony. Na l
 
 ### Udostępnianie dokumentu
 
+Możliwe jest także udostępnienie konkretnego dokumentu. W oknie dokumentu (jeżeli aktywna jest zakładka Description!) w górnym prawym rogu ekranu widoczne są ikony dotyczące wykonywania operacji na bieżącym dokumencie. Jedną z nich jest ikona udostępiania dokumentu innym użytkownikom. Kliknięcie na nią wyświetla okno dialogowe udostępniania.
+<figure>
+  <img src="image/dokument_operacje.png" width="600">
+</figure>   
+
+W oknie tym należy wskazać grupy użytkowników lub konkretnych użytkowników, którzy mają mieć dostęp do naszego dokumetu.
+<figure>
+  <img src="image/share_dokument.png" width="400">
+</figure>   
+
 
 ### Przenoszenie dokumentu do innego projektu
     
+Ciekawą opcją jest możliwość przeniesienia dokumentu do innego projektu. W górym prawym rogu ekranu dokumentu (podczas pracy w zakładce Description), obok ikony uruchamiąjącej udostępnianie dokumentu widoczna jest ikona narzędzia przenoszenia dokumentu ('Mograte to another project'). W oknie dialogowym przenoszenia widoczne są dwa pola, w pierwszym polu z listą rozwijaną należy wskazać docelowy projekt, zaś widoczne poniżej pole wyboru decyduje o tym czy wraz z dokumentem przenieść jego tagi (chodzi o tagi przypisane na poziomie dokumentu narzędziem Assign Tag widocznym na liście dokumentów projektu - niebieska ikona z etykietami).
+<figure>
+  <img src="image/migrate_to_another_project.png" width="400">
+</figure>
+
+Po potwierdzeniu przyciskiem 'Migrate' aplikacja wyświetli odpowiednie powiadomienie o sktutecznym zakończeniu operacji a nasz dokument będzie o tej pory częścią innego projektu.
+
+<figure>
+  <img src="image/powiadomienie_migracja.png" width="300">
+</figure>
 
 ### Eksport, udostępnienie i usunięcie modelu
 
