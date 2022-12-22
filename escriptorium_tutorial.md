@@ -1,6 +1,6 @@
 # eScriptorium - Tutorial
 
-eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi rękopisami i drukami. Aplikacja jest zintegrowana z programem Kraken, narzędziem wykorzystującym algorytmy uczenia głębokiego do rozpoznawania tekstów (OCR i HTR). eScriptorium to projekt prowadzony przez eScripta, zespół z Université Paris Sciences et Lettres.
+eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi rękopisami i drukami - przygotowywaniem manualnych i automatycznych transkrypcji. Aplikacja jest zintegrowana z programem Kraken, narzędziem wykorzystującym algorytmy uczenia głębokiego do rozpoznawania tekstów (OCR i HTR). eScriptorium to projekt prowadzony przez eScripta, zespół z Université Paris Sciences et Lettres.
 
 ## Spis treści
 
@@ -11,6 +11,7 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Utworzenie nowego dokumentu](#utworzenie-nowego-dokumentu)
   - [Import skanów](#import-skan%C3%B3w)
   - [Import transkrypcji i skanów](#import-transkrypcji-i-skan%C3%B3w)
+- [Zakładki dokumentu]()
 - [Lista obrazów/skanów](#lista-obraz%C3%B3wskan%C3%B3w)
 - [Binaryzacja](#binaryzacja)
 - [Segmentacja](#segmentacja)
@@ -135,9 +136,21 @@ Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi,
   <img src="image/import_xml.png" width="300" style="padding-top: 30px;">
 </figure>
 
+
+## Zakładki dokumentu
+
+Okno dokumentu jest tym miejscem aplikacji, które jest najcześciej wyświetlane podczas pracy z eScriptorium. Składa się z 6 zakładek:
+- _Description_ - gdzie znajdują się podstawowe informacje i metadane opisujące dokument.
+- _Ontology_ - z definicjami tagów i anotacji dla tesktu i obrazu.
+- _Images_ - gdzie można dodawać i usuwać skany, importować transkrypcje, przeprowadzać najwazniejsze operacje jak segmentacja czy transkrypcja automatyczna, trenować modele HTR/OCR a w wreszcie także eksportować dane.
+- _Edit_ - w której użytkownik pracuje z konkretnym obrazem/skanem
+- _Models_ - zawierającym listę modeli związanych z danym dokumentem (modeli wykorzystanych do utworzenia transkrypcji lub modeli wytrenowanych na bazie tego dokumentu)
+- _Reports_ - zakładka raportów na temat bieżącego dokumentu, np. informacje o liczbie obrazów w dokumencie, średnim współczynniku pewności transkrypcji czy częstotliwości występowania znaków w transkrypcji.
+
+
 ## Lista obrazów/skanów
 
-Lista obrazów/skanów jest głównym miejscem szybkiego przeglądania kolekcji skanów
+Lista obrazów/skanów widoczna w zakładce 'Images' dokumentu jest głównym miejscem szybkiego przeglądania kolekcji skanów
 w dokumencie, z poziomu listy skanów wywoływane jest też ich przetwarzanie: binaryzacja, segmentacja czy transkrypcja. Skany wyświetlane są w formie miniatur, jeżeli jest ich więcej niż kilka i nie mieszczą się na ekranie, aplikacja wyświetla poziomy pasek przewijania.
 
 <figure>
