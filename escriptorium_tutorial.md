@@ -16,6 +16,10 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Segmentacja](#segmentacja)
   - [Okno edycji skanu, segmentacji, transkrypcji](#okno-edycji-skanu-segmentacji-transkrypcji)
   - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
+- [Definiowanie tagów dla skanów - elementów dokumentu]()
+  - [Przypisywane tagów do elementów segmentacji]()
+  - [Przypisywanie tagów do fragmentów tekstu]()
+  - [Przypisywanie tagów do fragmentów obrazu]()
 - [Wprowadzanie transkrypcji manualnej](#wprowadzanie-transkrypcji-manualnej)
   - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
 - [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
@@ -124,7 +128,7 @@ Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi,
   <img src="image/import_pdf.png" width="300" style="padding-top: 30px;">
 </figure>
 
-- import transkrypcji w formacie xml (np. ALTO v.4 lub PAGE XML), ten wariant umożliwia importowanie transkrypcji i segmentacji do wczytanych wcześniej skanów, transkrypcje mogą być grupą plików xml lub mogą być spakowane w formie pliku zip. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informacje z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB.
+- import transkrypcji w formacie xml (np. ALTO v.4 lub PAGE XML), ten wariant umożliwia importowanie transkrypcji i segmentacji do wczytanych wcześniej skanów, transkrypcje mogą być grupą plików xml lub mogą być spakowane w formie pliku zip. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informacje z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB. W przypadku importu plików pochodzących np.  Transkribusa (zaleca się wówczas format PAGE) należy po imporcie przeprowadzić korektę masek linii (segmentację z opcją 'only line mask'). 
 <figure>
   <img src="image/import_xml.png" width="300" style="padding-top: 30px;">
 </figure>
@@ -160,11 +164,11 @@ Przed uruchomieniem automatycznej transkrypcji skanów (OCR/HTR) niezbędne jest
   <img src="image/segmentacja.png" width="450">
 </figure>
 
-W obecnej wersji dostępny jest jeden domyślny model: blla.mlmodel, dający skądinąd bardzo dobre rezultaty. Domyślnie segmentacja wyznacza linie i regiony ('Lines and regions'), można zmienić zakres zadania segmentacji rozwijając listę poniżej pola z nazwą modelu.
-Pojawią się wówczas opcje: 'Lines Baselines and mask' (wyznaczanie linii i masek linii),
-'only line Mask' - tylko maski wierszy, 'Regions' - wyznaczanie regionów.
+W obecnej wersji dostępny jest jeden domyślny model: blla.mlmodel, dający skądinąd bardzo dobre rezultaty. Domyślnie segmentacja wyznacza linie bazowe, maski linii (wielokąty)  i regiony ('Lines and regions'), można zmienić zakres zadania segmentacji rozwijając listę poniżej pola z nazwą modelu.
+Pojawią się wówczas opcje: 'Lines Baselines and mask' (wyznaczanie tylko linii i masek linii),
+'only line Mask' - tylko maski wierszy (ta funkcja przelicza od nowa kształt masek - wielokątów i nie wykorzystuje modelu), 'Regions' - wyznaczanie regionów, bez modyfikacji linii bazowych i masek linii.
 
-Trzecie z pól okna parametrów segmentacji określa układ elementów na stronach, domyślnie wybrany jest 'Horizontal l2r', dostępne są także 'Horizontal r2l', 'Vertical l2r' oraz 'Vertical r2l'. Pole wyboru 'Override' u dołu okna oznacza, że istniejąca wcześniej segmentacja dla przetwarzanych skanów zostanie usunięta, usunięta zostanie także transkrypcja.
+Trzecie z pól okna parametrów segmentacji określa układ tekstu na stronach, domyślnie wybrany jest 'Horizontal l2r', dostępne są także 'Horizontal r2l', 'Vertical l2r' oraz 'Vertical r2l'. Pole wyboru 'Override' u dołu okna oznacza, że istniejąca wcześniej segmentacja dla przetwarzanych skanów zostanie usunięta, usunięta zostanie także transkrypcja.
 
 Procedura segmentacji może być czasochłonna, w jej trakcie aplikacja wyświetla dyskretną animację dla przetwarzanych obrazów - na zaznaczonych do przetworzenia skanach (poniżej miniaturki skanu) mruga mała ikonka z liniami (ikona segmentacji skanu). Wyświetlany jest także żółty przycisk na tle miniatury skanu, pozwalający na rezygnację z przeprowadzanej właśnie segmentacji. Po zakończeniu procedury wyświetlane jest powiadomienie w górnym prawym roku ekranu, a wspomniana ikona przybiera kolor zielony. Pełni ona jednocześnie rolę przycisku - można uruchomić segmentację klikając właśnie tą małą ikonkę pod miniaturą.
 
@@ -219,6 +223,65 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 <figure>
   <img src="image/modyfkacja_maski_linii.png" width="450">
 </figure>
+
+
+## Definiowanie tagów dla skanów - elementów dokumentu
+
+W zakładce Ontology dokumentu można zdefiniować tagi opisujące elementy obrazu  - typy regionów i linii, a także anotacje dla obrazu i anotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko typy z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów tylko zaznaczone typy będą widoczne podczas pracy w edytorze obrazu.  
+<figure>
+  <img src="image/ontologia_dokumentu.png" width="600">
+</figure>
+
+W dalszej części okna 'Ontology' można stworzyć definicje anotacji zarówno dla obrazu jak i dla tekstu. Podczas definowania ustalany jest koor wyróżniający poszczególne anatacje, a także czy możliwe będzie dodawanie komentarzy użytkownika do anotacji. 
+
+
+### Przypisywane tagów do elementów segmentacji
+
+Aby przypisać tag do elementu typu region, linia należy najpierw zaznaczyć wybrany element. Np. pracując w zakładce Images z konkretnym skanem rękopisu należy wyświetlić panel 'Segmentation', w nim włączyć tryb operacji na regionach (zielona ikona z 4 kwadracikami, nad skanem) następnie kliknąć na wybrany region. W górnym lewym roku obrazy wyświetli się wówczas pasek narzędzi w którym widoczne będą 2 ikony, czerwona oznaczająca usuwanie regionu, oraz zielona z literą T, która pozwala na przypisanie typu do regionu z listy. Po wybraniu typu regionu aplikacja przypisze temu regionowi kolor związany z danym typem.
+<figure>
+  <img src="image/typ_regionu.png " width="500">
+</figure>
+
+Oprócz wyróżnienia kolorem typ regionu będzie od tej pory widoczny w górnym prawym roku ekranu w momencie przesuwania kursora myszy nad danym regionem.
+<figure>
+  <img src="image/region_type_show.png" width="400">
+</figure>
+
+W trybie pracy z liniami bazowymi (wyłączony tryb regionów, włączone linie bazowe - z maskami lub bez) można przypisywać typy do linii. Na przykład po zaznaczeniu linii z podpisem ('Corticelli' na poniższym obrazie) wyświetlany jest, podobnie jka dla regionów, pasek narzędzi
+z ikoną ustawiania typu linii (zielona ikona z literą T). Po wybraniu typu linii 'Signature' będzie ona przypisana do danej linii (lub kilku jeżeli zaznaczono więcej niż jedną). Kolorem związanym z typem linii będzie od tej pory rysowana pionowa (zwykle) kreska oznaczająca początek linii i jej wysokość. 
+<figure>
+  <img src="image/typ_linii.png" width="500">
+</figure>
+
+Podobnie jak w przypadku regionów, typ linii będzie widoczny w górnym prawym roku obrazu/skanu w momencie przesuwania kursora myszy nad daną 
+linią.
+<figure>
+  <img src="image/line_type_show.png" width="400">
+</figure>
+
+
+### Przypisywanie tagów do fragmentów tekstu
+
+Podczas pracy w panelu 4 - 'Text' możliwe jest anotowanie fragmentów tekstu transkrypcji zdefiniowanymi wcześniej w zakładce 'Ontology' dokumentu tagami. Jeżeli tagi zostały zdefiniowane zmienia się wygląd paska narzędzi nad polem tekstowym, pojawiają się przyciski przełączania odpowiadające tagom. Włączenie takiego przycisku pozwala na zaznaczenie wybranego tekstu, po czym pojawia się oknienko dialogowe pozwalające na wprowadzenie komentarza (jeżeli tak zdefinowano w definicji tagu) i zapisanie zmian. 
+<figure>
+  <img src="image/anotacja_tekstu.png" width="400">
+</figure>
+
+Otagowany tekst będzie oznaczony kolorem wybranym podczas definiowania danego tagu.
+<figure>
+  <img src="image/anotacja_tekst_efekt.png" width="400">
+</figure>
+
+**Uwaga:** w obecnej wersji nie zauważyłem możliwości wykorzystania otagowanego tekstu - tagi nie są eksportowane, ani w formacie TXT, ani XML.
+
+
+### Przypisywanie tagów do fragmentów obrazu
+
+Anotacji podlegać mogą też fragmenty obrazów/skanów. Należy wyświetlić panel 1 - 'Source image', jeżeli w zakładce 'Ontology' były zdefiniowane tagi do anotacji, pojawią się one w formie przycisków przełączania. Po wybraniu jednego z nich można zaznaczyć fragment obazu (zależnie od definicji, w formie prosotkąta lub wielokąta) i opcjonalnie przypisać do niego komentarz, można w ten sposób oznaczyć fragmenty skanu nie będące częścią oryginalnego rękopisu, uszkodzenia mikrofilmu będącego źródłem obrazu a nie występujące na oryginalne dokumntu itp.
+<figure>
+  <img src="image/anotacje_obrazu.png" width="600">
+</figure>
+
 
 ## Wprowadzanie transkrypcji manualnej
 
@@ -357,12 +420,12 @@ modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posi
 
 Utworzenie i wytrenowanie nowego modelu od podstaw wymaga solidnej wielkości materiału treningowego a także sporej ilości czasu i mocy komputera do przeprowadzenia procesu uczenia. Typowe, dostępne publicznie modele pisma ręcznego zostały utworzone na podstawie kilkunastu do kilkudziesięciu tysięcy wierszy 'ground truth' (zob. [lectaurep](https://github.com/lectaurep/lectaurep_base_model)). Przygotowanie takiego materiału (o 100% poprawności zweryfikowanej przez ekspertów) jest najbardziej pracochłonnym etapem pracy nad modelem. 
 
-Procedura uczenia może być szybsza i prostsza jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. transfer learning, przy użyciu dużo mniejszej liczby wierszy _ground truth_, od kilkuset do paru tysięcy wierszy. Douczanie modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw. 
+Proces uczenia może być łatwiejszy jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. transfer learning, przy użyciu dużo mniejszej liczby wierszy _ground truth_ - np. od kilkuset do paru tysięcy. Douczanie modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw. 
 
 
 ## Współpraca z innymi użytkownkami
 
-Aplikacja posiada możliwość współdzielenia zarówno projektów jak i modeli z innymi użytkownikami.
+Aplikacja posiada możliwość współdzielenia zarówno projektów jak i dokumentó czy modeli z innymi użytkownikami.
 
 
 ### Udostępnianie projektów
@@ -372,7 +435,15 @@ Aby udostępnić projekt innemu użytkownikowi należy w oknie projektu odnaleź
   <img src="image/share_project.png" width="400">
 </figure>   
 
-Alternatywnie, jeżeli w naszej instancji eScriptorium utowrzone zostały grupy użytkowników, zamiast udostępniać projekt pojedynczym osobom można udostępnić go całej grupie (tworzenie grup i przypisywanie użytkowników do grup jest dostępne w panelu administracyjnym aplikacji). 
+Alternatywnie, jeżeli w naszej instancji eScriptorium utowrzone zostały grupy użytkowników, zamiast udostępniać projekt pojedynczym osobom można udostępnić go całej grupie (tworzenie grup i przypisywanie użytkowników do grup jest dostępne w panelu administracyjnym aplikacji).
+
+Użytkownik może zrezygnować z projektu który został mu udostępniony. Na liście projektów te stworzone przez inną osobę i udostępnione posiadają z prawej strony żółtą ikonę z czarnym symbolem koszta na śmieci ('Remove from list'). Użycie tego narzędzia nie spowoduje usunięcia projektu w ogóle, ale usunie jedynie projekt z naszej listy projektów.  
+
+
+### Udostępnianie dokumentu
+
+
+### Przenoszenie dokumentu do innego projektu
     
 
 ### Eksport, udostępnienie i usunięcie modelu
