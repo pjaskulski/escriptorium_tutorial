@@ -351,9 +351,14 @@ W głównym menu aplikacji (górny prawy róg okna), menu 'My Models' otwiera ok
 - czerowona ikona z koszem na śmieci pozwala na usunięcie modelu - ale nie modelu udostępnionego
 - ikona w niebieskim-morskim kolorze umożliwia - tylko dla modeli trenowanych w danej instancji eSCriptorium - na przełączenie na inną wersję modelu (jedną z wersji pośrednich stworzonych podczas uczenia) 
 
+
 ### Zakładka Models w dokumencie
 
 Zakładka 'Models' w dokumencie wyświetla podobną listę do tej z menu 'My Models'. Są tam jednak widoczne tylko modele związane z bieżącym dokumentem. Np. użyte do transkrypcji automatycznej, czy wytrenowane na bazie plików z dokumentu. W tym oknie nie można usuwać modeli, widoczna jest jednak żółta ikona z symbolem kosza na śmieci - to narzędzie powoduje jedynie usunięcie moedlu z listy modeli dokumentu.   
+<figure>
+  <img src="image/document_models.png" width="450">
+</figure>
+
 
 ## Transkrypcja automatyczna
 
