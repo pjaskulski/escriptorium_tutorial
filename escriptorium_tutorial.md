@@ -295,6 +295,8 @@ Warto zauważyć, że 'wyrównywany' tekst np. z edycji krytycznej może nie ty
   <img src="image/aling_dzialanie.png" width="600">
 </figure>
 
+**Uwaga:** ponieważ jest to funkcjonalność w fazie 'beta' nie jest dostępna automatycznie, aby funkcja Align była widoczna i działała poprawnie należy ustawić zmienną środowiskową `TEXT_ALIGNMENT=True` oraz uruchomić dodatkowy kontener dockera: celery-jvm.
+
 
 ## Trenowanie własnego modelu w eScriptorium
 
