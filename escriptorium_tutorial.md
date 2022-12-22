@@ -16,10 +16,10 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Segmentacja](#segmentacja)
   - [Okno edycji skanu, segmentacji, transkrypcji](#okno-edycji-skanu-segmentacji-transkrypcji)
   - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
-- [Definiowanie tagów dla skanów - elementów dokumentu]()
-  - [Przypisywane tagów do elementów segmentacji]()
-  - [Przypisywanie tagów do fragmentów tekstu]()
-  - [Przypisywanie tagów do fragmentów obrazu]()
+- [Definiowanie tagów dla skanów - elementów dokumentu](#definiowanie-tag%C3%B3w-dla-skan%C3%B3w---element%C3%B3w-dokumentu)
+  - [Przypisywane tagów do elementów segmentacji](#przypisywane-tag%C3%B3w-do-element%C3%B3w-segmentacji)
+  - [Przypisywanie tagów do fragmentów tekstu](#przypisywanie-tag%C3%B3w-do-fragment%C3%B3w-tekstu)
+  - [Przypisywanie tagów do fragmentów obrazu](#przypisywanie-tag%C3%B3w-do-fragment%C3%B3w-obrazu)
 - [Wprowadzanie transkrypcji manualnej](#wprowadzanie-transkrypcji-manualnej)
   - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
 - [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
@@ -229,10 +229,10 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 
 W zakładce Ontology dokumentu można zdefiniować tagi opisujące elementy obrazu  - typy regionów i linii, a także anotacje dla obrazu i anotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko typy z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów tylko zaznaczone typy będą widoczne podczas pracy w edytorze obrazu.  
 <figure>
-  <img src="image/ontologia_dokumentu.png" width="600">
+  <img src="image/ontologia_dokumentu.png" width="750">
 </figure>
 
-W dalszej części okna 'Ontology' można stworzyć definicje anotacji zarówno dla obrazu jak i dla tekstu. Podczas definowania ustalany jest koor wyróżniający poszczególne anatacje, a także czy możliwe będzie dodawanie komentarzy użytkownika do anotacji. 
+W dalszej części okna 'Ontology' można stworzyć definicje anotacji zarówno dla obrazu jak i dla tekstu. Podczas definowania ustalany jest kolor wyróżniający poszczególne anotacje, a także czy możliwe będzie dodawanie komentarzy użytkownika do anotacji. 
 
 
 ### Przypisywane tagów do elementów segmentacji
