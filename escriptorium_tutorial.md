@@ -252,9 +252,9 @@ W zakładce Ontology dokumentu można zdefiniować tagi opisujące elementy obra
 W dalszej części okna 'Ontology' można stworzyć definicje anotacji zarówno dla obrazu jak i dla tekstu. Podczas definowania ustalany jest kolor wyróżniający poszczególne anotacje, a także czy możliwe będzie dodawanie komentarzy użytkownika do anotacji. 
 
 
-### Przypisywane tagów do elementów segmentacji
+### Przypisywane typów do elementów segmentacji
 
-Aby przypisać tag do elementu typu region, linia należy najpierw zaznaczyć wybrany element. Np. pracując w zakładce Images z konkretnym skanem rękopisu należy wyświetlić panel 'Segmentation', w nim włączyć tryb operacji na regionach (zielona ikona z 4 kwadracikami, nad skanem) następnie kliknąć na wybrany region. W górnym lewym roku obrazy wyświetli się wówczas pasek narzędzi w którym widoczne będą 2 ikony, czerwona oznaczająca usuwanie regionu, oraz zielona z literą T, która pozwala na przypisanie typu do regionu z listy. Po wybraniu typu regionu aplikacja przypisze temu regionowi kolor związany z danym typem.
+Aby przypisać typ do regionu lub linii należy najpierw zaznaczyć wybrany element. Np. pracując w zakładce Images z konkretnym skanem rękopisu należy wyświetlić panel 'Segmentation', w nim włączyć tryb operacji na regionach (zielona ikona z 4 kwadracikami, nad skanem) następnie kliknąć na wybrany region. W górnym lewym roku obrazy wyświetli się wówczas pasek narzędzi w którym widoczne będą 2 ikony, czerwona oznaczająca usuwanie regionu, oraz zielona z literą T, która pozwala na przypisanie typu do regionu z listy. Po wybraniu typu regionu aplikacja przypisze temu regionowi kolor związany z danym typem.
 <figure>
   <img src="image/typ_regionu.png " width="500">
 </figure>
