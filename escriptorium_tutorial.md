@@ -11,7 +11,7 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Utworzenie nowego dokumentu](#utworzenie-nowego-dokumentu)
   - [Import skanów](#import-skan%C3%B3w)
   - [Import transkrypcji i skanów](#import-transkrypcji-i-skan%C3%B3w)
-- [Zakładki dokumentu]()
+- [Zakładki dokumentu](#zak%C5%82adki-dokumentu)
 - [Lista obrazów/skanów](#lista-obraz%C3%B3wskan%C3%B3w)
 - [Binaryzacja](#binaryzacja)
 - [Segmentacja](#segmentacja)
