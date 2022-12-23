@@ -1,4 +1,4 @@
-# eScriptorium - Tutorial
+# eScriptorium i Kraken - wprowadzenie
 
 eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi rękopisami i drukami - przygotowywaniem manualnych i automatycznych transkrypcji. Aplikacja jest zintegrowana z programem Kraken, narzędziem wykorzystującym algorytmy uczenia głębokiego do rozpoznawania tekstów (OCR i HTR). eScriptorium to projekt prowadzony przez eScripta, zespół z Université Paris Sciences et Lettres.
 
