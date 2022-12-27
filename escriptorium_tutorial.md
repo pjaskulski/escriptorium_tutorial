@@ -28,6 +28,7 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
   - [Menu My Models](#menu-my-models)
   - [Zakładka Models w dokumencie](#zak%C5%82adka-models-w-dokumencie)
 - [Transkrypcja automatyczna](#transkrypcja-automatyczna)
+  - [Wersje transkrypcji](#wersje-transkrypcji)
 - [Automatic alignment - funkcja wyrównywania tekstu](#automatic-alignment---funkcja-wyr%C3%B3wnywania-tekstu)
 - [Trenowanie własnego modelu w eScriptorium](#trenowanie-w%C5%82asnego-modelu-w-escriptorium)
 - [Trenowanie modelu bezpośrednio w Krakenie](#trenowanie-modelu-bezpo%C5%9Brednio-w-krakenie)
@@ -389,6 +390,14 @@ Aby ocenić jakość transkrypcji należy wówczas wejść w tryb edycji obrazu 
 W górnym prawym rogu ekranu, powyżej ikon włączających/wyłączających panele widoczna jest lista transkrypcji, jeżeli domyślnie wyświetlona została inna, można tu odnaleźć i ustawić nowo przygotowaną transkrypcję.
 <figure>
   <img src="image/lista_transkrypcji_skanu.png" width="500">
+</figure>
+
+
+### Wersje transkrypcji
+
+Przycisk z symbolem koła zębatego znajdujący się obok listy wersji transkrypcji wyświetla okno zarządzania wersjami transkrypcji, z którego można usunąć wybrane wersje. Uwaga: nie można usuwać transkrypcji manualnej ('manual') oraz bieżącej, aktualnie wyświetlanej transkrypcji. Usuwanie wersji transkrypcji dotyczy wszystkich obrazów dokumentu, nie tylko bieżącego obrazu.
+<figure>
+  <img src="image/wersje_transkrypcji.png" width="400">
 </figure>
 
 
