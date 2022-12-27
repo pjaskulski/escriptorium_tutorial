@@ -23,6 +23,7 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
   - [Przypisywanie tagów do fragmentów obrazu](#przypisywanie-tag%C3%B3w-do-fragment%C3%B3w-obrazu)
 - [Wprowadzanie transkrypcji manualnej](#wprowadzanie-transkrypcji-manualnej)
   - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
+  - [Wirtualna klawiatura](#wirtualna-klawiatura)
 - [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
   - [Menu My Models](#menu-my-models)
   - [Zakładka Models w dokumencie](#zak%C5%82adka-models-w-dokumencie)
@@ -314,6 +315,15 @@ Między kolejnymi wierszami w obrębie strony można przemieszczać się dzię
 Okno pojedynczego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history' (link pojawi się tylko wówczas gdy dana linia była modyfikowana). Po wyświetleniu historii zmian użytkownik może przywrócić jeden z poprzednich stanów wiersza za pomocą zielonych ikonek z prawej strony listy zmian.
 <figure>
   <img src="image/linia_historia.png" width="600">
+</figure>
+
+
+### Wirtualna klawiatura
+
+Aby ułatwić wprowadzanie znaków specjalnych w aplikacji wprowadzoną funkcję wirtualnej klawiatury,
+którą można uruchomić podczas edycji wiersza transkrypcji (lub w panelu 'Text'). Klawiaturę taką włącza (i wyłącza) ikona z symbolem klawiatury, wyświetlane jest wówczas dodatkowe okienko gdzie widoczne są zdefiniowane znaki gotowe do wstawienia, można też zmienić definicję klawiatury na inną, dodać własną, zmodyfikować istniejącą.
+<figure>
+  <img src="image/wirtualna_klawiatura.png" width="400">
 </figure>
 
 
