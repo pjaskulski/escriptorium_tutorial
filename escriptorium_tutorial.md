@@ -11,7 +11,7 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Utworzenie nowego dokumentu](#utworzenie-nowego-dokumentu)
   - [Import skanów](#import-skan%C3%B3w)
   - [Import transkrypcji i skanów](#import-transkrypcji-i-skan%C3%B3w)
-- [Tagi dokumentów](#tagi-dokumentów)
+- [Tagi dokumentów](#tagi-dokument%C3%B3w)
 - [Zakładki dokumentu](#zak%C5%82adki-dokumentu)
 - [Lista obrazów/skanów](#lista-obraz%C3%B3wskan%C3%B3w)
 - [Binaryzacja](#binaryzacja)
@@ -151,7 +151,7 @@ Podczas importu obrazów poprzez protokół IIIF pobierane są zwykle z serwera 
 
 Do dokumentu można przypisywać tagi zdefiniowane przez użytkownika. Tagi są rodzajem etykiet opisujących dokument oraz pozwalają na szybkie filtrowanie dokumentów, można np. dodać tag 'IIIF' do wszystkich dokumentów projektu zaimportowanych poprzez ten protokół by później odfiltrować tylko dokumenty tego typu. Dodanie tagu do dokumentu obsługuje niebieska ikona z symbolem etykiety na liście dokumentów. Podobna ikona lecz w pasku narzędzi powyżej listy dokumentów (obok przycisku tworzenia nowego dokumentu) wyświetla okno zarządzania tagami, gdzie można zmienić nazwę tagi czy przypisany mu kolor.
 <figure>
-  <img src="image/dokument_tagi.png" width="600">
+  <img src="image/dokument_tagi.png" width="650">
 </figure>
 
 ## Zakładki dokumentu
