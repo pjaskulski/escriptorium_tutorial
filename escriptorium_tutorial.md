@@ -11,6 +11,7 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Utworzenie nowego dokumentu](#utworzenie-nowego-dokumentu)
   - [Import skanów](#import-skan%C3%B3w)
   - [Import transkrypcji i skanów](#import-transkrypcji-i-skan%C3%B3w)
+- [Tagi dokumentów](#tagi-dokumentów)
 - [Zakładki dokumentu](#zak%C5%82adki-dokumentu)
 - [Lista obrazów/skanów](#lista-obraz%C3%B3wskan%C3%B3w)
 - [Binaryzacja](#binaryzacja)
@@ -140,15 +141,22 @@ Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi,
   <img src="image/import_xml.png" width="300" style="padding-top: 30px;">
 </figure>
 
-Podczas importu obrazów poprzez protokół IIIF pobierane są zwykle z serwera również metadane importowanwj kolekcji, które można obejrzeć w zakładce 'Description' dokumentu.
+Podczas importu obrazów poprzez protokół IIIF pobierane są zwykle z serwera również metadane importowanej kolekcji, które można obejrzeć w zakładce 'Description' dokumentu.
 <figure>
   <img src="image/iiif_metadane.png" width="450">
 </figure>
 
 
+## Tagi dokumentów
+
+Do dokumentu można przypisywać tagi zdefiniowane przez użytkownika. Tagi są rodzajem etykiet opisujących dokument oraz pozwalają na szybkie filtrowanie dokumentów, można np. dodać tag 'IIIF' do wszystkich dokumentów projektu zaimportowanych poprzez ten protokół by później odfiltrować tylko dokumenty tego typu. Dodanie tagu do dokumentu obsługuje niebieska ikona z symbolem etykiety na liście dokumentów. Podobna ikona lecz w pasku narzędzi powyżej listy dokumentów (obok przycisku tworzenia nowego dokumentu) wyświetla okno zarządzania tagami, gdzie można zmienić nazwę tagi czy przypisany mu kolor.
+<figure>
+  <img src="image/dokument_tagi.png" width="600">
+</figure>
+
 ## Zakładki dokumentu
 
-Okno dokumentu jest tym miejscem aplikacji, które jest najcześciej wyświetlane podczas pracy z eScriptorium. Składa się z 6 zakładek:
+Okno dokumentu jest tym miejscem aplikacji, które jest najczęściej wyświetlane podczas pracy z eScriptorium. Składa się z 6 zakładek:
 - _Description_ - gdzie znajdują się podstawowe informacje i metadane opisujące dokument.
 - _Ontology_ - z definicjami tagów i adnotacji dla tekstu i obrazu.
 - _Images_ - gdzie można dodawać i usuwać skany, importować transkrypcje, przeprowadzać najważniejsze operacje jak segmentacja czy transkrypcja automatyczna, trenować modele HTR/OCR a w wreszcie także eksportować dane.
