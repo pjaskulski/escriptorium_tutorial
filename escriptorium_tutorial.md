@@ -243,6 +243,17 @@ Możliwe jest dodawanie węzłów do istniejących linii bazowych, należy w tym
   <img src="image/usuwanie_wezla_linii_bazowej.png" width="450">
 </figure>
 
+Dla wybranych linii można zmienić kierunek ich czytania, w pomocniczym pasku narzędzi ikona z poziomą linią i strzałkami na obu końcach zmienia właśnie kierunek czytania, po użyciu pionowa kreska oznaczająca początek linii przesuwa się na drugi jej koniec. Ponowne użycie narzędzia przywraca sytuację pierwotną.
+<figure>
+  <img src="image/reverse_line.png" width="500">
+</figure>
+
+Innym narzędziem widocznym w pomocniczym pasku narzędzi jest łączenie (lu rozłączanie) linii z regionem (ikona z symbolem węzła - 'Link/Unlink').
+<figure>
+  <img src="image/link_line_region.png" width="500">
+</figure>
+
+
 Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić uwagę że edycja maski działa nieco inaczej, po włączeniu widoczności masek linii, zaznaczeniu linii do modyfikacji należy kliknąć nie tyle w węzeł maski co w jego pobliże a przesuwając kursor myszy zobaczymy, iż podąża za nim węzeł maski linii.
 <figure>
   <img src="image/modyfkacja_maski_linii.png" width="450">
