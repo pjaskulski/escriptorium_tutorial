@@ -245,12 +245,12 @@ Możliwe jest dodawanie węzłów do istniejących linii bazowych, należy w tym
 
 Dla wybranych linii można zmienić kierunek ich czytania, w pomocniczym pasku narzędzi ikona z poziomą linią i strzałkami na obu końcach zmienia właśnie kierunek czytania, po użyciu pionowa kreska oznaczająca początek linii przesuwa się na drugi jej koniec. Ponowne użycie narzędzia przywraca sytuację pierwotną.
 <figure>
-  <img src="image/reverse_line.png" width="500">
+  <img src="image/reverse_line.png" width="600">
 </figure>
 
 Innym narzędziem widocznym w pomocniczym pasku narzędzi jest łączenie (lu rozłączanie) linii z regionem (ikona z symbolem węzła - 'Link/Unlink').
 <figure>
-  <img src="image/link_line_region.png" width="500">
+  <img src="image/link_line_region.png" width="600">
 </figure>
 
 
