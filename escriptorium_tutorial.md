@@ -387,7 +387,7 @@ Po zaimportowaniu plików z obrazami (skanami), wykonaniu segmentacji, zweryfiko
 
 Proces transkrypcji, zależnie od zakresu (jeden czy kilkaset obrazów) może zająć dłuższą chwilę i odbywa się w tle, na serwerze z eScritptorium. Po zakończeniu transkrypcji aplikacja wyświetla odpowiednie powiadomienie w górnym prawym rogu ekranu.
 Aby ocenić jakość transkrypcji należy wówczas wejść w tryb edycji obrazu (poprzez ikonę na tle miniatury skanu) lub wejść w zakładkę Edit w oknie dokumentu. Nowa transkrypcja będzie widoczna w panelu 3 - Transciption oraz jako tekst w panelu 4 - Text.
-W górnym prawym rogu ekranu, powyżej ikon włączających/wyłączających panele widoczna jest lista transkrypcji, jeżeli domyślnie wyświetlona została inna, można tu odnaleźć i ustawić nowo przygotowaną transkrypcję.
+W górnym prawym rogu ekranu, powyżej ikon włączających/wyłączających panele widoczna jest lista wersji transkrypcji, jeżeli domyślnie wyświetlona została inna, można tu odnaleźć i ustawić nowo przygotowaną transkrypcję.
 <figure>
   <img src="image/lista_transkrypcji_skanu.png" width="500">
 </figure>
@@ -398,6 +398,11 @@ W górnym prawym rogu ekranu, powyżej ikon włączających/wyłączających pan
 Przycisk z symbolem koła zębatego znajdujący się obok listy wersji transkrypcji wyświetla okno zarządzania wersjami transkrypcji, z którego można usunąć wybrane wersje. Uwaga: nie można usuwać transkrypcji manualnej ('manual') oraz bieżącej, aktualnie wyświetlanej transkrypcji. Usuwanie wersji transkrypcji dotyczy wszystkich obrazów dokumentu, nie tylko bieżącego obrazu.
 <figure>
   <img src="image/wersje_transkrypcji.png" width="400">
+</figure>
+
+Zaznaczenie w tym samym oknie paru pól wyboru (po lewej stronie nazwy wersji transkrypcji) pozwoli na wyświetlenie porównania transkrypcji (na poziomie wiersza). Po zamknięciu okna wersji, kliknięcy w wybrany wiersz transkrypcji (w panelu transkrypcji) wyświetlony zostanie edytor linii, tym razem w dolnej części okienka edytora widoczna będzie opcja 'Toggle transcription comparison'. Włączenie jej wyświetli warianty bieżącego wiersza z zaznaczonych wcześniej transkrypcji.
+<figure>
+  <img src="image/porownanie_wersji_transkrypcji.png" width="400">
 </figure>
 
 
