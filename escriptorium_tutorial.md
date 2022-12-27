@@ -495,6 +495,10 @@ Przykładowy wynik:
 Gdzie 'Accuracy' (dokładność) to wskaźnik mierzący jakość rozpoznania przez model - procent poprawnie rozpoznanych znaków. Ten sam wskaźnik jest podawany po każdej epoce trenowania modelu (val_accuracy)
 podczas weryfikacji wyników na próbce walidacyjnej danych (tam w formie ułamka np. 0.83).
 
+Przykład polecenia uruchamiającego trenowanie modelu od podstaw, z modyfikacją architektury sieci neuronowej (parametr `-s`) oraz _learning rate_ (parametr `-r`):
+
+    ketos train --augment -u NFD -s '[1,120,0,1 Cr3,13,32 Do0.1,2 Mp2,2 Cr3,13,32 Do0.1,2 Mp2,2 Cr3,9,64 Do0.1,2 Mp2,2 Cr3,9,64 Do0.1,2 S1(1x0)1,3 Lbx200 Do0.1,2 Lbx200 Do.1,2 Lbx200 Do]' --output poniatowski_from_scratch --lag 5 --workers 2 -r 0.0001 -f binary poniatowski.arrow
+
 Szczegółowy opis procesu i parametrów trenowania znajduje się na stronie:
 https://kraken.re/master/training.html
 
