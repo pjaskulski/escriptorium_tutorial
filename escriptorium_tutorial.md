@@ -585,3 +585,11 @@ eScriptorium udostępnione zostało na otwartej licencji własnej (https://gitla
 
 Program Kraken rozwijany jest na innej platformie - github: https://github.com/mittagessen/
 a udostępniony został na licencji Apache 2.0.
+
+## Dodatkowe informacje
+
+Zrzuty ekranu prezentowane w niniejszym wprowadzeniu pochodzą z wersji 0.13.2 eScriptorium. Fragmenty skanów i tekstów widoczne na zrzutach pochodzą z testów eScriptorium prowadzonych w Instytucie Historii PAN związanych z przygotowaniem modeli HTR dla XVIII wiecznych rękopisów w języku polskim, na bazie korespondencji króla Stanisława Poniatowskiego.
+
+Osobom zainteresowanym samą korespondencją należy polecić dwutomowe wydanie "Korespondencja polityczna
+Stanisława Augusta", opracowanie Monika Jusupović i Adam Danilczyk, Warszawa 2016. ([RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045))
+
