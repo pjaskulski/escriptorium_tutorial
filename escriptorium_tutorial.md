@@ -238,6 +238,11 @@ czyli z wciśniętym klawiszem Shift i lewym przyciskiem myszy zaznaczyć obszar
   <img src="image/lasso.png" width="600">
 </figure>
 
+Możliwe jest dodawanie węzłów do istniejących linii bazowych, należy w tym celu zaznaczyć linię i dwukrotnie kliknąć w wybrany miejscu linii. Nowy węzeł można przesuwać, zaznaczony węzeł można też usunąć - podczas edycji segmentacji widoczny jest dodatkowy pasek narzędzi, jednym z nich jest żółta ikona z symbolem kosza, która służy właśnie do usuwanie węzłów.
+<figure>
+  <img src="image/usuwanie_wezla_linii_bazowej.png" width="450">
+</figure>
+
 Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić uwagę że edycja maski działa nieco inaczej, po włączeniu widoczności masek linii, zaznaczeniu linii do modyfikacji należy kliknąć nie tyle w węzeł maski co w jego pobliże a przesuwając kursor myszy zobaczymy, iż podąża za nim węzeł maski linii.
 <figure>
   <img src="image/modyfkacja_maski_linii.png" width="450">
@@ -400,9 +405,9 @@ Przycisk z symbolem koła zębatego znajdujący się obok listy wersji transkryp
   <img src="image/wersje_transkrypcji.png" width="400">
 </figure>
 
-Zaznaczenie w tym samym oknie paru pól wyboru (po lewej stronie nazwy wersji transkrypcji) pozwoli na wyświetlenie porównania transkrypcji (na poziomie wiersza). Po zamknięciu okna wersji, kliknięcy w wybrany wiersz transkrypcji (w panelu transkrypcji) wyświetlony zostanie edytor linii, tym razem w dolnej części okienka edytora widoczna będzie opcja 'Toggle transcription comparison'. Włączenie jej wyświetli warianty bieżącego wiersza z zaznaczonych wcześniej transkrypcji.
+Zaznaczenie w tym samym oknie paru pól wyboru (po lewej stronie nazwy wersji transkrypcji) pozwoli na wyświetlenie porównania transkrypcji (na poziomie wiersza). Po zamknięciu okna wersji, kliknięciu w wybrany wiersz transkrypcji (w panelu transkrypcji) wyświetlony zostanie edytor linii, tym razem w dolnej części okienka edytora widoczna będzie opcja 'Toggle transcription comparison'. Włączenie jej wyświetli warianty bieżącego wiersza z zaznaczonych wcześniej transkrypcji.
 <figure>
-  <img src="image/porownanie_wersji_transkrypcji.png" width="400">
+  <img src="image/porownanie_wersji_transkrypcji.png" width="500">
 </figure>
 
 
@@ -428,7 +433,7 @@ Warto zauważyć, że 'wyrównywany' tekst np. z edycji krytycznej może nie ty
 
 ## Trenowanie własnego modelu w eScriptorium
 
-eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train', uruchamia trenowanie modelu segmentacji, lub - co jest częściej wykorzystywane - modelu transkrypcji. Pierwszym krokiem jest zaznaczenie co najmniej jednego skanu. Wybór narzędzia
+eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train', uruchamia trenowanie modelu segmentacji (Train -> Segmentator), lub - co jest częściej wykorzystywane - modelu transkrypcji (Train -> Recognizer). Pierwszym krokiem jest zaznaczenie co najmniej jednego skanu. Wybór narzędzia
 Train -> Recognizer wyświetla okno parametrów trenowania modelu transkrypcji.
 
 <figure>
@@ -604,5 +609,5 @@ a udostępniony został na licencji Apache 2.0.
 
 Zrzuty ekranu prezentowane w niniejszym wprowadzeniu pochodzą z wersji 0.13.2 eScriptorium. Fragmenty skanów i tekstów widoczne na zrzutach pochodzą z testów aplikacji eScriptorium i Kraken prowadzonych w 2022 roku w Instytucie Historii PAN związanych z próbami przygotowania modeli HTR dla XVIII wiecznych rękopisów w języku polskim, na bazie korespondencji króla Stanisława Poniatowskiego.
 
-Osobom zainteresowanym samą korespondencją należy polecić wydaną kilka lat temu dwutomową publikację: "Korespondencja polityczna Stanisława Augusta. Wiedeń", (tom I 1788-1790, tom II 1791-1792), opracowanie Monika Jusupović i Adam Danilczyk, Warszawa 2016, dostępną w [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045).
+Osobom zainteresowanym samą korespondencją należy polecić wydaną kilka lat temu publikację: "Korespondencja polityczna Stanisława Augusta. Wiedeń", (tom I 1788-1790, tom II 1791-1792), opracowanie Monika Jusupović i Adam Danilczyk, Warszawa 2016, dostępną w [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045).
 
