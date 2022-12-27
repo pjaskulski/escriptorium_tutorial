@@ -204,19 +204,19 @@ Okno edycji skanu może wyświetlać od 1 do 5 paneli. Panele mogą być włąc
 <figure>
   <img src="image/skan_metadane.png" width="450">
 </figure>
-- 'Source Image' - Oryginalny obraz/skan
+- 'Source Image' - Oryginalny obraz/skan. Ikony w pasku narzędzi panelu pozwalają na obracanie obrazu (o 90 stopni w lewo/prawo), oraz na pobranie pliku z obrazem.
 <figure>
   <img src="image/skan_org.png" width="450">
 </figure>
-- 'Segmentation' - Segmentacja, gdzie widoczna jest manualna lub automatyczna segmentacja: linie bazowe, maski linii i regiony.
+- 'Segmentation' - Segmentacja, gdzie widoczna jest manualna lub automatyczna segmentacja: linie bazowe, maski linii i regiony. Ikony w panelu obrazu to narzędzia umożliwiające edycję segmentacji, zakrzywione strzałki cofają lub ponawiają operacje edycji, rozwijana ikona 'Editor settigns' wyświetla kolory przypisane do typów regionów czy linii. Zielona ikona z 4 białymi kwadratami włącza/wyłącza tryb regionów (klawisz skrótu R), ikona ze strzałką w dół i cyframi wyświetla kolejność linii (klawisz L), ikona z symbolem maski - włącza wyświetlanie kształtu maski (klawisz M). Żółta ikona z symbolem nożyc to narzędzie cięcia, które umożliwia np. przycinanie linii bazowych.
 <figure>
   <img src="image/skan_segmentation.png" width="450">
 </figure>
-- 'Transcription' - Transkrypcja, po przeprowadzaniu automatycznej transkrypcji panel ten wyświetla jej wyniki w graficznej formie, opcjonalne może też wyświetlać 'confidence visualizations' - jeżeli zostało to włączone w parametrach dokumentu (zakładka Description), poprzez kolorowanie wierszy od pomarańczowego poprzez żółty do odcieni zieleni - im większa pewność transkrypcji tym bliżej do soczystej zieleni.
+- 'Transcription' - Transkrypcja, po przeprowadzaniu automatycznej transkrypcji panel ten wyświetla jej wyniki w graficznej formie, opcjonalne może też wyświetlać 'confidence visualizations' - jeżeli zostało to włączone w parametrach dokumentu (zakładka Description), poprzez kolorowanie wierszy od pomarańczowego poprzez żółty do odcieni zieleni - im większa pewność transkrypcji tym bliżej do soczystej zieleni. Kontrolka z suwakiem pozwala regulować czułość stopnia pewności.
 <figure>
   <img src="image/skan_confidence.png" width="450">
 </figure>
-- 'Text' - Tekst transkrypcji manualnej lub automatycznych (jeżeli dany skan był już rozpoznawany przez model/modele), u góry okna można wybrać z listy rozwijanej, która transkrypcja ma być wyświetlana.
+- 'Text' - Tekst transkrypcji manualnej lub automatycznych (jeżeli dany skan był już rozpoznawany przez model/modele), u góry okna można wybrać z listy rozwijanej, która transkrypcja ma być wyświetlana. Ikona z białymi trójkątami w pasku narzędzi panelu pozwala na włączenie trybu sortowania wierszy. Jeżeli w zakładce 'Ontology' dokumentu zdefiniowano adnotacje dla tekstu, w pasku narzędzi będą one widoczne w formie przycisków włączania/wyłączania.
 <figure>
   <img src="image/skan_text.png" width="450">
 </figure>
@@ -338,7 +338,7 @@ Istnieje jednakże kolekcja gotowych wytrenowanych modeli przechowywanych w serw
 
 Każdy model w kolekcji posiada swoją podstronę, często z informacjami na temat zbioru rękopisów na bazie których został wytrenowany. Np. model 'HTR-United - Manu McFrench V1 (Manuscripts of Modern and Contemporaneous French)' (https://zenodo.org/record/6657809#.Y6LfDtLMJKs) został przygotowany na podstawie francuskiej kolekcji z lat XVII-XXI wieku ze wspomnianego wyżej zbioru HTR-United, z dodatkiem małej próbki hiszpańskich listów z XIX wieku i XX wiecznych rękopisów angielskich.
 
-Modele przechowywane są w plikach binarnych z rozszerzeniem *.mlmodel i można je pobrać z sekcji 'Files' podstrony danego modelu. Wielkość modelu to zazwyczaj od kilkunastu do parudziesięciu megabajtów. Po pobraniu na dysk lokalny można taki model zaimportować do eScriptorium, korzystając z funkcji 'Upload a model' w oknie z listą modeli widoczną po przejściu do menu 'My Models' u góry ekranu aplikacji.
+Modele przechowywane są w plikach binarnych z rozszerzeniem *.mlmodel (format wprowadzony przez Apple w ramach frameworku CoreML, do integracji metod uczenia maszynowego w aplikacjach, zob. https://apple.github.io/coremltools/mlmodel/index.html) i można je pobrać z sekcji 'Files' podstrony danego modelu. Wielkość modelu to zazwyczaj od kilkunastu do parudziesięciu megabajtów. Po pobraniu na dysk lokalny można taki model zaimportować do eScriptorium, korzystając z funkcji 'Upload a model' w oknie z listą modeli widoczną po przejściu do menu 'My Models' u góry ekranu aplikacji.
 
 W przypadku bezpośredniego korzystania z programu Kraken posiada on wbudowaną obsługę pobierania modeli z repozytorium zenodo, służą do tego polecenia `kraken list`, `kraken show` i `kraken get`, opisane w dokumentacji w sekcji [Model Repository](https://kraken.re/master/advanced.html#querying-and-model-retrieval).
 
@@ -464,7 +464,7 @@ Utworzenie i wytrenowanie nowego modelu od podstaw wymaga solidnej wielkości ma
 Proces uczenia może być łatwiejszy jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. _transfer learning_ ('uczenie transferowe', zob. https://en.wikipedia.org/wiki/Transfer_learning), przy użyciu dużo mniejszej liczby wierszy _ground truth_ - np. od kilkuset do paru tysięcy. Douczanie (inaczej: dostrajanie) modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw.
 > "Korzystanie z wcześniej wytrenowanych modeli jest najważniejszą metodą, dzięki której możemy trenować kolejne, dokładniejsze modele, przy czym cała operacja odbywa się szybciej, z użyciem mniejszej ilości danych oraz w krótszym czasie, a także przy mniejszym poziomie kosztów"
 >
-> Jeremy Howard, Sylvain Gugger, _Deep Learning dla programistów_, 2021
+> Jeremy Howard, Sylvain Gugger, _Deep Learning dla programistów_, 2021, str. 52
 
 Jeżeli jednak nie istnieje żaden model, który mógłby pełnić rolę modelu bazowego dla przetwarzanych rękopisów, pozostaje ścieżka trenowania 'od zera'. Ponieważ praca bezpośrednio z Krakenem daje możliwości modyfikacji parametrów uczenia, czego nie można zrobić z poziomu eScriptorium, wydaje się że taki sposób trenowania jest lepszym podejściem. Wymaga to jednak opanowania obsługi Krakena z linii komend, czyli zapoznania się z dokumentacją polecenia [ketos train](https://kraken.re/master/ketos.html), czy zapoznania się z opisem [VGSL](https://kraken.re/master/vgsl.html#vgsl) dotyczącym architektury sieci neuronowych. Bardzo ciekawą lekturą będzie też dwuczęściowy artykuł opisujący doświadczenia podczas trenowania modelu opartego na francuskich rękopisach notarialnych z lat 1742-1928: [część 1](https://lectaurep.hypotheses.org/475), [część 2](https://lectaurep.hypotheses.org/488).
 
