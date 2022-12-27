@@ -143,8 +143,8 @@ Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi,
 
 Okno dokumentu jest tym miejscem aplikacji, które jest najcześciej wyświetlane podczas pracy z eScriptorium. Składa się z 6 zakładek:
 - _Description_ - gdzie znajdują się podstawowe informacje i metadane opisujące dokument.
-- _Ontology_ - z definicjami tagów i anotacji dla tesktu i obrazu.
-- _Images_ - gdzie można dodawać i usuwać skany, importować transkrypcje, przeprowadzać najwazniejsze operacje jak segmentacja czy transkrypcja automatyczna, trenować modele HTR/OCR a w wreszcie także eksportować dane.
+- _Ontology_ - z definicjami tagów i adnotacji dla tekstu i obrazu.
+- _Images_ - gdzie można dodawać i usuwać skany, importować transkrypcje, przeprowadzać najważniejsze operacje jak segmentacja czy transkrypcja automatyczna, trenować modele HTR/OCR a w wreszcie także eksportować dane.
 - _Edit_ - w której użytkownik pracuje z konkretnym obrazem/skanem
 - _Models_ - zawierającym listę modeli związanych z danym dokumentem (modeli wykorzystanych do utworzenia transkrypcji lub modeli wytrenowanych na bazie tego dokumentu)
 - _Reports_ - zakładka raportów na temat bieżącego dokumentu, np. informacje o liczbie obrazów w dokumencie, średnim współczynniku pewności transkrypcji czy częstotliwości występowania znaków w transkrypcji.
@@ -165,7 +165,7 @@ Powyżej listy skanów widoczny jest pasek narzędzi. Pierwsze dwa przyciski na 
   <img src="image/miniatury_skanow.png" width="300">
 </figure>
 
-Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przycisków informujących o stanie danego skanu i pozwalających na wykonanie pewnych operacji na nim, na przykład pole wyboru w górnym lewym rogu miniatury zaznacza dany skan, mała ikonka z krzyżykiem (w górnym prawym rogu) umożliwia usunięcie skanu z dokumentu, zielone pole/przycisk na środku miniatury wyświetla skan w trybie edycji, ikony pod miniaturą informują czy dla skanu przeprowadzono jedną z operacji przetwarzania, wówczas przybierają kolor zielony. Np. okrągła czarno-biała ikona odpowiada za binaryzację, ikona ze schematycznymi liniami za segmentację, ikona będąca białym pustym prostokątem dotyczy transkrypcji zaś ikona wyglądająca jak symbol pliku/dokumetu odpowiada funkcji Align (automatycznemu wyrównaniu tekstu). Chwycenie i przemieszczenie całej miniatury pozwala natomiast zmienić kolejność skanów w dokumencie.
+Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przycisków informujących o stanie danego skanu i pozwalających na wykonanie pewnych operacji na nim, na przykład pole wyboru w górnym lewym rogu miniatury zaznacza dany skan, mała ikonka z krzyżykiem (w górnym prawym rogu) umożliwia usunięcie skanu z dokumentu, zielone pole/przycisk na środku miniatury wyświetla skan w trybie edycji, ikony pod miniaturą informują czy dla skanu przeprowadzono jedną z operacji przetwarzania, wówczas przybierają kolor zielony. Np. okrągła czarno-biała ikona odpowiada za binaryzację, ikona ze schematycznymi liniami za segmentację, ikona będąca białym pustym prostokątem dotyczy transkrypcji zaś ikona wyglądająca jak symbol pliku/dokumentu odpowiada funkcji Align (automatycznemu wyrównaniu tekstu). Chwycenie i przemieszczenie całej miniatury pozwala natomiast zmienić kolejność skanów w dokumencie.
 
 ## Binaryzacja
 
@@ -244,12 +244,12 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
 
 ## Definiowanie tagów dla skanów - elementów dokumentu
 
-W zakładce Ontology dokumentu można zdefiniować tagi opisujące elementy obrazu  - typy regionów i linii, a także anotacje dla obrazu i anotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko typy z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów tylko zaznaczone typy będą widoczne podczas pracy w edytorze obrazu.
+W zakładce Ontology dokumentu można zdefiniować tagi opisujące elementy obrazu  - typy regionów i linii, a także adnotacje dla obrazu i adnotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko typy z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów tylko zaznaczone typy będą widoczne podczas pracy w edytorze obrazu.
 <figure>
   <img src="image/ontologia_dokumentu.png" width="750">
 </figure>
 
-W dalszej części okna 'Ontology' można stworzyć definicje anotacji zarówno dla obrazu jak i dla tekstu. Podczas definowania ustalany jest kolor wyróżniający poszczególne anotacje, a także czy możliwe będzie dodawanie komentarzy użytkownika do anotacji.
+W dalszej części okna 'Ontology' można stworzyć definicje adnotacji zarówno dla obrazu jak i dla tekstu. Podczas definiowania ustalany jest kolor wyróżniający poszczególne adnotacje, a także czy możliwe będzie dodawanie komentarzy użytkownika do adnotacji.
 
 
 ### Przypisywane typów do elementów segmentacji
@@ -279,7 +279,7 @@ linią.
 
 ### Przypisywanie tagów do fragmentów tekstu
 
-Podczas pracy w panelu 4 - 'Text' możliwe jest anotowanie fragmentów tekstu transkrypcji zdefiniowanymi wcześniej w zakładce 'Ontology' dokumentu tagami. Jeżeli tagi zostały zdefiniowane zmienia się wygląd paska narzędzi nad polem tekstowym, pojawiają się przyciski przełączania odpowiadające tagom. Włączenie takiego przycisku pozwala na zaznaczenie wybranego tekstu, po czym pojawia się oknienko dialogowe pozwalające na wprowadzenie komentarza (jeżeli tak zdefinowano w definicji tagu) i zapisanie zmian.
+Podczas pracy w panelu 4 - 'Text' możliwe jest adnotowanie fragmentów tekstu transkrypcji zdefiniowanymi wcześniej w zakładce 'Ontology' dokumentu tagami. Jeżeli tagi zostały zdefiniowane zmienia się wygląd paska narzędzi nad polem tekstowym, pojawiają się przyciski przełączania odpowiadające tagom. Włączenie takiego przycisku pozwala na zaznaczenie wybranego tekstu, po czym pojawia się okienko dialogowe pozwalające na wprowadzenie komentarza (jeżeli tak zdefiniowano w definicji tagu) i zapisanie zmian.
 <figure>
   <img src="image/anotacja_tekstu.png" width="400">
 </figure>
@@ -294,7 +294,7 @@ Otagowany tekst będzie oznaczony kolorem wybranym podczas definiowania danego t
 
 ### Przypisywanie tagów do fragmentów obrazu
 
-Anotacji podlegać mogą też fragmenty obrazów/skanów. Należy wyświetlić panel 1 - 'Source image', jeżeli w zakładce 'Ontology' były zdefiniowane tagi do anotacji, pojawią się one w formie przycisków przełączania. Po wybraniu jednego z nich można zaznaczyć fragment obazu (zależnie od definicji, w formie prosotkąta lub wielokąta) i opcjonalnie przypisać do niego komentarz, można w ten sposób oznaczyć fragmenty skanu nie będące częścią oryginalnego rękopisu, uszkodzenia mikrofilmu będącego źródłem obrazu a nie występujące na oryginalne dokumntu itp.
+Adnotacji podlegać mogą też fragmenty obrazów/skanów. Należy wyświetlić panel 1 - 'Source image', jeżeli w zakładce 'Ontology' były zdefiniowane tagi do adnotacji, pojawią się one w formie przycisków przełączania. Po wybraniu jednego z nich można zaznaczyć fragment obrazu (zależnie od definicji, w formie prostokąta lub wielokąta) i opcjonalnie przypisać do niego komentarz, można w ten sposób oznaczyć fragmenty skanu nie będące częścią oryginalnego rękopisu, uszkodzenia mikrofilmu będącego źródłem obrazu a nie występujące na oryginalne dokumentu itp.
 <figure>
   <img src="image/anotacje_obrazu.png" width="600">
 </figure>
@@ -311,7 +311,7 @@ Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i ed
 
 Między kolejnymi wierszami w obrębie strony można przemieszczać się dzięki ikonom strzałek widocznym w górnej części okna. Jeżeli aktywnym elementem jest edycyjne pole tekstowe nawigację między poprzednią i kolejną stroną zapewniają też klawisze strzałek góra/dół, do kolejnego wiersza przenosi nas także klawisz Enter (który także wywołuje zapis zmian).
 
-Okno pojedycznego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history' (link pojawi się tylko wówczas gdy dana linia była modyfikowana). Po wyświetleniu historii zmian użytkownik może przywrócić jeden z poprzednich stanów wiersza za pomocą zielonych ikonek z prawej strony listy zmian.
+Okno pojedynczego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history' (link pojawi się tylko wówczas gdy dana linia była modyfikowana). Po wyświetleniu historii zmian użytkownik może przywrócić jeden z poprzednich stanów wiersza za pomocą zielonych ikonek z prawej strony listy zmian.
 <figure>
   <img src="image/linia_historia.png" width="600">
 </figure>
@@ -346,17 +346,17 @@ W przypadku bezpośredniego korzystania z programu Kraken posiada on wbudowaną 
 
 W głównym menu aplikacji (górny prawy róg okna), menu 'My Models' otwiera okno z listą modeli dostępnych dla użytkownika (zaimportowanych, wytrenowanych przez użytkownika lub udostępnionych użytkownikowi). Duży zielony przycisk 'Upload a model' służy właśnie do zaimportowania modelu pobranego np. z serwisu zenodo.org (plik w formacie *.mlmodel). **Uwaga:** aplikacja domyślnie proponuje nazwę modelu zgodną z nazwą pliku, można ją zmodyfikować, ale po zatwierdzeniu importu (w obecnej wersji eScriptorium) nie można już jej zmienić.
 
-Lista modeli wyświetla podstawowe informacje o każdym z nich: typie (model może służyć do transkrypcji 'Recognize', lub segmentacji 'Segmentation'), wielkości w megabajtach, czy jest to model już wytrenowany (czy trwa trenowanie), jaka jest jego najlepsza dokładność ('Accuracy'). W przypadku modeli trenowanych w danej instacji eScriptorium widoczna jest także liczba błędych/wszystkich znaków określona podczas walidacji po trenowaniu. Ostatnia kolumna informuje czy jest to model będący 'własnościa' bieżącego użytkownika ('Owner') czy też został mu udostępniony ('User', 'Public'). Za kolumnami z informacjami znajdują się ikony narzędzi, których liczba zależy właśnie od tego czy jest to 'nasz' model i czy był trenowany w eScriptorium:
+Lista modeli wyświetla podstawowe informacje o każdym z nich: typie (model może służyć do transkrypcji 'Recognize', lub segmentacji 'Segmentation'), wielkości w megabajtach, czy jest to model już wytrenowany (czy trwa trenowanie), jaka jest jego najlepsza dokładność ('Accuracy'). W przypadku modeli trenowanych w danej instancji eScriptorium widoczna jest także liczba błędych/wszystkich znaków określona podczas walidacji po trenowaniu. Ostatnia kolumna informuje czy jest to model będący 'własnością' bieżącego użytkownika ('Owner') czy też został mu udostępniony ('User', 'Public'). Za kolumnami z informacjami znajdują się ikony narzędzi, których liczba zależy właśnie od tego czy jest to 'nasz' model i czy był trenowany w eScriptorium:
 
 - zielona ikona z symbolem pliku pozwala na pobranie modelu na dysk lokalny (plik *.mlmodel)
 - niebieska ikona z zakrzywioną strzałką pozwala na udostępnienie 'naszego' modelu innym użytkownikom
-- czerowona ikona z koszem na śmieci pozwala na usunięcie modelu - ale nie modelu udostępnionego
+- czerwona ikona z koszem na śmieci pozwala na usunięcie modelu - ale nie modelu udostępnionego
 - ikona w niebieskim-morskim kolorze umożliwia - tylko dla modeli trenowanych w danej instancji eSCriptorium - na przełączenie na inną wersję modelu (jedną z wersji pośrednich stworzonych podczas uczenia)
 
 
 ### Zakładka Models w dokumencie
 
-Zakładka 'Models' w dokumencie wyświetla podobną listę do tej z menu 'My Models'. Są tam jednak widoczne tylko modele związane z bieżącym dokumentem. Np. użyte do transkrypcji automatycznej, czy wytrenowane na bazie plików z dokumentu. W tym oknie nie można usuwać modeli, widoczna jest jednak żółta ikona z symbolem kosza na śmieci - to narzędzie powoduje jedynie usunięcie moedlu z listy modeli dokumentu.
+Zakładka 'Models' w dokumencie wyświetla podobną listę do tej z menu 'My Models'. Są tam jednak widoczne tylko modele związane z bieżącym dokumentem. Np. użyte do transkrypcji automatycznej, czy wytrenowane na bazie plików z dokumentu. W tym oknie nie można usuwać modeli, widoczna jest jednak żółta ikona z symbolem kosza na śmieci - to narzędzie powoduje jedynie usunięcie modelu z listy modeli dokumentu.
 <figure>
   <img src="image/document_models.png" width="450">
 </figure>
@@ -447,7 +447,7 @@ Przykładowy wynik:
     1142      Errors
     98.65%    Accuracy``
 
-Gdzie 'Accuracy' (dokładość) to wskaźnik mierzący jakość rozpoznania przez model - procent poprawnie rozpoznanych znaków. Ten sam wskaźnik jest podawany po każdej epoce trenowania modelu (val_accuracy)
+Gdzie 'Accuracy' (dokładność) to wskaźnik mierzący jakość rozpoznania przez model - procent poprawnie rozpoznanych znaków. Ten sam wskaźnik jest podawany po każdej epoce trenowania modelu (val_accuracy)
 podczas weryfikacji wyników na próbce walidacyjnej danych (tam w formie ułamka np. 0.83).
 
 Szczegółowy opis procesu i parametrów trenowania znajduje się na stronie:
@@ -462,38 +462,38 @@ modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posi
 Utworzenie i wytrenowanie nowego modelu od podstaw wymaga solidnej wielkości materiału treningowego a także sporej ilości czasu i mocy komputera do przeprowadzenia procesu uczenia. Typowe, dostępne publicznie modele pisma ręcznego zostały utworzone na podstawie kilkunastu do kilkudziesięciu tysięcy wierszy 'ground truth' (zob. [lectaurep](https://github.com/lectaurep/lectaurep_base_model)). Przygotowanie takiego materiału (o 100% poprawności zweryfikowanej przez ekspertów) jest najbardziej pracochłonnym etapem pracy nad modelem.
 
 Proces uczenia może być łatwiejszy jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. _transfer learning_ ('uczenie transferowe', zob. https://en.wikipedia.org/wiki/Transfer_learning), przy użyciu dużo mniejszej liczby wierszy _ground truth_ - np. od kilkuset do paru tysięcy. Douczanie modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw.
-> "Korzystanie z wcześniej wytrenowanych modeli jest najważniejeszą metodą, dzięki której możemy trenować kolejne, dokładniejsze modele, przy czym cała operacja odbywa się szybciej, z użyciem mniejszej ilości danych oraz w krótszym czasie, a także przy mniejszym poziomie kosztów"
+> "Korzystanie z wcześniej wytrenowanych modeli jest najważniejszą metodą, dzięki której możemy trenować kolejne, dokładniejsze modele, przy czym cała operacja odbywa się szybciej, z użyciem mniejszej ilości danych oraz w krótszym czasie, a także przy mniejszym poziomie kosztów"
 >
 > Jeremy Howard, Sylvain Gugger, _Deep Learning dla programistów_, 2021
 
 Jeżeli jednak nie istnieje żaden model, który mógłby pełnić rolę modelu bazowego dla przetwarzanych rękopisów, pozostaje ścieżka trenowania 'od zera'. Ponieważ praca bezpośrednio z Krakenem daje możliwości modyfikacji parametrów uczenia, czego nie można zrobić z poziomu eScriptorium, wydaje się że taki sposób trenowania jest lepszym podejściem. Wymaga to jednak opanowania obsługi Krakena z linii komend, czyli zapoznania się z dokumentacją polecenia [ketos train](https://kraken.re/master/ketos.html), czy zapoznania się z opisem [VGSL](https://kraken.re/master/vgsl.html#vgsl) dotyczącym architektury sieci neuronowych. Bardzo ciekawą lekturą będzie też dwuczęściowy artykuł opisujący doświadczenia podczas trenowania modelu opartego na francuskich rękopisach notarialnych z lat 1742-1928: [część 1](https://lectaurep.hypotheses.org/475), [część 2](https://lectaurep.hypotheses.org/488).
 
 
-## Współpraca z innymi użytkownkami
+## Współpraca z innymi użytkownikami
 
-Aplikacja posiada możliwość współdzielenia zarówno projektów jak i dokumentó czy modeli z innymi użytkownikami.
+Aplikacja posiada możliwość współdzielenia zarówno projektów jak i dokumentów czy modeli z innymi użytkownikami.
 
 
 ### Udostępnianie projektów
 
-Aby udostępnić projekt innemu użytkownikowi należy w oknie projektu odnaleźć niebieską ikonę 'Share this Project' w górnym prawym rogu okna. Wyświetlone zostanie wówczas okno dlalogowe w którym należy wprowadzić login użytkownika, któremu chcemy udostępnić projekt. Po zatwierdzeniu system wyświetli powiadomienie o udanym udostępnieniu a docelowy użytkownik powinien zobaczyć projekt na swojej liście.
+Aby udostępnić projekt innemu użytkownikowi należy w oknie projektu odnaleźć niebieską ikonę 'Share this Project' w górnym prawym rogu okna. Wyświetlone zostanie wówczas okno dialogowe, w którym należy wprowadzić login użytkownika, któremu chcemy udostępnić projekt. Po zatwierdzeniu system wyświetli powiadomienie o udanym udostępnieniu a docelowy użytkownik powinien zobaczyć projekt na swojej liście.
 <figure>
   <img src="image/share_project.png" width="400">
 </figure>
 
-Alternatywnie, jeżeli w naszej instancji eScriptorium utowrzone zostały grupy użytkowników, zamiast udostępniać projekt pojedynczym osobom można udostępnić go całej grupie (tworzenie grup i przypisywanie użytkowników do grup jest dostępne w panelu administracyjnym aplikacji).
+Alternatywnie, jeżeli w naszej instancji eScriptorium utworzone zostały grupy użytkowników, zamiast udostępniać projekt pojedynczym osobom można udostępnić go całej grupie (tworzenie grup i przypisywanie użytkowników do grup jest dostępne w panelu administracyjnym aplikacji).
 
 Użytkownik może zrezygnować z projektu który został mu udostępniony. Na liście projektów te stworzone przez inną osobę i udostępnione posiadają z prawej strony żółtą ikonę z czarnym symbolem koszta na śmieci ('Remove from list'). Użycie tego narzędzia nie spowoduje usunięcia projektu w ogóle, ale usunie jedynie projekt z naszej listy projektów.
 
 
 ### Udostępnianie dokumentu
 
-Możliwe jest także udostępnienie konkretnego dokumentu. W oknie dokumentu (jeżeli aktywna jest zakładka Description!) w górnym prawym rogu ekranu widoczne są ikony dotyczące wykonywania operacji na bieżącym dokumencie. Jedną z nich jest ikona udostępiania dokumentu innym użytkownikom. Kliknięcie na nią wyświetla okno dialogowe udostępniania.
+Możliwe jest także udostępnienie konkretnego dokumentu. W oknie dokumentu (jeżeli aktywna jest zakładka Description!) w górnym prawym rogu ekranu widoczne są ikony dotyczące wykonywania operacji na bieżącym dokumencie. Jedną z nich jest ikona udostępniania dokumentu innym użytkownikom. Kliknięcie na nią wyświetla okno dialogowe udostępniania.
 <figure>
   <img src="image/dokument_operacje.png" width="600">
 </figure>
 
-W oknie tym należy wskazać grupy użytkowników lub konkretnych użytkowników, którzy mają mieć dostęp do naszego dokumetu.
+W oknie tym należy wskazać grupy użytkowników lub konkretnych użytkowników, którzy mają mieć dostęp do naszego dokumentu.
 <figure>
   <img src="image/share_dokument.png" width="400">
 </figure>
@@ -501,12 +501,12 @@ W oknie tym należy wskazać grupy użytkowników lub konkretnych użytkownikó
 
 ### Przenoszenie dokumentu do innego projektu
 
-Ciekawą opcją jest możliwość przeniesienia dokumentu do innego projektu. W górym prawym rogu ekranu dokumentu (podczas pracy w zakładce Description), obok ikony uruchamiąjącej udostępnianie dokumentu widoczna jest ikona narzędzia przenoszenia dokumentu ('Mograte to another project'). W oknie dialogowym przenoszenia widoczne są dwa pola, w pierwszym polu z listą rozwijaną należy wskazać docelowy projekt, zaś widoczne poniżej pole wyboru decyduje o tym czy wraz z dokumentem przenieść jego tagi (chodzi o tagi przypisane na poziomie dokumentu narzędziem Assign Tag widocznym na liście dokumentów projektu - niebieska ikona z etykietami).
+Ciekawą opcją jest możliwość przeniesienia dokumentu do innego projektu. W górnym prawym rogu ekranu dokumentu (podczas pracy w zakładce Description), obok ikony uruchamiającej udostępnianie dokumentu widoczna jest ikona narzędzia przenoszenia dokumentu ('Migrate to another project'). W oknie dialogowym przenoszenia widoczne są dwa pola, w pierwszym polu z listą rozwijaną należy wskazać docelowy projekt, zaś widoczne poniżej pole wyboru decyduje o tym czy wraz z dokumentem przenieść jego tagi (chodzi o tagi przypisane na poziomie dokumentu narzędziem Assign Tag widocznym na liście dokumentów projektu - niebieska ikona z etykietami).
 <figure>
   <img src="image/migrate_to_another_project.png" width="400">
 </figure>
 
-Po potwierdzeniu przyciskiem 'Migrate' aplikacja wyświetli odpowiednie powiadomienie o sktutecznym zakończeniu operacji a nasz dokument będzie o tej pory częścią innego projektu.
+Po potwierdzeniu przyciskiem 'Migrate' aplikacja wyświetli odpowiednie powiadomienie o skutecznym zakończeniu operacji a nasz dokument będzie o tej pory częścią innego projektu.
 
 <figure>
   <img src="image/powiadomienie_migracja.png" width="300">
@@ -535,7 +535,7 @@ Przygotowane w eScriptorium transkrypcje skanów można zapisać w formie plikó
 
 ## Raporty
 
-Zarówno projekty jak i dokumenty posiadają zakładki 'Reports' z informacjami statystycznymi na temat zawartości projektu czy dokumentu. Dotyczą one np. liczby obrazów, liczby rozpoznanych regionów  i wierszy, liczby słów i znaków w transkrypcjach. Odobną część stanowi sekcja Vocabulary gdzie po odświeżeniu wyświetlana jest aktualna częstotliwość występowania poszczególnych znaków. W zakładce 'Reports' dla dokumentu podawana jest także przeciętna pewność transkrypcji.
+Zarówno projekty jak i dokumenty posiadają zakładki 'Reports' z informacjami statystycznymi na temat zawartości projektu czy dokumentu. Dotyczą one np. liczby obrazów, liczby rozpoznanych regionów  i wierszy, liczby słów i znaków w transkrypcjach. Osobną część stanowi sekcja Vocabulary gdzie po odświeżeniu wyświetlana jest aktualna częstotliwość występowania poszczególnych znaków. W zakładce 'Reports' dla dokumentu podawana jest także przeciętna pewność transkrypcji.
 <figure>
   <img src="image/projekt_raporty.png" width="600">
 </figure>
