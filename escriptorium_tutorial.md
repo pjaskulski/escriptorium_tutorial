@@ -588,7 +588,7 @@ a udostępniony został na licencji Apache 2.0.
 
 ## Dodatkowe informacje
 
-Zrzuty ekranu prezentowane w niniejszym wprowadzeniu pochodzą z wersji 0.13.2 eScriptorium. Fragmenty skanów i tekstów widoczne na zrzutach pochodzą z testów eScriptorium prowadzonych w Instytucie Historii PAN związanych z przygotowaniem modeli HTR dla XVIII wiecznych rękopisów w języku polskim, na bazie korespondencji króla Stanisława Poniatowskiego.
+Zrzuty ekranu prezentowane w niniejszym wprowadzeniu pochodzą z wersji 0.13.2 eScriptorium. Fragmenty skanów i tekstów widoczne na zrzutach pochodzą z testów eScriptorium prowadzonych w Instytucie Historii PAN związanych z próbami przygotowania modeli HTR dla XVIII wiecznych rękopisów w języku polskim, na bazie korespondencji króla Stanisława Poniatowskiego.
 
-Osobom zainteresowanym samą korespondencją należy polecić dwutomową publikację "Korespondencja polityczna Stanisława Augusta", opracowanie Monika Jusupović i Adam Danilczyk, Warszawa 2016. ([RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045))
+Osobom zainteresowanym samą korespondencją należy polecić wydaną kilka lat temu dwutomową publikację: "Korespondencja polityczna Stanisława Augusta", opracowanie Monika Jusupović i Adam Danilczyk, Warszawa 2016, dostępną w [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045).
 
