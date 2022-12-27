@@ -22,8 +22,8 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
   - [Przypisywanie tagów do fragmentów tekstu](#przypisywanie-tag%C3%B3w-do-fragment%C3%B3w-tekstu)
   - [Przypisywanie tagów do fragmentów obrazu](#przypisywanie-tag%C3%B3w-do-fragment%C3%B3w-obrazu)
 - [Wprowadzanie transkrypcji manualnej](#wprowadzanie-transkrypcji-manualnej)
-  - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
   - [Wirtualna klawiatura](#wirtualna-klawiatura)
+  - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
 - [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
   - [Menu My Models](#menu-my-models)
   - [Zakładka Models w dokumencie](#zak%C5%82adka-models-w-dokumencie)
@@ -124,7 +124,7 @@ operacyjnego dialog z możliwością wskazanie plików. Obsługiwane są typowe 
 ### Import transkrypcji i skanów
 
 Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi, przycisk rozwija się udostępniając 3 polecenia:
-- import obrazów z zewnętrznego serwera poprzez protokół IIIF, co jest przydatne gdy posiadamy już kolekcję skanów w repozytorium obsługującym ten protokół
+- import obrazów z zewnętrznego serwera poprzez protokół IIIF, co jest przydatne gdy posiadamy już kolekcję skanów w repozytorium obsługującym ten protokół. Przykładowy manifest IIIF: `https://digitalcollections.universiteitleiden.nl/iiif_manifest/item%3A1603568/manifest` (Book of hours (Dutch) - Bibliotheca Publica Latina).
 <figure>
   <img src="image/import_iif.png" width="300" style="padding-top: 30px;">
 </figure>
