@@ -277,6 +277,11 @@ Przydatnym narzędziem podczas modyfikowania segmentacji jest  narzędzie cięci
   <img src="image/cut_line.png" width="650">
 </figure>
 
+Niska jakość obrazów wejściowych, np. liczne zabrudzenia, artefakty wynikające ze skanowania starych mikrofilmów z uszkodzeniami, uszkodzenia samych skanowanych czy fotografowanych dokumentów mają negatywny wpływ na jakość segmentacji. Można spodziewać się rozpoznawania zbiorów uszkodzeń czy zabrudzeń jako regionów, czasem fałszywego rozpoznawania nieistniejących linii.
+<figure>
+  <img src="image/zabrudzenia_segmentacja.png" width="600">
+</figure>
+
 
 ## Definiowanie tagów dla skanów - elementów dokumentu
 
