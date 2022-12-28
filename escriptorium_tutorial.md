@@ -272,7 +272,7 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
   <img src="image/modyfkacja_maski_linii.png" width="450">
 </figure>
 
-Przydatnym narzędziem podczas modyfikowania segmentacji jest  narzędzie cięcia 'Cut through lines' (ikona z symbolem nożyczek na żółtym tle), Po włączeniu (kolor ikony zmienia się na zielony) pozwala zaznaczyć prostokątny obszar, który przycina części linii (lub całe linie).
+Przydatnym narzędziem podczas modyfikowania segmentacji jest  narzędzie cięcia 'Cut through lines' (ikona z symbolem nożyczek na żółtym tle), Po włączeniu (kolor ikony zmienia się na zielony) pozwala zaznaczyć prostokątny obszar, który przycina części linii (lub usuwa całe linie).
 <figure>
   <img src="image/cut_line.png" width="650">
 </figure>
