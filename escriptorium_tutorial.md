@@ -88,7 +88,7 @@ pozwala na utworzenie nowego projektu. Jedynym polem, które można i należy wy
   <img src="image/utworzenie_nowego_projektu.png" width="600">
 </figure>
 
-Aplikacja wyświetla notyfikację (powiadomienie, zielony komunikat w górnym lewym rogu) z informacją o prawidłowym utworzeniu projektu, który pojawi się też od razu na liście projektów.
+Aplikacja wyświetla powiadomienie (zielony komunikat w górnym lewym rogu) z informacją o prawidłowym utworzeniu projektu, który pojawi się też od razu na liście projektów.
 <figure>
   <img src="image/notyfikacja_utworzenie_projektu.png" width="300">
 </figure>
@@ -100,9 +100,9 @@ Po utworzeniu projektu można go otworzyć klikając w tytuł. Projekt jest czym
   <img src="image/nowy_dokument.png" width="600">
 </figure>
 
-Okno definiowania dokumentu zawiera dużo więcej pól niż w przypadku projektu. Pola podzielone są na 6 zakładek: Description, Ontology, Images, Edit, Models i Reports. Aby dodać i zapisać nowy dokument należy przede wszystkim wypełnić pierwszą z nich, zaczynając od nazwy (Name) dokumentu np. 'Księgi kaliskie t. 23' (inaczej niż dla projektów w przypadku dokumentów można później edytować i zmienić jego nazwę). Następnie wybrać z listy rodzaj pisma (main script) - w przypadku dokumentów przetwarzanych w Instytucie Historii PAN będzie to zapewne 'Latin', 'Cyrillic' lub 'Cyrillic (Old Church Slavonic variant)'. Należy również ustalić czy porządek ułożenia elementów w dokumencie to 'Left to right' czy 'Right to left' (kierunek samego pisma jest określony przez wybór rodzaju pisma).
+Okno definiowania dokumentu zawiera dużo więcej pól niż w przypadku projektu. Pola podzielone są na 6 zakładek: Description, Ontology, Images, Edit, Models i Reports (część jest początkowo niedostępna). Aby dodać i zapisać nowy dokument należy przede wszystkim wypełnić pierwszą z nich, zaczynając od nazwy (Name) dokumentu np. 'Księgi kaliskie t. 23' (inaczej niż dla projektów, w przypadku dokumentów można później edytować i zmienić ich nazwę). Następnie wybrać z listy rodzaj pisma (main script) - w przypadku dokumentów przetwarzanych w Instytucie Historii PAN będzie to zapewne 'Latin', 'Cyrillic' lub 'Cyrillic (Old Church Slavonic variant)'. Należy również ustalić czy porządek ułożenia elementów w dokumencie to 'Left to right' czy 'Right to left' (kierunek samego pisma jest określony przez wybór rodzaju pisma).
 
-W kolejnym polu należy wskazać pozycję linii w stosunku do wielokąta (kształtu) wiersza tekstu: 'Baseline', 'Topline', 'Centered'. Aplikacja pozwala opcjonalnie na wyświetlanie stopnia zaufania dla poszczególnych fragmentów automatycznej transkrypcji, jeżeli chcemy wyświetlać taką informację należy zaznaczyć pole wyboru 'Show confidence visualizations' (wizualizacja pojawi się w panelu Transcription w trybie edycji skanu/obrazu).
+W kolejnym polu należy wskazać pozycję linii w stosunku do wielokąta (kształtu) wiersza tekstu: 'Baseline', 'Topline', 'Centered'. Aplikacja pozwala opcjonalnie na wyświetlanie stopnia zaufania dla poszczególnych fragmentów automatycznej transkrypcji, jeżeli chcemy wyświetlać taką informację należy zaznaczyć pole wyboru 'Show confidence visualizations' (wizualizacja pojawi się w panelu' Transcription' w trybie edycji skanu/obrazu).
 
 Sekcja Metadata pozwala na wprowadzenie własnych metadanych opisujących dokument (można wprowadzić informacje dotyczące np. okresu chronologicznego czy pochodzenia geograficznego). Po zakończeniu wprowadzania tych podstawowych danych przycisk 'Create' na dole okna utworzy nasz nowy dokument, wyświetlając stosowny komunikat (powiadomienie) w górnym prawym roku ekranu.
 Wszystkie wprowadzone informacje będą mogły być w przyszłości uzupełnione i poprawione.
@@ -149,7 +149,7 @@ Podczas importu obrazów poprzez protokół IIIF pobierane są zwykle z serwera 
 
 ## Tagi dokumentów
 
-Do dokumentu można przypisywać tagi zdefiniowane przez użytkownika. Tagi są rodzajem etykiet opisujących dokument oraz pozwalają na szybkie filtrowanie dokumentów, można np. dodać tag 'IIIF' do wszystkich dokumentów projektu zaimportowanych poprzez ten protokół by później odfiltrować tylko dokumenty tego typu. Dodanie tagu do dokumentu obsługuje niebieska ikona z symbolem etykiety na liście dokumentów. Podobna ikona lecz w pasku narzędzi powyżej listy dokumentów (obok przycisku tworzenia nowego dokumentu) wyświetla okno zarządzania tagami, gdzie można zmienić nazwę tagi czy przypisany mu kolor.
+Do dokumentu można przypisywać tagi zdefiniowane przez użytkownika. Tagi są rodzajem etykiet opisujących dokument oraz pozwalają na szybkie filtrowanie dokumentów, można np. dodać tag 'IIIF' do wszystkich dokumentów projektu zaimportowanych poprzez ten protokół by później odfiltrować tylko dokumenty tego typu. Dodanie tagu do dokumentu obsługuje niebieska ikona z symbolem etykiety na liście dokumentów. Podobna ikona lecz w pasku narzędzi powyżej listy dokumentów (obok przycisku tworzenia nowego dokumentu) wyświetla okno zarządzania tagami, gdzie można zmienić nazwę tagu czy przypisany mu kolor.
 <figure>
   <img src="image/dokument_tagi.png" width="750">
 </figure>
@@ -158,29 +158,27 @@ Do dokumentu można przypisywać tagi zdefiniowane przez użytkownika. Tagi są 
 
 Okno dokumentu jest tym miejscem aplikacji, które jest najczęściej wyświetlane podczas pracy z eScriptorium. Składa się z 6 zakładek:
 - _Description_ - gdzie znajdują się podstawowe informacje i metadane opisujące dokument.
-- _Ontology_ - z definicjami tagów i adnotacji dla tekstu i obrazu.
+- _Ontology_ - z definicjami typów, etykiet i adnotacji dla tekstu i obrazu.
 - _Images_ - gdzie można dodawać i usuwać skany, importować transkrypcje, przeprowadzać najważniejsze operacje jak segmentacja czy transkrypcja automatyczna, trenować modele HTR/OCR a w wreszcie także eksportować dane.
-- _Edit_ - w której użytkownik pracuje z konkretnym obrazem/skanem
-- _Models_ - zawierającym listę modeli związanych z danym dokumentem (modeli wykorzystanych do utworzenia transkrypcji lub modeli wytrenowanych na bazie tego dokumentu)
+- _Edit_ - w której użytkownik pracuje z konkretnym obrazem/skanem.
+- _Models_ - zawierającym listę modeli związanych z danym dokumentem (modeli wykorzystanych do utworzenia transkrypcji lub modeli wytrenowanych na bazie tego dokumentu).
 - _Reports_ - zakładka raportów na temat bieżącego dokumentu, np. informacje o liczbie obrazów w dokumencie, średnim współczynniku pewności transkrypcji czy częstotliwości występowania znaków w transkrypcji.
 
 
 ## Lista obrazów/skanów
 
-Lista obrazów/skanów widoczna w zakładce 'Images' dokumentu jest głównym miejscem szybkiego przeglądania kolekcji skanów
-w dokumencie, z poziomu listy skanów wywoływane jest też ich przetwarzanie: binaryzacja, segmentacja czy transkrypcja. Skany wyświetlane są w formie miniatur, jeżeli jest ich więcej niż kilka i nie mieszczą się na ekranie, aplikacja wyświetla poziomy pasek przewijania.
-
+Lista obrazów/skanów widoczna w zakładce 'Images' dokumentu jest głównym miejscem szybkiego przeglądania kolekcji skanów w dokumencie. Z poziomu listy skanów wywoływane jest też ich przetwarzanie: binaryzacja, segmentacja czy transkrypcja. Skany wyświetlane są w formie miniatur, jeżeli jest ich więcej niż kilka i nie mieszczą się na ekranie, aplikacja wyświetla poziomy pasek przewijania.
 <figure>
   <img src="image/lista_skanow.png" width="750">
 </figure>
 
-Powyżej listy skanów widoczny jest pasek narzędzi. Pierwsze dwa przyciski na pasku pozwalają na zaznaczenie (wybranie) lub odznaczenie wszystkich skanów - operacje przetwarzania skanów przeprowadzane są tylko na zaznaczonych obrazach. Kolejne przyciski odpowiadają za import i eksport, trenowanie (możliwe jest trenowanie modelu segmentacji lub modelu transkrypcji), grupa przycisków z prawej strony pozwala na przetwarzanie skanów: binaryzację, segmentację, transkrypcję oraz automatycznie wyrównanie (Align) ze wskazanym tekstem (np. transkrypcją manualną).
+Powyżej listy skanów widoczny jest pasek narzędzi. Pierwsze dwa przyciski na pasku pozwalają na zaznaczenie (wybranie) lub odznaczenie wszystkich skanów - operacje przetwarzania skanów przeprowadzane są tylko na zaznaczonych obrazach. Kolejne przyciski odpowiadają za import i eksport, trenowanie (możliwe jest trenowanie modelu segmentacji lub modelu transkrypcji), grupa przycisków z prawej strony pozwala na przetwarzanie skanów: binaryzację, segmentację, transkrypcję oraz automatyczne wyrównanie (Align) ze wskazanym tekstem (np. transkrypcją manualną).
 
 <figure>
   <img src="image/miniatury_skanow.png" width="300">
 </figure>
 
-Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przycisków informujących o stanie danego skanu i pozwalających na wykonanie pewnych operacji na nim, na przykład pole wyboru w górnym lewym rogu miniatury zaznacza dany skan, mała ikonka z krzyżykiem (w górnym prawym rogu) umożliwia usunięcie skanu z dokumentu, zielone pole/przycisk na środku miniatury wyświetla skan w trybie edycji, ikony pod miniaturą informują czy dla skanu przeprowadzono jedną z operacji przetwarzania, wówczas przybierają kolor zielony. Np. okrągła czarno-biała ikona odpowiada za binaryzację, ikona ze schematycznymi liniami za segmentację, ikona będąca białym pustym prostokątem dotyczy transkrypcji zaś ikona wyglądająca jak symbol pliku/dokumentu odpowiada funkcji Align (automatycznemu wyrównaniu tekstu). Chwycenie i przemieszczenie całej miniatury pozwala natomiast zmienić kolejność skanów w dokumencie.
+Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przycisków informujących o stanie danego skanu i pozwalających na wykonanie pewnych operacji na nim, na przykład pole wyboru w górnym lewym rogu miniatury zaznacza dany skan, mała ikonka z krzyżykiem (w górnym prawym rogu) umożliwia usunięcie skanu z dokumentu, zielone pole/przycisk na środku miniatury wyświetla skan w trybie edycji, ikony pod miniaturą informują czy dla skanu przeprowadzono jedną z operacji przetwarzania, wówczas przybierają kolor zielony. Np. okrągła czarno-biała ikona odpowiada za binaryzację, ikona ze schematycznymi liniami za segmentację, ikona będąca białym pustym prostokątem dotyczy transkrypcji zaś ikona wyglądająca jak symbol pliku/dokumentu odpowiada funkcji Align (automatycznemu wyrównaniu tekstu). Chwycenie za pomocą myszy i przemieszczenie całej miniatury pozwala natomiast zmienić kolejność skanów w dokumencie.
 
 ## Binaryzacja
 
@@ -191,13 +189,12 @@ Binaryzacja jest w obecnej wersji procedurą niezalecaną do przeprowadzania, do
 
 ## Segmentacja
 
-Przed uruchomieniem automatycznej transkrypcji skanów (OCR/HTR) niezbędne jest prawidłowe podzielenie pisma lub druku na regiony i wiersze. Można to zrobić manualnie, jednak w przypadku większej kolekcji skanów byłby to zbyt czasochłonne. eScriptorium posiada mechanizm automatycznej segmentacji wykorzystujący model uczenia głębokiego. Aby go uruchomić należy najpierw zaznaczyć jeden lub więcej skanów/obrazów na liście a następnie kliknąć przycisk 'Segment' na pasku narzędzi. Wyświetlone zostanie okno z opcjami segmentacji, w którym należy wybrać model, zakres pracy, układ elementów na stronie itp.
+Przed uruchomieniem automatycznej transkrypcji skanów (OCR/HTR) niezbędne jest prawidłowe podzielenie pisma lub druku na regiony i wiersze. Można to zrobić manualnie, jednak w przypadku większej kolekcji skanów byłoby to zbyt czasochłonne. eScriptorium posiada mechanizm automatycznej segmentacji wykorzystujący model uczenia głębokiego. Aby go uruchomić należy najpierw zaznaczyć jeden lub więcej skanów/obrazów na liście a następnie kliknąć przycisk 'Segment' na pasku narzędzi. Wyświetlone zostanie okno z opcjami segmentacji, w którym należy wybrać model, zakres pracy, układ elementów na stronie itp.
 <figure>
   <img src="image/segmentacja.png" width="450">
 </figure>
 
-W obecnej wersji dostępny jest jeden domyślny model: blla.mlmodel, dający skądinąd bardzo dobre rezultaty. Domyślnie segmentacja wyznacza linie bazowe, maski linii (wielokąty)  i regiony ('Lines and regions'), można zmienić zakres zadania segmentacji rozwijając listę poniżej pola z nazwą modelu.
-Pojawią się wówczas opcje: 'Lines Baselines and mask' (wyznaczanie tylko linii i masek linii),
+W obecnej wersji dostępny jest jeden domyślny model: blla.mlmodel, dający skądinąd bardzo dobre rezultaty. Domyślnie - opcja: 'Lines and regions' - segmentacja wyznacza linie bazowe, maski linii (wielokąty) i regiony, można zmienić zakres zadania segmentacji rozwijając listę poniżej pola z nazwą modelu. Pojawią się wówczas opcje: 'Lines Baselines and mask' (wyznaczanie tylko linii i masek linii),
 'only line Mask' - tylko maski wierszy (ta funkcja przelicza od nowa kształt masek - wielokątów i nie wykorzystuje modelu), 'Regions' - wyznaczanie regionów, bez modyfikacji linii bazowych i masek linii.
 
 Trzecie z pól okna parametrów segmentacji określa układ tekstu na stronach, domyślnie wybrany jest 'Horizontal l2r', dostępne są także 'Horizontal r2l', 'Vertical l2r' oraz 'Vertical r2l'. Pole wyboru 'Override' u dołu okna oznacza, że istniejąca wcześniej segmentacja dla przetwarzanych skanów zostanie usunięta, usunięta zostanie także transkrypcja.
@@ -208,7 +205,7 @@ Uwaga: w przypadku importu skanów i transkrypcji z programu Transkribus w zalec
 
 ### Okno edycji skanu, segmentacji, transkrypcji
 
-Aby zobaczyć utworzoną przez model segmentację strony/skanu, należy wejść w edycję danej strony - po najechaniu kursorem myszy na miniaturkę skanu wyświetli się pasek z białą ikoną symbolizującą edycję, oraz dymek z podpowiedzią 'Edit', kliknięcie w pasek otworzy skan w trybie edycji. Alternatywnie, jedna z zakładek w dokumencie to zakładka 'Edit', która uruchamia tryb edycji dla pierwszego skanu z dokumentu, tryb edycji posiada możliwość nawigacji do kolejnego/poprzedniego skanu, przesuwając się w lewo/prawo można odnaleźć właściwy skan.
+Aby zobaczyć utworzoną przez model segmentację strony/skanu, należy wejść w edycję danej strony - po najechaniu kursorem myszy na miniaturkę skanu wyświetli się pasek z białą ikoną symbolizującą edycję, oraz dymek z podpowiedzią 'Edit', kliknięcie w pasek otworzy skan w trybie edycji. Alternatywnie, jedna z zakładek w dokumencie to zakładka 'Edit', która uruchamia tryb edycji dla pierwszego skanu z dokumentu, tryb edycji posiada możliwość nawigacji do kolejnego/poprzedniego skanu (ikony strzałek u góry ekranu), przesuwając się w lewo/prawo można odnaleźć właściwy skan (nawigacja możliwa jest także za pomocą klawiatury: Crtl + strzałka w lewo/prawo lub klawisze Page Down/Page Up).
 
 Okno edycji skanu może wyświetlać od 1 do 5 paneli. Panele mogą być włączane i wyłączane poprzez ikony w górnym prawym rogu okna.
 <figure>
@@ -227,11 +224,11 @@ Okno edycji skanu może wyświetlać od 1 do 5 paneli. Panele mogą być włąc
 <figure>
   <img src="image/skan_segmentation.png" width="450">
 </figure>
-- 'Transcription' - Transkrypcja, po przeprowadzaniu automatycznej transkrypcji panel ten wyświetla jej wyniki w graficznej formie, opcjonalne może też wyświetlać 'confidence visualizations' - jeżeli zostało to włączone w parametrach dokumentu (zakładka Description), poprzez kolorowanie wierszy od pomarańczowego poprzez żółty do odcieni zieleni - im większa pewność transkrypcji tym bliżej do soczystej zieleni. Kontrolka z suwakiem pozwala regulować czułość stopnia pewności.
+- 'Transcription' - Transkrypcja, po przeprowadzaniu automatycznej transkrypcji panel ten wyświetla jej wyniki w graficznej formie, opcjonalne może też wyświetlać 'confidence visualizations' - jeżeli zostało to włączone w parametrach dokumentu (zakładka Description), poprzez kolorowanie wierszy od pomarańczowego poprzez żółty do odcieni zieleni - im większa pewność transkrypcji tym bliżej do soczystej zieleni. Kontrolka z suwakiem pozwala regulować czułość stopnia pewności - przesuwanie bardziej w prawo będzie mocniej podkreślać różnice.
 <figure>
   <img src="image/skan_confidence.png" width="450">
 </figure>
-- 'Text' - Tekst transkrypcji manualnej lub automatycznych (jeżeli dany skan był już rozpoznawany przez model/modele), u góry okna można wybrać z listy rozwijanej, która transkrypcja ma być wyświetlana. Ikona z białymi trójkątami w pasku narzędzi panelu pozwala na włączenie trybu sortowania wierszy. Jeżeli w zakładce 'Ontology' dokumentu zdefiniowano adnotacje dla tekstu, w pasku narzędzi będą one widoczne w formie przycisków włączania/wyłączania.
+- 'Text' - Tekst transkrypcji manualnej lub automatycznych (jeżeli dany skan był już rozpoznawany przez model/modele), u góry okna można wybrać z listy rozwijanej, która wersja transkrypcji ma być wyświetlana. Ikona z białymi trójkątami w pasku narzędzi panelu pozwala na włączenie trybu sortowania wierszy. Jeżeli w zakładce 'Ontology' dokumentu zdefiniowano adnotacje dla tekstu, w pasku narzędzi będą one widoczne w formie przycisków włączania/wyłączania.
 <figure>
   <img src="image/skan_text.png" width="450">
 </figure>
@@ -239,8 +236,7 @@ Okno edycji skanu może wyświetlać od 1 do 5 paneli. Panele mogą być włąc
 ### Weryfikacja i korekta segmentacji
 
 Aczkolwiek możliwe jest korygowanie zarówno linii bazowych jak i masek linii, ręczna
-korekta masek nie jest zalecana, raczej należy starać się poprawiać długość i kształt linii bazowych, zaś maski linii są wówczas (zwykle z 1-2 sekundowych opóźnieniem) automatycznie dostosowywane przez aplikację.
-
+korekta masek nie jest zalecana, raczej należy starać się poprawiać długość i kształt linii bazowych, zaś maski linii są wówczas (zwykle z 1-2 sekundowym opóźnieniem) automatycznie dostosowywane przez aplikację.
 <figure>
   <img src="image/modyfikacja_linii_bazowej.png" width="450">
 </figure>
@@ -251,7 +247,7 @@ czyli z wciśniętym klawiszem Shift i lewym przyciskiem myszy zaznaczyć obszar
   <img src="image/lasso.png" width="600">
 </figure>
 
-Możliwe jest dodawanie węzłów do istniejących linii bazowych, należy w tym celu zaznaczyć linię i dwukrotnie kliknąć w wybrany miejscu linii. Nowy węzeł można przesuwać, zaznaczony węzeł można też usunąć - podczas edycji segmentacji widoczny jest dodatkowy pasek narzędzi, jednym z nich jest żółta ikona z symbolem kosza, która służy właśnie do usuwanie węzłów.
+Możliwe jest dodawanie węzłów do istniejących linii bazowych, należy w tym celu zaznaczyć linię i dwukrotnie kliknąć w wybrany miejscu linii. Nowy węzeł można przesuwać, zaznaczony węzeł można też usunąć - podczas edycji segmentacji widoczny jest dodatkowy pasek narzędzi, jednym z narzędzi jest żółta ikona z symbolem kosza, która służy właśnie do usuwanie węzłów.
 <figure>
   <img src="image/usuwanie_wezla_linii_bazowej.png" width="450">
 </figure>
@@ -261,7 +257,7 @@ Dla wybranych linii można zmienić kierunek ich czytania, w pomocniczym pasku 
   <img src="image/reverse_line.png" width="600">
 </figure>
 
-Innym narzędziem widocznym w pomocniczym pasku narzędzi jest łączenie (lu rozłączanie) linii z regionem (ikona z symbolem węzła - 'Link/Unlink').
+Innym narzędziem widocznym w pomocniczym pasku narzędzi jest łączenie (lub rozłączanie) linii z regionem (ikona z symbolem węzła - 'Link/Unlink').
 <figure>
   <img src="image/link_line_region.png" width="600">
 </figure>
@@ -272,7 +268,7 @@ Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić u
   <img src="image/modyfkacja_maski_linii.png" width="450">
 </figure>
 
-Przydatnym narzędziem podczas modyfikowania segmentacji jest  narzędzie cięcia 'Cut through lines' (ikona z symbolem nożyczek na żółtym tle), Po włączeniu (kolor ikony zmienia się na zielony) pozwala zaznaczyć prostokątny obszar, który przycina części linii (lub usuwa całe linie).
+Przydatnym narzędziem podczas modyfikowania segmentacji jest narzędzie cięcia 'Cut through lines' (ikona z symbolem nożyczek na żółtym tle), Po włączeniu (kolor ikony zmienia się na zielony) pozwala zaznaczyć prostokątny obszar, który przycina części linii (lub usuwa całe linie).
 <figure>
   <img src="image/cut_line.png" width="650">
 </figure>
@@ -285,7 +281,7 @@ Niska jakość obrazów wejściowych, np. liczne zabrudzenia, artefakty wynikaj�
 
 ## Definiowanie tagów dla skanów - elementów dokumentu
 
-W zakładce Ontology dokumentu można zdefiniować tagi opisujące elementy obrazu  - typy regionów i linii, a także adnotacje dla obrazu i adnotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko typy z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów tylko zaznaczone typy będą widoczne podczas pracy w edytorze obrazu.
+W zakładce Ontology dokumentu można zdefiniować tagi opisujące elementy obrazu  - typy regionów i linii, a także adnotacje dla obrazu i adnotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko typy z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów - tylko zaznaczone typy będą widoczne podczas pracy w edytorze obrazu.
 <figure>
   <img src="image/ontologia_dokumentu.png" width="750">
 </figure>
@@ -305,14 +301,13 @@ Oprócz wyróżnienia kolorem typ regionu będzie od tej pory widoczny w górnym
   <img src="image/region_type_show.png" width="400">
 </figure>
 
-W trybie pracy z liniami bazowymi (wyłączony tryb regionów, włączone linie bazowe - z maskami lub bez) można przypisywać typy do linii. Na przykład po zaznaczeniu linii z podpisem ('Corticelli' na poniższym obrazie) wyświetlany jest, podobnie jka dla regionów, pasek narzędzi
+W trybie pracy z liniami bazowymi (wyłączony tryb regionów, włączone linie bazowe - z maskami lub bez) można przypisywać typy do linii. Na przykład po zaznaczeniu linii z podpisem ('Corticelli' na poniższym obrazie) wyświetlany jest, podobnie jak dla regionów, pasek narzędzi
 z ikoną ustawiania typu linii (zielona ikona z literą T). Po wybraniu typu linii 'Signature' będzie ona przypisana do danej linii (lub kilku jeżeli zaznaczono więcej niż jedną). Kolorem związanym z typem linii będzie od tej pory rysowana pionowa (zwykle) kreska oznaczająca początek linii i jej wysokość.
 <figure>
   <img src="image/typ_linii.png" width="500">
 </figure>
 
-Podobnie jak w przypadku regionów, typ linii będzie widoczny w górnym prawym roku obrazu/skanu w momencie przesuwania kursora myszy nad daną
-linią.
+Podobnie jak w przypadku regionów, typ linii będzie widoczny w górnym prawym roku obrazu/skanu w momencie przesuwania kursora myszy nad daną linią.
 <figure>
   <img src="image/line_type_show.png" width="400">
 </figure>
@@ -335,7 +330,7 @@ Otagowany tekst będzie oznaczony kolorem wybranym podczas definiowania danego t
 
 ### Przypisywanie tagów do fragmentów obrazu
 
-Adnotacji podlegać mogą też fragmenty obrazów/skanów. Należy wyświetlić panel 1 - 'Source image', jeżeli w zakładce 'Ontology' były zdefiniowane tagi do adnotacji, pojawią się one w formie przycisków przełączania. Po wybraniu jednego z nich można zaznaczyć fragment obrazu (zależnie od definicji, w formie prostokąta lub wielokąta) i opcjonalnie przypisać do niego komentarz, można w ten sposób oznaczyć fragmenty skanu nie będące częścią oryginalnego rękopisu, uszkodzenia mikrofilmu będącego źródłem obrazu a nie występujące na oryginalne dokumentu itp.
+Adnotacji podlegać mogą też fragmenty obrazów/skanów. Należy wyświetlić panel 1 - 'Source image', jeżeli w zakładce 'Ontology' były zdefiniowane tagi do adnotacji, pojawią się one w formie przycisków przełączania. Po wybraniu jednego z nich można zaznaczyć fragment obrazu (zależnie od definicji, w formie prostokąta lub wielokąta) i opcjonalnie przypisać do niego komentarz, można w ten sposób oznaczyć np. fragmenty skanu nie będące częścią oryginalnego rękopisu, uszkodzenia mikrofilmu będącego źródłem obrazu a nie występujące na oryginale dokumentu itp.
 <figure>
   <img src="image/anotacje_obrazu.png" width="600">
 </figure>
@@ -360,7 +355,7 @@ Okno pojedynczego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim a
 
 ### Wirtualna klawiatura
 
-Aby ułatwić wprowadzanie znaków specjalnych w aplikacji wprowadzoną funkcję wirtualnej klawiatury,
+Aby ułatwić wprowadzanie znaków specjalnych w aplikacji wprowadzono funkcję wirtualnej klawiatury,
 którą można uruchomić podczas edycji wiersza transkrypcji (lub w panelu 'Text'). Klawiaturę taką włącza (i wyłącza) ikona z symbolem klawiatury, wyświetlane jest wówczas dodatkowe okienko gdzie widoczne są zdefiniowane znaki gotowe do wstawienia, można też zmienić definicję klawiatury na inną, dodać własną, zmodyfikować istniejącą.
 <figure>
   <img src="image/wirtualna_klawiatura.png" width="400">
@@ -394,7 +389,7 @@ W przypadku bezpośredniego korzystania z programu Kraken posiada on wbudowaną 
 
 ### Menu My Models
 
-W głównym menu aplikacji (górny prawy róg okna), menu 'My Models' otwiera okno z listą modeli dostępnych dla użytkownika (zaimportowanych, wytrenowanych przez użytkownika lub udostępnionych użytkownikowi). Duży zielony przycisk 'Upload a model' służy właśnie do zaimportowania modelu pobranego np. z serwisu zenodo.org (plik w formacie *.mlmodel). **Uwaga:** aplikacja domyślnie proponuje nazwę modelu zgodną z nazwą pliku, można ją zmodyfikować, ale po zatwierdzeniu importu (w obecnej wersji eScriptorium) nie można już jej zmienić.
+W głównym menu aplikacji (górny prawy róg okna), menu 'My Models' otwiera okno z listą modeli dostępnych dla użytkownika (zaimportowanych, wytrenowanych przez użytkownika lub udostępnionych użytkownikowi). Duży zielony przycisk 'Upload a model' służy właśnie do zaimportowania modelu pobranego np. z serwisu zenodo.org (plik w formacie *.mlmodel). **Uwaga:** aplikacja domyślnie proponuje nazwę modelu zgodną z nazwą pliku, można ją zmodyfikować, ale po zatwierdzeniu importu nie można już jej zmienić (w obecnej wersji eScriptorium).
 
 Lista modeli wyświetla podstawowe informacje o każdym z nich: typie (model może służyć do transkrypcji 'Recognize', lub segmentacji 'Segmentation'), wielkości w megabajtach, czy jest to model już wytrenowany (czy trwa trenowanie), jaka jest jego najlepsza dokładność ('Accuracy'). W przypadku modeli trenowanych w danej instancji eScriptorium widoczna jest także liczba błędych/wszystkich znaków określona podczas walidacji po trenowaniu. Ostatnia kolumna informuje czy jest to model będący 'własnością' bieżącego użytkownika ('Owner') czy też został mu udostępniony ('User', 'Public'). Za kolumnami z informacjami znajdują się ikony narzędzi, których liczba zależy właśnie od tego czy jest to 'nasz' model i czy był trenowany w eScriptorium:
 
@@ -414,13 +409,13 @@ Zakładka 'Models' w dokumencie wyświetla podobną listę do tej z menu 'My Mo
 
 ## Transkrypcja automatyczna
 
-Po zaimportowaniu plików z obrazami (skanami), wykonaniu segmentacji, zweryfikowaniu segmentacji i zakładając że istnieje model (zaimportowany lub wytrenowany) pasujący do rękopisów w obrazach, można przystąpić do wykorzystania jednej z najważniejszych funkcji eScriptorium czyli automatycznej transkrypcji. Aplikacja wykorzystuje w tym celu program Kraken. Do przeprowadzenia transkrypcji należy uprzednio zaznaczyć choć jeden obraz z listy obrazów bieżącego dokumentu. Przycisk 'Transcribe' w pasku narzędzi uruchamia procedurę wyświetlając okno dialogowe z parametrami transkrypcji - właściwie jednym parametrem, należy bowiem wybrać jeden z listy dostępnych modeli.
+Po zaimportowaniu plików z obrazami (skanami), wykonaniu segmentacji, zweryfikowaniu segmentacji i zakładając, że istnieje model (zaimportowany lub wytrenowany) pasujący do rękopisów w obrazach, można przystąpić do wykorzystania jednej z najważniejszych funkcji eScriptorium czyli automatycznej transkrypcji. Aplikacja wykorzystuje w tym celu program Kraken. Do przeprowadzenia transkrypcji należy uprzednio zaznaczyć choć jeden obraz z listy obrazów bieżącego dokumentu. Przycisk 'Transcribe' w pasku narzędzi uruchamia procedurę wyświetlając okno dialogowe z parametrami transkrypcji - właściwie jednym parametrem, należy bowiem wybrać jeden z listy dostępnych modeli.
 <figure>
   <img src="image/transcribe.png" width="400">
 </figure>
 
 Proces transkrypcji, zależnie od zakresu (jeden czy kilkaset obrazów) może zająć dłuższą chwilę i odbywa się w tle, na serwerze z eScritptorium. Po zakończeniu transkrypcji aplikacja wyświetla odpowiednie powiadomienie w górnym prawym rogu ekranu.
-Aby ocenić jakość transkrypcji należy wówczas wejść w tryb edycji obrazu (poprzez ikonę na tle miniatury skanu) lub wejść w zakładkę Edit w oknie dokumentu. Nowa transkrypcja będzie widoczna w panelu 3 - Transciption oraz jako tekst w panelu 4 - Text.
+Aby ocenić jakość transkrypcji należy wówczas wejść w tryb edycji obrazu (poprzez ikonę na tle miniatury skanu) lub wejść w zakładkę Edit w oknie dokumentu. Nowa transkrypcja będzie widoczna w panelu 3 - 'Transciption' oraz jako tekst w panelu 4 - 'Text'.
 W górnym prawym rogu ekranu, powyżej ikon włączających/wyłączających panele widoczna jest lista wersji transkrypcji, jeżeli domyślnie wyświetlona została inna, można tu odnaleźć i ustawić nowo przygotowaną transkrypcję.
 <figure>
   <img src="image/lista_transkrypcji_skanu.png" width="500">
@@ -573,7 +568,7 @@ Ciekawą opcją jest możliwość przeniesienia dokumentu do innego projektu. W 
   <img src="image/migrate_to_another_project.png" width="400">
 </figure>
 
-Po potwierdzeniu przyciskiem 'Migrate' aplikacja wyświetli odpowiednie powiadomienie o skutecznym zakończeniu operacji a nasz dokument będzie o tej pory częścią innego projektu.
+Po potwierdzeniu przyciskiem 'Migrate' aplikacja wyświetli odpowiednie powiadomienie o skutecznym zakończeniu operacji a nasz dokument będzie od tej pory częścią innego projektu.
 
 <figure>
   <img src="image/powiadomienie_migracja.png" width="300">
