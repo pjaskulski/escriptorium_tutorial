@@ -194,8 +194,7 @@ Przed uruchomieniem automatycznej transkrypcji skanów (OCR/HTR) niezbędne jest
   <img src="image/segmentacja.png" width="450">
 </figure>
 
-W obecnej wersji dostępny jest jeden domyślny model: blla.mlmodel, dający skądinąd bardzo dobre rezultaty. Domyślnie - opcja: 'Lines and regions' - segmentacja wyznacza linie bazowe, maski linii (wielokąty) i regiony, można zmienić zakres zadania segmentacji rozwijając listę poniżej pola z nazwą modelu. Pojawią się wówczas opcje: 'Lines Baselines and mask' (wyznaczanie tylko linii i masek linii),
-'only line Mask' - tylko maski wierszy (ta funkcja przelicza od nowa kształt masek - wielokątów i nie wykorzystuje modelu), 'Regions' - wyznaczanie regionów, bez modyfikacji linii bazowych i masek linii.
+W obecnej wersji dostępny jest jeden model: blla.mlmodel dla segmentacji, dający skądinąd bardzo dobre rezultaty. Domyślnie ustawiony zakres: 'Lines and regions' - wyznacza linie bazowe, maski linii (wielokąty) i regiony. Można zmienić zakres segmentacji rozwijając listę poniżej pola z nazwą modelu. Pojawią się wówczas dodatkowe opcje: 'Lines Baselines and mask' (wyznaczanie tylko linii i masek linii), 'only line Mask' - tylko maski wierszy (ta funkcja przelicza od nowa kształt masek - wielokątów i nie wykorzystuje modelu), 'Regions' - wyznaczanie regionów, bez modyfikacji linii bazowych i masek linii.
 
 Trzecie z pól okna parametrów segmentacji określa układ tekstu na stronach, domyślnie wybrany jest 'Horizontal l2r', dostępne są także 'Horizontal r2l', 'Vertical l2r' oraz 'Vertical r2l'. Pole wyboru 'Override' u dołu okna oznacza, że istniejąca wcześniej segmentacja dla przetwarzanych skanów zostanie usunięta, usunięta zostanie także transkrypcja.
 
