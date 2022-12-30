@@ -279,7 +279,7 @@ Niska jakość obrazów wejściowych, np. liczne zabrudzenia, artefakty wynikaj�
 </figure>
 
 eScriptorium pozwala na operacje grupowe w oknie edycji segmentacji. Można za pomocą funkcji tzw.
-**lassa** (SHIFT + zaznaczenie obszaru kursorem myszy) zaznaczyć grupę węzłów linii lub linii i np. przesunąć je grupowo (trzymając klawisz CRTL chwycić jeden z węzłów i przesunąć).
+**lassa** (SHIFT + zaznaczenie obszaru kursorem myszy) zaznaczyć grupę węzłów linii lub linii i np. przesunąć je grupowo (trzymając klawisz CRTL chwycić jeden z węzłów poprzez kursor myszy i przesunąć), zmieniając kształt linii lib je wydłużając/skracając.
 <figure>
   <img src="image/lasso_grupa.png" width="650">
 </figure>
