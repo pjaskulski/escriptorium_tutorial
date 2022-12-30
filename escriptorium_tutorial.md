@@ -18,10 +18,10 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Segmentacja](#segmentacja)
   - [Okno edycji skanu, segmentacji, transkrypcji](#okno-edycji-skanu-segmentacji-transkrypcji)
   - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
-- [Definiowanie tagów dla skanów - elementów dokumentu](#definiowanie-tag%C3%B3w-dla-skan%C3%B3w---element%C3%B3w-dokumentu)
-  - [Przypisywane tagów do elementów segmentacji](#przypisywane-tag%C3%B3w-do-element%C3%B3w-segmentacji)
-  - [Przypisywanie tagów do fragmentów tekstu](#przypisywanie-tag%C3%B3w-do-fragment%C3%B3w-tekstu)
-  - [Przypisywanie tagów do fragmentów obrazu](#przypisywanie-tag%C3%B3w-do-fragment%C3%B3w-obrazu)
+- [Definiowanie typów i adnitacji dla elementów obrazów](#definiowanie-typów-i-adnotacji-dla-elementów-obrazów)
+  - [Przypisywane typów do elementów segmentacji](#przypisywane-typów-do-elementów-segmentacji)
+  - [Przypisywanie etykiet do fragmentów tekstu](#przypisywanie-etykiet-do-fragmentów-tekstu)
+  - [Przypisywanie etykiet do fragmentów obrazu](#przypisywanie-etykiet-do-fragmentów-obrazu)
 - [Wprowadzanie transkrypcji manualnej](#wprowadzanie-transkrypcji-manualnej)
   - [Wirtualna klawiatura](#wirtualna-klawiatura)
   - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
@@ -293,9 +293,9 @@ z narzędziem sklejania linii. Po jej kliknięciu aplikacja stara się skleić z
 </figure>
 
 
-## Definiowanie tagów dla skanów - elementów dokumentu
+## Definiowanie typów i adnotacji dla elementów obrazów
 
-W zakładce Ontology dokumentu można zdefiniować tagi opisujące elementy obrazu  - typy regionów i linii, a także adnotacje dla obrazu i adnotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko typy z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów - tylko zaznaczone typy będą widoczne podczas pracy w edytorze obrazu.
+W zakładce Ontology dokumentu można zdefiniować etykiety opisujące elementy obrazu - typy regionów i linii, a także adnotacje dla obrazu i adnotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko te z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów - tylko zaznaczone będą widoczne podczas pracy w edytorze obrazu.
 <figure>
   <img src="image/ontologia_dokumentu.png" width="750">
 </figure>
@@ -327,24 +327,24 @@ Podobnie jak w przypadku regionów, typ linii będzie widoczny w górnym prawym 
 </figure>
 
 
-### Przypisywanie tagów do fragmentów tekstu
+### Przypisywanie etykiet do fragmentów tekstu
 
-Podczas pracy w panelu 4 - 'Text' możliwe jest adnotowanie fragmentów tekstu transkrypcji zdefiniowanymi wcześniej w zakładce 'Ontology' dokumentu tagami. Jeżeli tagi zostały zdefiniowane zmienia się wygląd paska narzędzi nad polem tekstowym, pojawiają się przyciski przełączania odpowiadające tagom. Włączenie takiego przycisku pozwala na zaznaczenie wybranego tekstu, po czym pojawia się okienko dialogowe pozwalające na wprowadzenie komentarza (jeżeli tak zdefiniowano w definicji tagu) i zapisanie zmian.
+Podczas pracy w panelu 4 - 'Text' możliwe jest adnotowanie fragmentów tekstu transkrypcji zdefiniowanymi wcześniej w zakładce 'Ontology' dokumentu etykietami. Jeżeli etykiety zostały zdefiniowane zmienia się wygląd paska narzędzi nad polem tekstowym i pojawiają się przyciski przełączania odpowiadające etykietom. Włączenie takiego przycisku pozwala na zaznaczenie wybranego fragmentu tekstu, po czym pojawia się okienko dialogowe pozwalające na wprowadzenie komentarza (jeżeli tak zdefiniowano w definicji tagu) i zapisanie zmian.
 <figure>
   <img src="image/anotacja_tekstu.png" width="400">
 </figure>
 
-Otagowany tekst będzie oznaczony kolorem wybranym podczas definiowania danego tagu.
+Tekst z przypisaną etykietą będzie oznaczony kolorem wybranym podczas definiowania danej etykiety.
 <figure>
   <img src="image/anotacja_tekst_efekt.png" width="400">
 </figure>
 
-**Uwaga:** w obecnej wersji nie zauważyłem możliwości wykorzystania otagowanego tekstu - tagi nie są eksportowane, ani w formacie TXT, ani XML.
+**Uwaga:** w obecnej wersji nie zauważyłem możliwości wykorzystania adnotacji tekstu - etykiety nie są eksportowane, ani w formacie TXT, ani XML.
 
 
-### Przypisywanie tagów do fragmentów obrazu
+### Przypisywanie etykiet do fragmentów obrazu
 
-Adnotacji podlegać mogą też fragmenty obrazów/skanów. Należy wyświetlić panel 1 - 'Source image', jeżeli w zakładce 'Ontology' były zdefiniowane tagi do adnotacji, pojawią się one w formie przycisków przełączania. Po wybraniu jednego z nich można zaznaczyć fragment obrazu (zależnie od definicji, w formie prostokąta lub wielokąta) i opcjonalnie przypisać do niego komentarz, można w ten sposób oznaczyć np. fragmenty skanu nie będące częścią oryginalnego rękopisu, uszkodzenia mikrofilmu będącego źródłem obrazu a nie występujące na oryginale dokumentu itp.
+Adnotacji podlegać mogą też fragmenty obrazów/skanów. Należy wyświetlić panel 1 - 'Source image', jeżeli w zakładce 'Ontology' były zdefiniowane etykiety do adnotacji, pojawią się one w formie przycisków przełączania. Po wybraniu jednego z nich można zaznaczyć fragment obrazu (zależnie od definicji, w formie prostokąta lub wielokąta) i opcjonalnie przypisać do niego komentarz, można w ten sposób oznaczyć np. fragmenty skanu nie będące częścią oryginalnego rękopisu, uszkodzenia mikrofilmu będącego źródłem obrazu a nie występujące na oryginale dokumentu itp.
 <figure>
   <img src="image/anotacje_obrazu.png" width="600">
 </figure>
