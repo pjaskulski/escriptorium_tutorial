@@ -18,7 +18,7 @@ eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi r�
 - [Segmentacja](#segmentacja)
   - [Okno edycji skanu, segmentacji, transkrypcji](#okno-edycji-skanu-segmentacji-transkrypcji)
   - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
-- [Definiowanie typów i adnitacji dla elementów obrazów](#definiowanie-typów-i-adnotacji-dla-elementów-obrazów)
+- [Definiowanie typów i adnotacji dla elementów obrazów](#definiowanie-typów-i-adnotacji-dla-elementów-obrazów)
   - [Przypisywane typów do elementów segmentacji](#przypisywane-typów-do-elementów-segmentacji)
   - [Przypisywanie etykiet do fragmentów tekstu](#przypisywanie-etykiet-do-fragmentów-tekstu)
   - [Przypisywanie etykiet do fragmentów obrazu](#przypisywanie-etykiet-do-fragmentów-obrazu)
