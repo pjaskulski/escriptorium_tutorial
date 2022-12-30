@@ -278,6 +278,20 @@ Niska jakość obrazów wejściowych, np. liczne zabrudzenia, artefakty wynikaj�
   <img src="image/zabrudzenia_segmentacja.png" width="600">
 </figure>
 
+eScriptorium pozwala na operacje grupowe w oknie edycji segmentacji. Można za pomocą funkcji tzw.
+**lassa** (SHIFT + zaznaczenie obszaru kursorem myszy) zaznaczyć grupę węzłów linii lub linii i np. przesunąć je grupowo (trzymając klawisz CRTL chwycić jeden z węzłów i przesunąć).
+<figure>
+  <img src="image/lasso_grupa.png" width="650">
+</figure>
+
+Można też zaznaczone linie grupowo usunąć - narzędziem z paska narzędzi (czerwona ikona z koszem) lub klawiszem skrótu - DELETE.
+
+Po zaznaczeniu przynajmniej dwóch linii w podręcznym pasku narzędzi pojawia się nowa ikona, związana
+z narzędziem sklejania linii. Po jej kliknięciu aplikacja stara się skleić zaznaczone linie w jedną.
+<figure>
+  <img src="image/sklejanie_linii.png" width="650">
+</figure>
+
 
 ## Definiowanie tagów dla skanów - elementów dokumentu
 
@@ -635,7 +649,6 @@ a udostępniony został na licencji Apache 2.0.
 
 ## Dodatkowe informacje
 
-Zrzuty ekranu prezentowane w niniejszym wprowadzeniu pochodzą z wersji 0.13.2 eScriptorium. Fragmenty skanów i tekstów widoczne na zrzutach pochodzą z testów aplikacji eScriptorium i Kraken prowadzonych w 2022 roku w Instytucie Historii PAN związanych z próbami przygotowania modeli HTR dla XVIII wiecznych rękopisów w języku polskim, na bazie korespondencji króla Stanisława Augusta Poniatowskiego.
+Zrzuty ekranu prezentowane w niniejszym wprowadzeniu pochodzą z wersji 0.13.2 eScriptorium. Fragmenty skanów rękopisów widoczne na niektórych zrzutach pochodzą z testów aplikacji eScriptorium i Kraken prowadzonych w 2022 roku w Instytucie Historii PAN związanych z próbami przygotowania modeli HTR dla XVIII wiecznych rękopisów w języku polskim, na bazie korespondencji króla Stanisława Augusta Poniatowskiego.
 
-Osobom zainteresowanym samą korespondencją należy polecić wydaną kilka lat temu publikację: "Korespondencja polityczna Stanisława Augusta. Wiedeń", (tom I 1788-1790, tom II 1791-1792), opracowanie Monika Jusupović i Adam Danilczyk, Warszawa 2016, dostępną w [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045).
-
+Osobom zainteresowanym samą korespondencją należy polecić wydaną kilka lat temu publikację: "Korespondencja polityczna Stanisława Augusta. Wiedeń", (tom I 1788-1790, tom II 1791-1792), opracowanie Monika Jusupović i Adam Danilczyk, Warszawa 2016, dostępną w [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045). Oryginały korespondencji znajdują się w zbiorach Archiwum Głównym Akt Dawnych w Warszawie.
