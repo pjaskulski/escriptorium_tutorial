@@ -468,6 +468,18 @@ Warto zauważyć, że 'wyrównywany' tekst np. z edycji krytycznej może nie ty
 **Uwaga:** ponieważ jest to funkcjonalność w fazie 'beta' nie jest dostępna automatycznie, aby funkcja Align była widoczna i działała poprawnie należy ustawić zmienną środowiskową `TEXT_ALIGNMENT=True` oraz uruchomić dodatkowy kontener dockera: celery-jvm.
 
 
+## Strategia trenowania modeli
+
+Utworzenie i wytrenowanie nowego modelu od podstaw wymaga solidnej wielkości materiału treningowego a także sporej ilości czasu i mocy komputera do przeprowadzenia procesu uczenia. Typowe, dostępne publicznie modele pisma ręcznego zostały utworzone na podstawie kilkunastu do kilkudziesięciu tysięcy wierszy 'ground truth' (zob. [lectaurep](https://github.com/lectaurep/lectaurep_base_model)). Przygotowanie takiego materiału (o 100% poprawności zweryfikowanej przez ekspertów) jest najbardziej pracochłonnym etapem pracy nad modelem.
+
+Proces uczenia może być łatwiejszy jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. _transfer learning_ ('uczenie transferowe', zob. https://en.wikipedia.org/wiki/Transfer_learning), przy użyciu dużo mniejszej liczby wierszy _ground truth_ - np. od kilkuset do paru tysięcy. Douczanie (inaczej: dostrajanie) modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw.
+> "Korzystanie z wcześniej wytrenowanych modeli jest najważniejszą metodą, dzięki której możemy trenować kolejne, dokładniejsze modele, przy czym cała operacja odbywa się szybciej, z użyciem mniejszej ilości danych oraz w krótszym czasie, a także przy mniejszym poziomie kosztów"
+>
+> Jeremy Howard, Sylvain Gugger, _Deep Learning dla programistów_, 2021, str. 52
+
+Jeżeli jednak nie istnieje żaden model, który mógłby pełnić rolę modelu bazowego dla przetwarzanych rękopisów, pozostaje ścieżka trenowania 'od zera'. Ponieważ praca bezpośrednio z Krakenem daje możliwości modyfikacji parametrów uczenia, czego nie można zrobić z poziomu eScriptorium, wydaje się że taki sposób trenowania jest lepszym podejściem. Wymaga to jednak opanowania obsługi Krakena z linii komend, czyli zapoznania się z dokumentacją polecenia [ketos train](https://kraken.re/master/ketos.html), czy zapoznania się z opisem [VGSL](https://kraken.re/master/vgsl.html#vgsl) dotyczącym architektury sieci neuronowych. Bardzo ciekawą lekturą będzie też dwuczęściowy artykuł opisujący doświadczenia podczas trenowania modelu opartego na francuskich rękopisach notarialnych z lat 1742-1928: [część 1](https://lectaurep.hypotheses.org/475), [część 2](https://lectaurep.hypotheses.org/488).
+
+
 ## Trenowanie własnego modelu w eScriptorium
 
 eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train', uruchamia trenowanie modelu segmentacji (Train -> Segmentator), lub - co jest częściej wykorzystywane - modelu transkrypcji (Train -> Recognizer). Pierwszym krokiem jest zaznaczenie co najmniej jednego skanu. Wybór narzędzia
@@ -530,18 +542,6 @@ https://kraken.re/master/training.html
 
 Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org, Kraken umożliwia opublikowanie
 modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
-
-
-## Strategia trenowania modeli
-
-Utworzenie i wytrenowanie nowego modelu od podstaw wymaga solidnej wielkości materiału treningowego a także sporej ilości czasu i mocy komputera do przeprowadzenia procesu uczenia. Typowe, dostępne publicznie modele pisma ręcznego zostały utworzone na podstawie kilkunastu do kilkudziesięciu tysięcy wierszy 'ground truth' (zob. [lectaurep](https://github.com/lectaurep/lectaurep_base_model)). Przygotowanie takiego materiału (o 100% poprawności zweryfikowanej przez ekspertów) jest najbardziej pracochłonnym etapem pracy nad modelem.
-
-Proces uczenia może być łatwiejszy jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. _transfer learning_ ('uczenie transferowe', zob. https://en.wikipedia.org/wiki/Transfer_learning), przy użyciu dużo mniejszej liczby wierszy _ground truth_ - np. od kilkuset do paru tysięcy. Douczanie (inaczej: dostrajanie) modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw.
-> "Korzystanie z wcześniej wytrenowanych modeli jest najważniejszą metodą, dzięki której możemy trenować kolejne, dokładniejsze modele, przy czym cała operacja odbywa się szybciej, z użyciem mniejszej ilości danych oraz w krótszym czasie, a także przy mniejszym poziomie kosztów"
->
-> Jeremy Howard, Sylvain Gugger, _Deep Learning dla programistów_, 2021, str. 52
-
-Jeżeli jednak nie istnieje żaden model, który mógłby pełnić rolę modelu bazowego dla przetwarzanych rękopisów, pozostaje ścieżka trenowania 'od zera'. Ponieważ praca bezpośrednio z Krakenem daje możliwości modyfikacji parametrów uczenia, czego nie można zrobić z poziomu eScriptorium, wydaje się że taki sposób trenowania jest lepszym podejściem. Wymaga to jednak opanowania obsługi Krakena z linii komend, czyli zapoznania się z dokumentacją polecenia [ketos train](https://kraken.re/master/ketos.html), czy zapoznania się z opisem [VGSL](https://kraken.re/master/vgsl.html#vgsl) dotyczącym architektury sieci neuronowych. Bardzo ciekawą lekturą będzie też dwuczęściowy artykuł opisujący doświadczenia podczas trenowania modelu opartego na francuskich rękopisach notarialnych z lat 1742-1928: [część 1](https://lectaurep.hypotheses.org/475), [część 2](https://lectaurep.hypotheses.org/488).
 
 
 ## Współpraca z innymi użytkownikami
