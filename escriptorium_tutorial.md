@@ -61,7 +61,7 @@ Aktualna wersja aplikacji to 0.13.2 i taką opisuje niniejszy tutorial (stan na 
 
 ## Instalacja
 
-eScriptorium nie jest publiczną platformą, w której można założyć konto, by korzystać z aplikacji należy ją najpierw zainstalować. Lokalnie lub na serwerze - procedura instalacji z wykorzystaniem dockera opisana jest na stronie [wiki](https://gitlab.com/scripta/escriptorium/-/wikis/docker-install).
+eScriptorium nie jest publiczną platformą, w której można założyć konto. Aby korzystać z aplikacji należy ją najpierw zainstalować. Lokalnie lub na serwerze - procedura instalacji z wykorzystaniem dockera opisana jest na stronie [wiki](https://gitlab.com/scripta/escriptorium/-/wikis/docker-install).
 
 ## Logowanie i główne okno aplikacji
 
