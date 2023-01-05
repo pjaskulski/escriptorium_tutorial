@@ -1,11 +1,12 @@
 # eScriptorium i Kraken - wprowadzenie
 
-eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi rękopisami i drukami - przygotowywaniem manualnych i automatycznych transkrypcji. Aplikacja jest zintegrowana z programem Kraken, narzędziem wykorzystującym algorytmy uczenia głębokiego do rozpoznawania tekstów (OCR i HTR). eScriptorium to projekt prowadzony przez eScripta, zespół z Université Paris Sciences et Lettres.
+eScriptorium jest webową aplikacją przeznaczoną do pracy nad historycznymi rękopisami i drukami - przygotowywaniem manualnych i automatycznych transkrypcji. Aplikacja jest zintegrowana z programem Kraken, narzędziem wykorzystującym algorytmy uczenia głębokiego do rozpoznawania tekstów (OCR i HTR). eScriptorium to projekt prowadzony przez zespół z École Pratique des Hautes Études - Université PSL.
 
 ## Spis treści
 
 - [Podziękowania](podziękowania)
 - [Wersja](#wersja)
+- [Instalacja](#instalacja)
 - [Logowanie i główne okno aplikacji](#logowanie-i-g%C5%82%C3%B3wne-okno-aplikacji)
 - [Utworzenie nowego projektu](#utworzenie-nowego-projektu)
 - [Utworzenie nowego dokumentu](#utworzenie-nowego-dokumentu)
@@ -57,6 +58,10 @@ Aktualna wersja aplikacji to 0.13.2 i taką opisuje niniejszy tutorial (stan na 
 <figure>
   <img src="image/wersja.png" width="600">
 </figure>
+
+## Instalacja
+
+eScriptorium nie jest publiczną platformą, w której można założyć konto, by korzystać z aplikacji należy ją najpierw zainstalować. Lokalnie lub na serwerze - procedura instalacji z wykorzystaniem dockera opisana jest na stronie [wiki](https://gitlab.com/scripta/escriptorium/-/wikis/docker-install).
 
 ## Logowanie i główne okno aplikacji
 
@@ -483,7 +488,7 @@ Jeżeli jednak nie istnieje żaden model, który mógłby pełnić rolę modelu 
 ## Trenowanie własnego modelu w eScriptorium
 
 eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train', uruchamia trenowanie modelu segmentacji (Train -> Segmentator), lub - co jest częściej wykorzystywane - modelu transkrypcji (Train -> Recognizer). Pierwszym krokiem jest zaznaczenie co najmniej jednego skanu. Wybór narzędzia
-Train -> Recognizer wyświetla okno parametrów trenowania modelu transkrypcji.
+Train -> Recognizer wyświetla okno parametrów trenowania modelu transkrypcji. Uwaga: narzędzie 'Train' może nie być widoczne dla wszystkich użytkowników, jego dostępność zależy od przyznanych uprawnień w panelu administracyjnym (zob. [Administracja systemem](#administracja-systemem-escriptorium)).
 
 <figure>
   <img src="image/trenowanie_w_escriptorium.png" width="300">
