@@ -16,8 +16,8 @@ eScriptorium is a web-based application designed to work on historical manuscrip
 - [Document tabs](#document-tabs)
 - [List of images](#list-of-images)
 - [Binarisation](#binarisation)
-- [Segmentacja](#segmentacja)
-  - [Okno edycji skanu, segmentacji, transkrypcji](#okno-edycji-skanu-segmentacji-transkrypcji)
+- [Segmentation](#segmentation)
+  - [Image editing window, segmentation correction, transcription editing](#image-editing-window-segmentation-correction-transcription-editing)
   - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
 - [Definiowanie typów i adnotacji dla elementów obrazów](#definiowanie-typów-i-adnotacji-dla-elementów-obrazów)
   - [Przypisywane typów do elementów segmentacji](#przypisywane-typów-do-elementów-segmentacji)
@@ -193,47 +193,52 @@ In the current version of the application, binarization is not recommended. The 
   <img src="image/binaryzacja.png" width="450">
 </figure>
 
-## Segmentacja
+## Segmentation
 
-Przed uruchomieniem automatycznej transkrypcji skanów (OCR/HTR) niezbędne jest prawidłowe podzielenie pisma lub druku na regiony i wiersze. Można to zrobić manualnie, jednak w przypadku większej kolekcji skanów byłoby to zbyt czasochłonne. eScriptorium posiada mechanizm automatycznej segmentacji wykorzystujący model uczenia głębokiego. Aby go uruchomić należy najpierw zaznaczyć jeden lub więcej skanów/obrazów na liście a następnie kliknąć przycisk 'Segment' na pasku narzędzi. Wyświetlone zostanie okno z opcjami segmentacji, w którym należy wybrać model, zakres pracy, układ elementów na stronie itp.
+Before running automatic image transcription (OCR/HTR), it is necessary to correctly divide the manuscript into regions and lines. For individual small images, this procedure can be done manually, but for a larger collection of images, this would be too time-consuming. The eScriptorium has an automatic segmentation mechanism using a deep learning model. To activate it, select one or more images in the list and then click the 'Segment' button in the toolbar. A window with segmentation options will be displayed, where you select the model, the scope of work, the layout of elements on the page, etc.
 <figure>
   <img src="image/segmentacja.png" width="450">
 </figure>
 
-W obecnej wersji dostępny jest jeden model: blla.mlmodel dla segmentacji, dający skądinąd bardzo dobre rezultaty. Domyślnie ustawiony zakres: 'Lines and regions' - wyznacza linie bazowe, maski linii (wielokąty) i regiony. Można zmienić zakres segmentacji rozwijając listę poniżej pola z nazwą modelu. Pojawią się wówczas dodatkowe opcje: 'Lines Baselines and mask' (wyznaczanie tylko linii i masek linii), 'only line Mask' - tylko maski wierszy (ta funkcja przelicza od nowa kształt masek - wielokątów i nie wykorzystuje modelu), 'Regions' - wyznaczanie regionów, bez modyfikacji linii bazowych i masek linii.
+In the current version of the application, one segmentation model is available: blla.mlmodel, giving otherwise very good results. The default range set:
+- 'Lines and regions' - determines baselines, line masks (polygons), and regions.
+You can change the segmentation range by expanding the list below the model name field. Additional options will then appear:
+- 'Lines Baselines and mask' (designates only lines and line masks),
+-'only line Mask' - only line masks (this function recalculates the shape of the masks - polygons from scratch and does not use the model),
+- 'Regions' - designates regions, without modifying baselines and line masks.
 
-Trzecie z pól okna parametrów segmentacji określa układ tekstu na stronach, domyślnie wybrany jest 'Horizontal l2r', dostępne są także 'Horizontal r2l', 'Vertical l2r' oraz 'Vertical r2l'. Pole wyboru 'Override' u dołu okna oznacza, że istniejąca wcześniej segmentacja dla przetwarzanych skanów zostanie usunięta, usunięta zostanie także transkrypcja.
+The third field of the segmentation parameters window specifies the layout of the text on the pages, by default 'Horizontal l2r' is selected, 'Horizontal r2l', 'Vertical l2r' and 'Vertical r2l' are also available. The 'Override' checkbox at the bottom of the window means that any pre-existing segmentation for the images will be removed, the transcription will also be removed.
 
-Procedura segmentacji może być czasochłonna, w jej trakcie aplikacja wyświetla dyskretną animację dla przetwarzanych obrazów - na zaznaczonych do przetworzenia skanach (poniżej miniaturki skanu) mruga mała ikonka z liniami (ikona segmentacji skanu). Wyświetlany jest także żółty przycisk na tle miniatury skanu, pozwalający na rezygnację z przeprowadzanej właśnie segmentacji. Po zakończeniu procedury wyświetlane jest powiadomienie w górnym prawym roku ekranu, a wspomniana ikona przybiera kolor zielony. Pełni ona jednocześnie rolę przycisku - można uruchomić segmentację klikając właśnie tą małą ikonkę pod miniaturą.
+The segmentation procedure can be time-consuming. During the process, the application displays a discrete animation for the images being processed - a small icon with lines (the scan segmentation icon) blinks on the images selected for processing (below the thumbnail). A yellow button against the thumbnail is also displayed, allowing the user to cancel the segmentation currently being carried out. When the procedure is complete, a notification is displayed in the top right-hand corner of the screen and the icon turns green. This also acts as a button - segmentation can be started by clicking on the small icon below the thumbnail.
 
-Uwaga: w przypadku importu skanów i transkrypcji z programu Transkribus w zalecanym formacie PAGE XML, zalecane jest przeprowadzenie segmentacji, ale tylko z użyciem opcji 'only line Mask'.
+Note: when importing scans and transcriptions from Transkribus (PAGE XML format preferred), segmentation is recommended, but only using the 'only line Mask' option.
 
-### Okno edycji skanu, segmentacji, transkrypcji
+### Image editing window, segmentation correction, transcription editing
 
-Aby zobaczyć utworzoną przez model segmentację strony/skanu, należy wejść w edycję danej strony - po najechaniu kursorem myszy na miniaturkę skanu wyświetli się pasek z białą ikoną symbolizującą edycję, oraz dymek z podpowiedzią 'Edit', kliknięcie w pasek otworzy skan w trybie edycji. Alternatywnie, jedna z zakładek w dokumencie to zakładka 'Edit', która uruchamia tryb edycji dla pierwszego skanu z dokumentu, tryb edycji posiada możliwość nawigacji do kolejnego/poprzedniego skanu (ikony strzałek u góry ekranu), przesuwając się w lewo/prawo można odnaleźć właściwy skan (nawigacja możliwa jest także za pomocą klawiatury: Crtl + strzałka w lewo/prawo lub klawisze Page Down/Page Up).
+To see the image segmentation created by the model, enter edit mode for the image in question - if you hover the mouse cursor over a scan thumbnail, a bar will appear with a white icon symbolizing editing, and a balloon with a prompt 'Edit', clicking on the bar will open the scan in edit mode. Alternatively, one of the tabs in the document is the 'Edit' tab, which launches the edit mode for the first image in the document, the edit mode can navigate to the next/previous scan (arrow icons at the top of the screen), by moving left/right you can find the correct scan (navigation is also possible using the keyboard: Crtl + left/right arrow or Page Down/Page Up keys).
 
-Okno edycji skanu może wyświetlać od 1 do 5 paneli. Panele mogą być włączane i wyłączane poprzez ikony w górnym prawym rogu okna.
+The image editing window can display between 1 and 5 panels. Panels can be switched on and off via the icons in the upper right corner of the window.
 <figure>
   <img src="image/skan_panele.png" width="400">
 </figure>
 
-- 'Text'(?)-  Metadane strony/skanu, gdzie można zapisać tytuł strony, komentarz oraz metadane w formie par klucz - wartość.
+- 'Text'(?)- Page/scan metadata, where the page title, comment, and metadata can be stored in the form of key-value pairs.
 <figure>
   <img src="image/skan_metadane.png" width="450">
 </figure>
-- 'Source Image' - Oryginalny obraz/skan. Ikony w pasku narzędzi panelu pozwalają na obracanie obrazu (o 90 stopni w lewo/prawo), oraz na pobranie pliku z obrazem.
+- 'Source Image' - Original image. The icons in the panel's toolbar allow you to rotate the image (90 degrees left/right), and to download the image file.
 <figure>
   <img src="image/skan_org.png" width="450">
 </figure>
-- 'Segmentation' - Segmentacja, gdzie widoczna jest manualna lub automatyczna segmentacja: linie bazowe, maski linii i regiony. Ikony w panelu obrazu to narzędzia umożliwiające edycję segmentacji, zakrzywione strzałki cofają lub ponawiają operacje edycji, rozwijana ikona 'Editor settigns' wyświetla kolory przypisane do typów regionów czy linii. Zielona ikona z 4 białymi kwadratami włącza/wyłącza tryb regionów (klawisz skrótu R), ikona ze strzałką w dół i cyframi wyświetla kolejność linii (klawisz L), ikona z symbolem maski - włącza wyświetlanie kształtu maski (klawisz M). Żółta ikona z symbolem nożyc to narzędzie cięcia, które umożliwia np. przycinanie linii bazowych.
+- 'Segmentation' - Segmentation, where manual or automatic segmentation is visible: baselines, line masks, and regions. Icons in the image panel are tools for editing segmentation: curved arrows undo or redo editing operations, and a drop-down 'Editor settigns' icon displays colors assigned to a region or line type. A green icon with four white squares enables/disables region mode (R hotkey), an icon with a down arrow and numbers displays the line order (L key), and an icon with a mask symbol - enables the display of the mask shape (M key). The yellow icon with the scissors symbol is the cutting tool, which enables e.g. trimming of baselines.
 <figure>
   <img src="image/skan_segmentation.png" width="450">
 </figure>
-- 'Transcription' - Transkrypcja, po przeprowadzaniu automatycznej transkrypcji panel ten wyświetla jej wyniki w graficznej formie, opcjonalne może też wyświetlać 'confidence visualizations' - jeżeli zostało to włączone w parametrach dokumentu (zakładka Description), poprzez kolorowanie wierszy od pomarańczowego poprzez żółty do odcieni zieleni - im większa pewność transkrypcji tym bliżej do soczystej zieleni. Kontrolka z suwakiem pozwala regulować czułość stopnia pewności - przesuwanie bardziej w prawo będzie mocniej podkreślać różnice.
+- 'Transcription' - When an automatic transcription is performed, this panel displays the results in graphical form. Optionally, it can also display 'confidence visualisations' - if enabled in the document parameters (Description tab), by coloring the rows from orange through yellow to shades of green - the higher the confidence of the transcription, the closer it is to a luscious green. A slider control allows you to adjust the sensitivity of the degree of certainty - moving more to the right will emphasize differences more strongly.
 <figure>
   <img src="image/skan_confidence.png" width="450">
 </figure>
-- 'Text' - Tekst transkrypcji manualnej lub automatycznych (jeżeli dany skan był już rozpoznawany przez model/modele), u góry okna można wybrać z listy rozwijanej, która wersja transkrypcji ma być wyświetlana. Ikona z białymi trójkątami w pasku narzędzi panelu pozwala na włączenie trybu sortowania wierszy. Jeżeli w zakładce 'Ontology' dokumentu zdefiniowano adnotacje dla tekstu, w pasku narzędzi będą one widoczne w formie przycisków włączania/wyłączania.
+- 'Text' - Text of manual or automatic transcriptions (if the scan in question has already been recognized by the model(s)), at the top of the window you can select from a drop-down list which version of the transcription is to be displayed. An icon with white triangles in the panel's toolbar allows you to enable row-sorting mode. If annotations labels have been defined for the text in the 'Ontology' tab of the document, they will be visible in the toolbar as on/off buttons.
 <figure>
   <img src="image/skan_text.png" width="450">
 </figure>
