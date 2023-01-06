@@ -18,12 +18,12 @@ eScriptorium is a web-based application designed to work on historical manuscrip
 - [Binarisation](#binarisation)
 - [Segmentation](#segmentation)
   - [Image editing window, segmentation correction, transcription editing](#image-editing-window-segmentation-correction-transcription-editing)
-  - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
-- [Definiowanie typów i adnotacji dla elementów obrazów](#definiowanie-typów-i-adnotacji-dla-elementów-obrazów)
-  - [Przypisywane typów do elementów segmentacji](#przypisywane-typów-do-elementów-segmentacji)
-  - [Przypisywanie etykiet do fragmentów tekstu](#przypisywanie-etykiet-do-fragmentów-tekstu)
-  - [Przypisywanie etykiet do fragmentów obrazu](#przypisywanie-etykiet-do-fragmentów-obrazu)
-- [Wprowadzanie transkrypcji manualnej](#wprowadzanie-transkrypcji-manualnej)
+  - [Verification and correction of segmentation](#verification-and-correction-of-segmentation)
+- [Defining types and annotations for image elements](#defining-types-and-annotations-for-image-elements)
+  - [Assigning types to segmentation elements](#assigning-types-to-segmentation-elements)
+  - [Assigning labels to text passages](#assigning-labels-to-text-passages)
+  - [Assigning labels to parts of the image](#assigning-labels-to-parts-of-the-image)
+- [Entering a manual transcription](#entering-a-manual-transcription)
   - [Wirtualna klawiatura](#wirtualna-klawiatura)
   - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
 - [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
@@ -243,124 +243,120 @@ The image editing window can display between 1 and 5 panels. Panels can be switc
   <img src="image/skan_text.png" width="450">
 </figure>
 
-### Weryfikacja i korekta segmentacji
+### Verification and correction of segmentation
 
-Aczkolwiek możliwe jest korygowanie zarówno linii bazowych jak i masek linii, ręczna
-korekta masek nie jest zalecana, raczej należy starać się poprawiać długość i kształt linii bazowych, zaś maski linii są wówczas (zwykle z 1-2 sekundowym opóźnieniem) automatycznie dostosowywane przez aplikację.
+Although it is possible to correct both baselines and line masks, the manual correction of masks is not recommended. A better solution is to correct the length and shape of the baselines, and the line masks are then (usually with a 1-2 second delay) automatically adjusted by the application.
 <figure>
   <img src="image/modyfikacja_linii_bazowej.png" width="450">
 </figure>
 
-W przypadku problemów z zaznaczeniem właściwego węzła, można skorzystać z tzw. **lassa**,
-czyli z wciśniętym klawiszem Shift i lewym przyciskiem myszy zaznaczyć obszar z interesującym nas węzłem. Zaznaczony węzeł zmieni kolor na czarny i można go przesunąć, kursor myszy ustawiony nad takim węzłem zmienia kształt na 'łapkę'.
+In case of problems with selecting the correct line node, you can use the so-called **lasso** - with the Shift key pressed and the left mouse button pressed, select the area with the node of interest to us. The selected node will turn black and can be moved, the mouse cursor positioned over such a node changes to a 'hand' shape.
 <figure>
   <img src="image/lasso.png" width="600">
 </figure>
 
-Możliwe jest dodawanie węzłów do istniejących linii bazowych, należy w tym celu zaznaczyć linię i dwukrotnie kliknąć w wybrany miejscu linii. Nowy węzeł można przesuwać, zaznaczony węzeł można też usunąć - podczas edycji segmentacji widoczny jest dodatkowy pasek narzędzi, jednym z narzędzi jest żółta ikona z symbolem kosza, która służy właśnie do usuwanie węzłów.
+It is possible to add nodes to existing baselines by selecting the line and double-clicking at the desired point on the line. The new line node can be moved. The selected node can also be deleted - when editing a segmentation, an additional toolbar is visible, and one of the tools is a yellow icon with a basket symbol, which is used precisely to delete nodes.
 <figure>
   <img src="image/usuwanie_wezla_linii_bazowej.png" width="450">
 </figure>
 
-Dla wybranych linii można zmienić kierunek ich czytania, w pomocniczym pasku narzędzi ikona z poziomą linią i strzałkami na obu końcach zmienia właśnie kierunek czytania, po użyciu pionowa kreska oznaczająca początek linii przesuwa się na drugi jej koniec. Ponowne użycie narzędzia przywraca sytuację pierwotną.
+For selected lines it is possible to change their reading direction. In the auxiliary toolbar an icon with a horizontal line and arrows at both ends changes the reading direction when used - the vertical line marking the beginning of the line moves to the other end. Using the tool again restores the original situation.
 <figure>
   <img src="image/reverse_line.png" width="600">
 </figure>
 
-Innym narzędziem widocznym w pomocniczym pasku narzędzi jest łączenie (lub rozłączanie) linii z regionem (ikona z symbolem węzła - 'Link/Unlink').
+Another tool visible in the auxiliary toolbar is the icon for linking (or disconnecting) a line to a region (icon with a node symbol - 'Link/Unlink').
 <figure>
   <img src="image/link_line_region.png" width="600">
 </figure>
 
-
-Jeżeli jednak zaistnieje potrzeba modyfikacji maski linii, należy zwrócić uwagę że edycja maski działa nieco inaczej, po włączeniu widoczności masek linii, zaznaczeniu linii do modyfikacji należy kliknąć nie tyle w węzeł maski co w jego pobliże a przesuwając kursor myszy zobaczymy, iż podąża za nim węzeł maski linii.
+However, if there is a need to modify the line mask, note that editing the mask works a little differently. After enabling visibility of line masks, selecting the line to be modified, click not so much on the mask node as on its vicinity, and moving the mouse cursor you will see that the line mask node follows it.
 <figure>
   <img src="image/modyfkacja_maski_linii.png" width="450">
 </figure>
 
-Przydatnym narzędziem podczas modyfikowania segmentacji jest narzędzie cięcia 'Cut through lines' (ikona z symbolem nożyczek na żółtym tle), Po włączeniu (kolor ikony zmienia się na zielony) pozwala zaznaczyć prostokątny obszar, który przycina części linii (lub usuwa całe linie).
+A useful tool when modifying segmentation is the 'Cut through lines' tool (icon with a scissors symbol on a yellow background). When activated (the colour of the icon changes to green), it allows you to select a rectangular area that trims parts of lines (or removes whole lines).
 <figure>
   <img src="image/cut_line.png" width="650">
 </figure>
 
-Niska jakość obrazów wejściowych, np. liczne zabrudzenia, artefakty wynikające ze skanowania starych mikrofilmów z uszkodzeniami, uszkodzenia samych skanowanych czy fotografowanych dokumentów mają negatywny wpływ na jakość segmentacji. Można spodziewać się rozpoznawania zbiorów uszkodzeń czy zabrudzeń jako regionów, czasem fałszywego rozpoznawania nieistniejących linii.
+Low-quality input images, e.g. with numerous soils, artefacts resulting from scanning old microfilms with damage, damage to the scanned or photographed documents themselves have a negative impact on the quality of segmentation. Recognition of sets of damage or dirt as regions, sometimes false recognition of non-existent lines, can be expected.
 <figure>
   <img src="image/zabrudzenia_segmentacja.png" width="600">
 </figure>
 
-eScriptorium pozwala na operacje grupowe w oknie edycji segmentacji. Można za pomocą funkcji tzw.
-**lassa** (SHIFT + zaznaczenie obszaru kursorem myszy) zaznaczyć grupę węzłów linii lub linii i np. przesunąć je grupowo (trzymając klawisz CRTL chwycić jeden z węzłów poprzez kursor myszy i przesunąć), zmieniając kształt linii lib je wydłużając/skracając.
+The eScriptorium allows group operations in the segmentation editing window. It is possible to use the function of the so-called.
+**lasso** (SHIFT + selecting an area with the mouse cursor) to select a group of line or line nodes and, for example, move them in groups (with the CRTL key pressed, grab one of the nodes via the mouse cursor and move), changing the shape of the lines or lengthening/shortening them.
 <figure>
   <img src="image/lasso_grupa.png" width="650">
 </figure>
 
-Można też zaznaczone linie grupowo usunąć - narzędziem z paska narzędzi (czerwona ikona z koszem) lub klawiszem skrótu - DELETE.
+It is also possible to delete selected lines in groups - either with the tool from the toolbar (red icon with bin) or with the shortcut key - DELETE.
 
-Po zaznaczeniu przynajmniej dwóch linii w podręcznym pasku narzędzi pojawia się nowa ikona, związana
-z narzędziem sklejania linii. Po jej kliknięciu aplikacja stara się skleić zaznaczone linie w jedną.
+When at least two lines are selected, a new icon appears in the pop-up toolbar, associated with the line gluing tool. When clicked, the application tries to merge the selected lines into one.
 <figure>
   <img src="image/sklejanie_linii.png" width="650">
 </figure>
 
 
-## Definiowanie typów i adnotacji dla elementów obrazów
+## Defining types and annotations for image elements
 
-W zakładce Ontology dokumentu można zdefiniować etykiety opisujące elementy obrazu - typy regionów i linii, a także adnotacje dla obrazu i adnotacje tekstowe. Aplikacja proponuje kilka standardowych typów regionów ('Main', 'Title'), można jednak dodać własne typy. Tylko te z zaznaczonymi polami wyboru będą widoczne podczas edycji obrazu. Podobnie w przypadku typów linii, dostępnych jest parę standardowych ('Numbering', 'Signature') a korzystając z pola edycyjnego u dołu sekcji 'Line types' i zielonej ikony z plusem można dodawać własne typy linii. Znów - tylko zaznaczone będą widoczne podczas pracy w edytorze obrazu.
+In the Ontology tab of the document, labels can be defined to describe image elements - region and line types, as well as image annotations and text annotations. The application suggests several standard region types ('Main', 'Title'), but you can add your types. Only those with tick boxes will be visible when editing the image. Similarly, for line types, a couple of standard ones are available ('Numbering', 'Signature'), and using the edit box at the bottom of the 'Line types' section and the green plus icon, you can add your line types. Again - only the selected ones will be visible when working in the image editor.
 <figure>
   <img src="image/ontologia_dokumentu.png" width="750">
 </figure>
 
-W dalszej części okna 'Ontology' można stworzyć definicje adnotacji zarówno dla obrazu jak i dla tekstu. Podczas definiowania ustalany jest kolor wyróżniający poszczególne adnotacje, a także czy możliwe będzie dodawanie komentarzy użytkownika do adnotacji.
+Further in the 'Ontology' window, annotation definitions can be created for both image and text. During creation, the color that distinguishes the individual annotations is determined, as well as whether it will be possible to add user comments to the annotations.
 
 
-### Przypisywane typów do elementów segmentacji
+### Assigning types to segmentation elements
 
-Aby przypisać typ do regionu lub linii należy najpierw zaznaczyć wybrany element. Np. pracując w zakładce Images z konkretnym skanem rękopisu należy wyświetlić panel 'Segmentation', w nim włączyć tryb operacji na regionach (zielona ikona z 4 kwadracikami, nad skanem) następnie kliknąć na wybrany region. W górnym lewym roku obrazy wyświetli się wówczas pasek narzędzi w którym widoczne będą 2 ikony, czerwona oznaczająca usuwanie regionu, oraz zielona z literą T, która pozwala na przypisanie typu do regionu z listy. Po wybraniu typu regionu aplikacja przypisze temu regionowi kolor związany z danym typem.
+To assign a type to a region or line, you must first select an element. For example, when working in the Images tab with a specific image of a manuscript page, you should display the 'Segmentation' panel, turn on the region operation mode (green icon with four squares above the scan) and then click on the selected region. In the upper left corner of the image, a toolbar will be displayed with two icons: a red one indicating deletion of the region, and a green one with a T, which allows you to assign a type to a region from the list. Once a region type has been selected, the application will assign the color associated with the type to that region.
 <figure>
   <img src="image/typ_regionu.png " width="500">
 </figure>
 
-Oprócz wyróżnienia kolorem typ regionu będzie od tej pory widoczny w górnym prawym roku ekranu w momencie przesuwania kursora myszy nad danym regionem.
+In addition to highlighting with color, the type of region will now be displayed in the upper right corner of the screen when you move the mouse over the region.
 <figure>
   <img src="image/region_type_show.png" width="400">
 </figure>
 
-W trybie pracy z liniami bazowymi (wyłączony tryb regionów, włączone linie bazowe - z maskami lub bez) można przypisywać typy do linii. Na przykład po zaznaczeniu linii z podpisem ('Corticelli' na poniższym obrazie) wyświetlany jest, podobnie jak dla regionów, pasek narzędzi
-z ikoną ustawiania typu linii (zielona ikona z literą T). Po wybraniu typu linii 'Signature' będzie ona przypisana do danej linii (lub kilku jeżeli zaznaczono więcej niż jedną). Kolorem związanym z typem linii będzie od tej pory rysowana pionowa (zwykle) kreska oznaczająca początek linii i jej wysokość.
+In baselines mode (regions mode off, baselines on - with or without masks), types can be assigned to lines. For example, when a line with a signature ('Corticelli' in the image below) is selected, a toolbar is displayed, as for regions
+with an icon for setting the line type (green icon with a T). When the line type 'Signature' is selected, it will be assigned to a line (or several if more than one is selected). The colour associated with the line type will henceforth be a vertical (usually) line drawn to indicate the start of the line and its height.
 <figure>
   <img src="image/typ_linii.png" width="500">
 </figure>
 
-Podobnie jak w przypadku regionów, typ linii będzie widoczny w górnym prawym roku obrazu/skanu w momencie przesuwania kursora myszy nad daną linią.
+As with regions, the line type will be visible in the upper right corner of the image as you move your mouse over the line.
 <figure>
   <img src="image/line_type_show.png" width="400">
 </figure>
 
 
-### Przypisywanie etykiet do fragmentów tekstu
+### Assigning labels to text passages
 
-Podczas pracy w panelu 4 - 'Text' możliwe jest adnotowanie fragmentów tekstu transkrypcji zdefiniowanymi wcześniej w zakładce 'Ontology' dokumentu etykietami. Jeżeli etykiety zostały zdefiniowane zmienia się wygląd paska narzędzi nad polem tekstowym i pojawiają się przyciski przełączania odpowiadające etykietom. Włączenie takiego przycisku pozwala na zaznaczenie wybranego fragmentu tekstu, po czym pojawia się okienko dialogowe pozwalające na wprowadzenie komentarza (jeżeli tak zdefiniowano w definicji tagu) i zapisanie zmian.
+When working in panel 4 - 'Text', it is possible to annotate parts of the transcription text with labels previously defined in the 'Ontology' tab of the document. If labels have been defined the appearance of the toolbar above the text box changes, and toggle buttons corresponding to the labels appear. Activating such a button allows the selected text fragment to be selected, after which a dialog box appears  in which a comment can be entered (if so defined in the tag definition) and save the changes.
 <figure>
   <img src="image/anotacja_tekstu.png" width="400">
 </figure>
 
-Tekst z przypisaną etykietą będzie oznaczony kolorem wybranym podczas definiowania danej etykiety.
+Text with an assigned label will be marked with the color chosen when defining the label in question.
 <figure>
   <img src="image/anotacja_tekst_efekt.png" width="400">
 </figure>
 
-**Uwaga:** w obecnej wersji nie zauważyłem możliwości wykorzystania adnotacji tekstu - etykiety nie są eksportowane, ani w formacie TXT, ani XML.
+**Note:** in the current version there is (probably) no possibility to use text annotation - labels are not exported, neither in TXT nor XML format.
 
 
-### Przypisywanie etykiet do fragmentów obrazu
+### Assigning labels to parts of the image
 
-Adnotacji podlegać mogą też fragmenty obrazów/skanów. Należy wyświetlić panel 1 - 'Source image', jeżeli w zakładce 'Ontology' były zdefiniowane etykiety do adnotacji, pojawią się one w formie przycisków przełączania. Po wybraniu jednego z nich można zaznaczyć fragment obrazu (zależnie od definicji, w formie prostokąta lub wielokąta) i opcjonalnie przypisać do niego komentarz, można w ten sposób oznaczyć np. fragmenty skanu nie będące częścią oryginalnego rękopisu, uszkodzenia mikrofilmu będącego źródłem obrazu a nie występujące na oryginale dokumentu itp.
+Image fragments can also be annotated. Panel 1 - 'Source image' should be displayed and if annotation labels were defined in the 'Ontology' tab, they will appear as toggle buttons. Once you have selected one of these, you can select an image fragment (depending on the definition, as a rectangle or polygon) and optionally annotate it. In this way, it is possible to mark, for example, parts of the scan that are not part of the original manuscript, microfilm damage not present on the original document, etc.
 <figure>
   <img src="image/anotacje_obrazu.png" width="600">
 </figure>
 
 
-## Wprowadzanie transkrypcji manualnej
+## Entering a manual transcription
 
 eScriptorium może posłużyć jako środowisko przygotowania materiału treningowego (_ground truth_) do stworzenia nowego modelu. Wymaga to posiadania obrazów (skanów) rękopisów w dobrej jakości, oraz tekstów odczytanych z rękopisów przez ekspertów. Mając takie materiały można wczytać serię skanów do nowego dokumentu, następnie dla każdego ze skanów uzupełnić warstwę transkrypcji 'manual' - przygotowując odpowiednio dane tekstowe odpowiadające stronie skanu, z podziałem na wiersze zgodnym z podziałem w rękopisie. W trybie edycji dla obrazu należy wyświetlić panel 3 = 'Segmentation' oraz panel 4 - 'Text', w którym można wprowadzić tekst danej strony. Dla skanu rękopisu należy wcześniej przeprowadzić segmentację, tak by były wyznaczone regiony i linie tekstu oraz ich kolejność. Ważne jest uzgodnienie właściwego układu wierszy, tak by tekst wiersza w panelu Text odpowiadał właściwemu wierszowi rękopisu wyznaczonemu przez segmentację.
 
