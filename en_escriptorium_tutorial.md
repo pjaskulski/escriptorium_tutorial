@@ -24,7 +24,7 @@ eScriptorium is a web-based application designed to work on historical manuscrip
   - [Assigning labels to text passages](#assigning-labels-to-text-passages)
   - [Assigning labels to parts of the image](#assigning-labels-to-parts-of-the-image)
 - [Entering a manual transcription](#entering-a-manual-transcription)
-  - [Wirtualna klawiatura](#wirtualna-klawiatura)
+  - [Virtual keyboard](#virtual-keyboard)
   - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
 - [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
   - [Menu My Models](#menu-my-models)
@@ -358,25 +358,24 @@ Image fragments can also be annotated. Panel 1 - 'Source image' should be displa
 
 ## Entering a manual transcription
 
-eScriptorium może posłużyć jako środowisko przygotowania materiału treningowego (_ground truth_) do stworzenia nowego modelu. Wymaga to posiadania obrazów (skanów) rękopisów w dobrej jakości, oraz tekstów odczytanych z rękopisów przez ekspertów. Mając takie materiały można wczytać serię skanów do nowego dokumentu, następnie dla każdego ze skanów uzupełnić warstwę transkrypcji 'manual' - przygotowując odpowiednio dane tekstowe odpowiadające stronie skanu, z podziałem na wiersze zgodnym z podziałem w rękopisie. W trybie edycji dla obrazu należy wyświetlić panel 3 = 'Segmentation' oraz panel 4 - 'Text', w którym można wprowadzić tekst danej strony. Dla skanu rękopisu należy wcześniej przeprowadzić segmentację, tak by były wyznaczone regiony i linie tekstu oraz ich kolejność. Ważne jest uzgodnienie właściwego układu wierszy, tak by tekst wiersza w panelu Text odpowiadał właściwemu wierszowi rękopisu wyznaczonemu przez segmentację.
+eScriptorium can be used as an environment for preparing training material (_ground truth_) which is necessary to create a new model. For this purpose, good quality images (scans) of manuscripts and texts read from manuscripts by experts are necessary. Having such materials, you can load a series of images into a new document, then complete the 'manual' transcription layer for each image - preparing the text data corresponding to the page of the scan, with the division into lines according to the division in the manuscript. In edit mode for the image, panel 3 = 'Segmentation' and panel 4 - 'Text' should be displayed, where you can enter the text of the page. For the manuscript image, segmentation should be carried out beforehand so that regions and lines of text and their order are delineated. It is important to agree on the correct line layout, so that the line text in the Text panel corresponds to the correct manuscript line determined by the segmentation.
 
-Kontrolę taką najwygodniej przeprowadzić włączając tryb przeglądania i edycji pojedynczych wierszy transkrypcji -> w panelu segmentacji należy kliknąć w dowolną linię, wyświetlony zostanie wówczas fragment skanu rękopisu z danym wierszem oraz edytowalne pole tekstowe.
+The most convenient way to check this is to turn on the browse mode and edit individual lines of the transcription -> in the segmentation panel, click on any line, then a fragment of the manuscript scan with the given line and an editable text field will be displayed.
 <figure>
   <img src="image/linia_transkrypcji.png" width="600">
 </figure>
 
-Między kolejnymi wierszami w obrębie strony można przemieszczać się dzięki ikonom strzałek widocznym w górnej części okna. Jeżeli aktywnym elementem jest edycyjne pole tekstowe nawigację między poprzednią i kolejną stroną zapewniają też klawisze strzałek góra/dół, do kolejnego wiersza przenosi nas także klawisz Enter (który także wywołuje zapis zmian).
+Within a page, the arrow icons at the top of the window allow you to move between successive lines. If the active element is an editing text field, the up/down arrow keys also navigate between the previous and next lines of text, and the Enter key (which also triggers the saving of changes) moves you to the next line.
 
-Okno pojedynczego wiersza transkrypcji zawiera dodatkowo informacje o ostatnim autorze i dacie zmian, oraz pozwala na wyświetlenie całej historii zmian danego wiersza, po kliknięciu na link 'Toggle history' (link pojawi się tylko wówczas gdy dana linia była modyfikowana). Po wyświetleniu historii zmian użytkownik może przywrócić jeden z poprzednich stanów wiersza za pomocą zielonych ikonek z prawej strony listy zmian.
+The window for editing a single line of the transcription additionally contains information about the last author and the date of changes, and allows the entire history of changes to a given line to be displayed by clicking on the 'Toggle history' link (the link will only appear if a given line has been modified). Once the change history is displayed, the user can restore one of the previous states of the line using the green icons to the right of the change list.
 <figure>
   <img src="image/linia_historia.png" width="600">
 </figure>
 
 
-### Wirtualna klawiatura
+### Virtual keyboard
 
-Aby ułatwić wprowadzanie znaków specjalnych w aplikacji wprowadzono funkcję wirtualnej klawiatury,
-którą można uruchomić podczas edycji wiersza transkrypcji (lub w panelu 'Text'). Klawiaturę taką włącza (i wyłącza) ikona z symbolem klawiatury, wyświetlane jest wówczas dodatkowe okienko gdzie widoczne są zdefiniowane znaki gotowe do wstawienia, można też zmienić definicję klawiatury na inną, dodać własną, zmodyfikować istniejącą.
+The virtual keyboard function was introduced to make it easier to enter special characters in the application. The keyboard can be activated while editing a transcription line (or in the 'Text' panel), using the button with the keyboard symbol icon, which displays an additional window showing the defined characters ready for insertion. The same icon is used to deactivate the virtual keyboard. You can also change to a different keyboard definition, add your own, or modify an existing one.
 <figure>
   <img src="image/wirtualna_klawiatura.png" width="400">
 </figure>
