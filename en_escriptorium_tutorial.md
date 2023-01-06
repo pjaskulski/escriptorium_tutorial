@@ -1,6 +1,6 @@
 # eScriptorium and Kraken - introduction
 
-eScriptorium is a web-based application designed to work on historical manuscripts and prints - preparing manual and automatic transcriptions. The application is integrated with Kraken, a tool using deep learning algorithms for text recognition (OCR and HTR). eScriptorium is a project led by a team from École Pratique des Hautes Études - Université PSL.
+eScriptorium is a web-based application designed to work on historical manuscripts and printed books, to prepare manual and automatic transcriptions. The application is integrated with Kraken, a tool using deep learning algorithms for text recognition (OCR and HTR). eScriptorium is a project led by a team from École Pratique des Hautes Études - Université PSL.
 
 ## Table of contents
 
