@@ -4,18 +4,18 @@ eScriptorium is a web-based application designed to work on historical manuscrip
 
 ## Table of contents
 
-- [Acknowledgementsa](#acknowledgements)
+- [Acknowledgements](#acknowledgements)
 - [Version](#version)
 - [Installation](#installation)
 - [Login to the application and its main window](#login-to-the-application-and-its-main-window)
 - [How to create a new project](#how-to-create-a-new-project)
-- [Utworzenie nowego dokumentu](#utworzenie-nowego-dokumentu)
-  - [Import skanów](#import-skan%C3%B3w)
-  - [Import transkrypcji i skanów](#import-transkrypcji-i-skan%C3%B3w)
-- [Tagi dokumentów](#tagi-dokument%C3%B3w)
-- [Zakładki dokumentu](#zak%C5%82adki-dokumentu)
-- [Lista obrazów/skanów](#lista-obraz%C3%B3wskan%C3%B3w)
-- [Binaryzacja](#binaryzacja)
+- [How to create a new document](#how-to-create-a-new-document)
+  - [Image import](#image-import)
+  - [Import of transcripts and images](#import-of-transcripts-and-images)
+- [Document tags](#document-tags)
+- [Document tabs](#document-tabs)
+- [List of images](#list-of-images)
+- [Binarisation](#binarisation)
 - [Segmentacja](#segmentacja)
   - [Okno edycji skanu, segmentacji, transkrypcji](#okno-edycji-skanu-segmentacji-transkrypcji)
   - [Weryfikacja i korekta segmentacji](#weryfikacja-i-korekta-segmentacji)
@@ -91,101 +91,104 @@ The 'Create new Project' button is visible in the top right corner of the screen
   <img src="image/utworzenie_nowego_projektu.png" width="600">
 </figure>
 
-Aplikacja wyświetla powiadomienie (zielony komunikat w górnym lewym rogu) z informacją o prawidłowym utworzeniu projektu, który pojawi się też od razu na liście projektów.
+The application displays a notification (green message box in the top right corner) indicating that the project has been created correctly, which will also appear immediately in the project list.
 <figure>
   <img src="image/notyfikacja_utworzenie_projektu.png" width="300">
 </figure>
 
-## Utworzenie nowego dokumentu
+## How to create a new document
 
-Po utworzeniu projektu można go otworzyć klikając w tytuł. Projekt jest czymś w rodzaju kontenera na dokumenty, można w nim zgrupować dokumenty zawierające np. skany różnych ksiąg danego źródła historycznego. Tworzenie dokumentu rozpoczyna się od kliknięcia zielonego przycisku 'Create new Document' - tradycyjnie w górnym prawym rogu ekranu.
+Once created, a project can be opened by clicking on the title. The project is something like a container for documents. You can group documents containing, for example, scans of various books of a given historical source. Creating a new document starts with clicking the green 'Create new Document' button - in the upper right corner of the screen.
 <figure>
   <img src="image/nowy_dokument.png" width="600">
 </figure>
 
-Okno definiowania dokumentu zawiera dużo więcej pól niż w przypadku projektu. Pola podzielone są na 6 zakładek: Description, Ontology, Images, Edit, Models i Reports (część jest początkowo niedostępna). Aby dodać i zapisać nowy dokument należy przede wszystkim wypełnić pierwszą z nich, zaczynając od nazwy (Name) dokumentu np. 'Księgi kaliskie t. 23' (inaczej niż dla projektów, w przypadku dokumentów można później edytować i zmienić ich nazwę). Następnie wybrać z listy rodzaj pisma (main script) - w przypadku dokumentów przetwarzanych w Instytucie Historii PAN będzie to zapewne 'Latin', 'Cyrillic' lub 'Cyrillic (Old Church Slavonic variant)'. Należy również ustalić czy porządek ułożenia elementów w dokumencie to 'Left to right' czy 'Right to left' (kierunek samego pisma jest określony przez wybór rodzaju pisma).
+The document window is much more complex than the project window. The information is divided into six tabs: Description, Ontology, Images, Edit, Models, and Reports (some are initially inaccessible). To add and save a new document, first of all, you need to fill in the fields in the first tab (Description), starting with the name of the document e.g. 'Book vol. 23' (unlike for projects, you can rename the document later). Then select from the list the type of script (main script) - for example:  'Latin', 'Cyrillic' or 'Cyrillic (Old Church Slavonic variant)'. It should also be determined whether the order of the elements in the document is 'Left to right' or 'Right to left' (the direction of the script itself is determined by the choice of main script).
 
-W kolejnym polu należy wskazać pozycję linii w stosunku do wielokąta (kształtu) wiersza tekstu: 'Baseline', 'Topline', 'Centered'. Aplikacja pozwala opcjonalnie na wyświetlanie stopnia zaufania dla poszczególnych fragmentów automatycznej transkrypcji, jeżeli chcemy wyświetlać taką informację należy zaznaczyć pole wyboru 'Show confidence visualizations' (wizualizacja pojawi się w panelu' Transcription' w trybie edycji skanu/obrazu).
+In the next field, indicate the position of the line to the polygon (shape) of the text line: 'Baseline', 'Topline', 'Centered'. The application optionally displays the degree of confidence for individual fragments of the automatic transcription; if you want to display such information, tick the 'Show confidence visualizations' checkbox (the visualization will appear in the 'Transcription' panel in the scan/image editing mode).
 
-Sekcja Metadata pozwala na wprowadzenie własnych metadanych opisujących dokument (można wprowadzić informacje dotyczące np. okresu chronologicznego czy pochodzenia geograficznego). Po zakończeniu wprowadzania tych podstawowych danych przycisk 'Create' na dole okna utworzy nasz nowy dokument, wyświetlając stosowny komunikat (powiadomienie) w górnym prawym roku ekranu.
-Wszystkie wprowadzone informacje będą mogły być w przyszłości uzupełnione i poprawione.
-Zapisanie dokumentu odbezpiecza dostęp do podstawowej zakładki: 'Images' - tam będą znajdować się przetwarzane skany rękopisów i druków.
+The Metadata section allows you to enter your metadata describing the document (you can enter information concerning, for example, the chronological period or geographical origin). Once you have completed entering this basic data, the 'Create' button at the bottom of the window will create our new document, displaying an appropriate message (notification) in the top right of the screen.
+All the information entered will be available for future additions and corrections.
+Saving the document unlocks access to the primary tab: 'Images' - this is where the processed scans of manuscripts and prints will be located.
 <figure>
   <img src="image/notyfikacja_utworzenie_dokumentu.png" width="300">
 </figure>
 
-### Import skanów
 
-Zakładka 'Images' składa się z trzech głównych elementów: pola do importu obrazów/skanów na górze (białe pole otoczone przerywaną linią z napisem 'Drop images here or click do Upload'), paska z narzędziami pośrodku oraz listy skanów, którą można przewijać (poziomo) gdy liczba skanów przekroczy szerokość ekranu. W przypadku nowego dokumentu lista skanów nie jest jeszcze widoczna.
+### Image import
+
+The 'Images' tab consists of three main elements:
+ -the box for importing images/scans at the top (a white box surrounded by a dashed line, with the words 'Drop images here or click to Upload'),
+- a toolbar in the middle
+- and a list of scans that can be scrolled (horizontally) when the number of scans exceeds the width of the screen. For a new document, the scan list is not yet visible.
 <figure>
   <img src="image/pole_importu_obrazow.png" width="600">
 </figure>
 
-Najprostszą metodą importu jest zaznaczenie pliku lub grupy plików w dowolnej aplikacji
-zarządzającej plikami w danym systemie operacyjnym (Explorator w Windows, czy Files w Ubuntu) i przeciągnięcie ich na obszar pola importu skanów. Spowoduje to uruchomienie procesu importowania - skany pojawią się w polu importu i stopniowo będą przechodzić do listy skanów. Można w ten sposób importować całkiem duże kolekcje, nawet kilkaset obrazów.
-Można także kliknąć w obrębie pola importu, co wywoła standardowy dla danego systemu
-operacyjnego dialog z możliwością wskazanie plików. Obsługiwane są typowe formaty plików graficznych np. jpeg, png, tiff. 
- 
-### Import transkrypcji i skanów
+The simplest method of importing images is to select a file or group of files in any application for managing files in your operating system (Explorers in Windows, or Files in Ubuntu) and dragging them into the scan import box area. This action will start the import process - the scans will appear in the import field and gradually move into the list of scans. You can import quite large collections in this way, even several hundred images.
+You can also click within the import field, which will trigger the standard system dialog with the possibility of selecting files. Typical image file formats are supported, for example JPEG, PNG, TIFF.
 
-Dodatkowe możliwości importu daje przycisk Import widoczny na pasku narzędzi, przycisk rozwija się udostępniając 3 polecenia:
-- import obrazów z zewnętrznego serwera poprzez **protokół IIIF**, co jest przydatne gdy posiadamy już kolekcję skanów w repozytorium obsługującym ten protokół. Przykładowy manifest IIIF: `https://digitalcollections.universiteitleiden.nl/iiif_manifest/item%3A1603568/manifest` (Book of hours (Dutch) - Bibliotheca Publica Latina).
+
+### Import of transcripts and images
+
+Additional import possibilities are provided by the Import button visible on the toolbar. The button unfolds providing three commands:
+- import images from an external server via the **IIIF protocol**, which is useful if you already have a collection of scans in a repository that supports this protocol. Example IIIF manifest: `https://digitalcollections.universiteitleiden.nl/iiif_manifest/item%3A1603568/manifest` (Book of hours (Dutch) - Bibliotheca Publica Latina).
 <figure>
   <img src="image/import_iif.png" width="300" style="padding-top: 30px;">
 </figure>
 
-- import obrazów **z pliku pdf** - każda strona pliku zostanie zaimportowana jako osobny obraz
+- import of images **from a pdf file** - each page of the file will be imported as a separate image
 <figure>
   <img src="image/import_pdf.png" width="300" style="padding-top: 30px;">
 </figure>
 
-- import transkrypcji **w formacie xml** (np. ALTO v.4 lub PAGE XML), ten wariant umożliwia importowanie transkrypcji i segmentacji do wczytanych wcześniej skanów, transkrypcje mogą być grupą plików xml lub mogą być spakowane w formie **pliku zip**. Funkcja ta pozwala także na import pliku zip, zawierającego zarówno skany jak i transkrypcje xml, aplikacja rozpakuje wówczas obrazy i umieści na liście skanów, wczytując jednocześnie informacje z plików xml - transkrypcję, segmentację itd. Uwaga: domyślnie maksymalna wielkość importowanego pliku zip nie może przekroczyć 150 MB. W przypadku importu plików pochodzących np.  Transkribusa (zaleca się wówczas format PAGE) należy po imporcie przeprowadzić korektę masek linii (segmentację z opcją 'only line mask'). 
+- import of transcriptions **in XML** format (e.g. ALTO v.4 or PAGE XML). This option allows importing transcriptions and segmentation to previously loaded scans, the transcriptions can be a group of XML files or can be packed as a **zip file**. This function also allows you to import a zip file containing both scans and XML transcriptions. The application will then extract the images and place them in the list of scans while simultaneously loading the information from the XML files - transcription, segmentation, etc. Note: by default, the maximum size of the imported zip file cannot exceed 150 MB. In the case of importing files originating from e.g. Transkribus (the PAGE format is then recommended), line masks must be corrected after import (segmentation with the 'only line mask' option).
 <figure>
   <img src="image/import_xml.png" width="300" style="padding-top: 30px;">
 </figure>
 
-Podczas importu obrazów poprzez protokół IIIF pobierane są zwykle z serwera również metadane importowanej kolekcji, które można obejrzeć w zakładce 'Description' dokumentu.
+When importing images via the IIIF protocol, the metadata of the imported collection is usually also downloaded from the server, which can be viewed in the 'Description' tab of the document.
 <figure>
   <img src="image/iiif_metadane.png" width="450">
 </figure>
 
 
-## Tagi dokumentów
+## Document tags
 
-Do dokumentu można przypisywać tagi zdefiniowane przez użytkownika. Tagi są rodzajem etykiet opisujących dokument oraz pozwalają na szybkie filtrowanie dokumentów, można np. dodać tag 'IIIF' do wszystkich dokumentów projektu zaimportowanych poprzez ten protokół by później odfiltrować tylko dokumenty tego typu. Dodanie tagu do dokumentu obsługuje niebieska ikona z symbolem etykiety na liście dokumentów. Podobna ikona lecz w pasku narzędzi powyżej listy dokumentów (obok przycisku tworzenia nowego dokumentu) wyświetla okno zarządzania tagami, gdzie można zmienić nazwę tagu czy przypisany mu kolor.
+You can assign user-defined tags to a document. Tags are a type of labels describing a document and allow for quick filtering of documents, e.g. you can add the 'IIIF' tag to all project documents imported via this protocol to later filter out only documents of this type. Adding a tag to a document is supported by a blue icon (with a label symbol) in the list of documents. A similar icon, but in the toolbar above the list of documents (next to the button for creating a new document) displays the tag management window, where you can change the name of the tag or the color assigned to it.
 <figure>
   <img src="image/dokument_tagi.png" width="750">
 </figure>
 
-## Zakładki dokumentu
 
-Okno dokumentu jest tym miejscem aplikacji, które jest najczęściej wyświetlane podczas pracy z eScriptorium. Składa się z 6 zakładek:
-- _Description_ - gdzie znajdują się podstawowe informacje i metadane opisujące dokument.
-- _Ontology_ - z definicjami typów, etykiet i adnotacji dla tekstu i obrazu.
-- _Images_ - gdzie można dodawać i usuwać skany, importować transkrypcje, przeprowadzać najważniejsze operacje jak segmentacja czy transkrypcja automatyczna, trenować modele HTR/OCR a w wreszcie także eksportować dane.
-- _Edit_ - w której użytkownik pracuje z konkretnym obrazem/skanem.
-- _Models_ - zawierającym listę modeli związanych z danym dokumentem (modeli wykorzystanych do utworzenia transkrypcji lub modeli wytrenowanych na bazie tego dokumentu).
-- _Reports_ - zakładka raportów na temat bieżącego dokumentu, np. informacje o liczbie obrazów w dokumencie, średnim współczynniku pewności transkrypcji czy częstotliwości występowania znaków w transkrypcji.
+## Document tabs
 
+The document window is the place of the application that is most often displayed when working with eScriptorium. It consists of 6 tabs:
+- _Description_ - where you can find basic information and metadata describing the document.
+- _Ontology_ - with definitions of types, labels and annotations for text and image.
+- _Images_ - where you can add and delete scans, import transcriptions, carry out the most important operations such as segmentation or automatic transcription, train HTR/OCR models and finally export data.
+- _Edit_ - in which the user works with a specific image/scan.
+- _Models_ - containing a list of models related to a given document (models used to create the transcript or models trained on the basis of this document).
+- _Reports_ - reports tab about the current document, e.g. information about the number of images in the document, the average transcription confidence factor or the frequency of characters in the transcription.
 
-## Lista obrazów/skanów
+## List of images
 
-Lista obrazów/skanów widoczna w zakładce 'Images' dokumentu jest głównym miejscem szybkiego przeglądania kolekcji skanów w dokumencie. Z poziomu listy skanów wywoływane jest też ich przetwarzanie: binaryzacja, segmentacja czy transkrypcja. Skany wyświetlane są w formie miniatur, jeżeli jest ich więcej niż kilka i nie mieszczą się na ekranie, aplikacja wyświetla poziomy pasek przewijania.
+The image list, visible in the 'Images' tab of the document, is the main place to quickly browse the collection of images in the document. Image processing is also invoked from the image list: binarisation, segmentation or transcription. Images are displayed as thumbnails; if there are more than a few and they do not fit on the screen, the application displays a horizontal scroll bar.
 <figure>
   <img src="image/lista_skanow.png" width="750">
 </figure>
 
-Powyżej listy skanów widoczny jest pasek narzędzi. Pierwsze dwa przyciski na pasku pozwalają na zaznaczenie (wybranie) lub odznaczenie wszystkich skanów - operacje przetwarzania skanów przeprowadzane są tylko na zaznaczonych obrazach. Kolejne przyciski odpowiadają za import i eksport, trenowanie (możliwe jest trenowanie modelu segmentacji lub modelu transkrypcji), grupa przycisków z prawej strony pozwala na przetwarzanie skanów: binaryzację, segmentację, transkrypcję oraz automatyczne wyrównanie (Align) ze wskazanym tekstem (np. transkrypcją manualną).
-
+A toolbar is visible above the image list. The first two buttons on the bar allow all images to be marked (selected) or deselected - image processing operations are performed only on the selected images. The next buttons are responsible for import and export, training - it is possible to train a segmentation model or a transcription model. The availability of the 'Train' button depends on user rights. A group of buttons on the right-hand side of the toolbar allows the processing of scans: binarisation, segmentation, transcription and automatic alignment (Align) with the indicated text (e.g. manual transcription).
 <figure>
   <img src="image/miniatury_skanow.png" width="300">
 </figure>
 
-Każdy obraz/skan wyświetlany w formie miniatury posiada zestaw ikon/przycisków informujących o stanie danego skanu i pozwalających na wykonanie pewnych operacji na nim, na przykład pole wyboru w górnym lewym rogu miniatury zaznacza dany skan, mała ikonka z krzyżykiem (w górnym prawym rogu) umożliwia usunięcie skanu z dokumentu, zielone pole/przycisk na środku miniatury wyświetla skan w trybie edycji, ikony pod miniaturą informują czy dla skanu przeprowadzono jedną z operacji przetwarzania, wówczas przybierają kolor zielony. Np. okrągła czarno-biała ikona odpowiada za binaryzację, ikona ze schematycznymi liniami za segmentację, ikona będąca białym pustym prostokątem dotyczy transkrypcji zaś ikona wyglądająca jak symbol pliku/dokumentu odpowiada funkcji Align (automatycznemu wyrównaniu tekstu). Chwycenie za pomocą myszy i przemieszczenie całej miniatury pozwala natomiast zmienić kolejność skanów w dokumencie.
+Each image displayed as a thumbnail has a set of icons/buttons that indicate the status of a particular scan and allow certain operations to be performed on it. For example, the checkbox in the upper-left corner of the thumbnail selects a particular scan, while the small cross icon (in the upper-right corner) allows you to delete a scan from a document. The green box/button in the centre of the thumbnail allows you to enter edit mode, and the icons below the thumbnail indicate whether any of the processing operations have been carried out on the scan, in which case they turn green. For example, the round black/white icon is for binarisation, the icon with schematic lines is for segmentation, the icon which is a white empty rectangle is for transcription and the icon which looks like a file/document symbol corresponds to the Align function (automatic text alignment). By grabbing a thumbnail with the mouse and moving it within the image list, you can change the order of the images in the document.
 
-## Binaryzacja
 
-Binaryzacja jest w obecnej wersji procedurą niezalecaną do przeprowadzania, dokumentacja systemu ostrzega że może to prowadzić nawet do pogorszenia jakości wyników.
+## Binarisation
+
+In the current version of the application, binarization is not recommended. The system warns that this may even lead to a deterioration in the quality of the results.
 <figure>
   <img src="image/binaryzacja.png" width="450">
 </figure>
