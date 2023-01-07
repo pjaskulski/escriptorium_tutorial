@@ -26,7 +26,7 @@ eScriptorium is a web-based application designed to work on historical manuscrip
 - [Entering a manual transcription](#entering-a-manual-transcription)
   - [Virtual keyboard](#virtual-keyboard)
   - [Order of lines](#order-of-lines)
-- [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
+- [Models, import of publicly available models](#models-import-of-publicly-available-models)
   - [Menu My Models](#menu-my-models)
   - [Zakładka Models w dokumencie](#zak%C5%82adka-models-w-dokumencie)
 - [Transkrypcja automatyczna](#transkrypcja-automatyczna)
@@ -394,17 +394,17 @@ The order of the rows can be modified in the 'Text' panel after activating the s
 </figure>
 
 
-## Modele, import modeli dostępnych publicznie
+## Models, import of publicly available models
 
-Po zainstalowaniu eScriptorium nie posiada żadnego domyślnego modelu OCR/HTR. Można na podstawie posiadanych materiałów (_ground truth_ - kolekcji obrazów i pasujących do nich w 100% zweryfikowanych tekstów) wytrenować własny. Kolekcje publicznie dostępnych materiałów na otwartych licencjach można znaleźć w katalogu [HTR-United](https://htr-united.github.io/), podobne kolekcje lecz głównie dla materiałów OCR zebrane zostały na stronie [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/).
+Once installed, eScriptorium has no default OCR/HTR model. You can train your own model based on the materials you have (_ground truth_ - collections of images and matching 100% verified texts). Collections of publicly available material under open licenses can be found in [HTR-United](https://htr-united.github.io/), similar collections but mainly for OCR material have been collected at [OCR and Ground Truth Resources](https://cneud.github.io/ocr-gt/).
 
-Istnieje jednakże kolekcja gotowych wytrenowanych modeli przechowywanych w serwisie [zenodo.org](https://zenodo.org/communities/ocr_models?page=1&size=20). Obecnie dostępnych jest kilkanaście modeli, od łacińskiego i francuskiego pisma średniowiecznego VIII-XV w., poprzez modele wytrenowane na rękopisach francuskich z XVIII-XX wieku, do modeli dla rękopisów arabskich, hebrajskich czy wietnamskich. Wśród modeli znajdują się też modele OCR dla starych druków perskich czy otomańskich. Wszystkie dostępne są bezpłatnie, zwykle na licencji Creative Commons Attribution 4.0 International. Można oczywiście także udostępnić w tym katalogu swój model, jeżeli tylko będzie on przydatny dla innych użytkowników.
+There is, however, a collection of pre-trained models stored at [zenodo.org](https://zenodo.org/communities/ocr_models?page=1&size=20). Currently, there are several models available, from models for Arabic, Hebrew or Vietnamese manuscripts to those designed for Latin and French medieval writing of the 8th-15th centuries, or trained on French manuscripts from the 18th-20th centuries. The collection also includes OCR models for old Persian or Ottoman prints. All are available free of charge, usually under a Creative Commons Attribution 4.0 International license. You can, of course, also make your model available in this catalogue, as long as it is useful to other users.
 
-Każdy model w kolekcji posiada swoją podstronę, często z informacjami na temat zbioru rękopisów na bazie których został wytrenowany. Np. model 'HTR-United - Manu McFrench V1 (Manuscripts of Modern and Contemporaneous French)' (https://zenodo.org/record/6657809#.Y6LfDtLMJKs) został przygotowany na podstawie francuskiej kolekcji z lat XVII-XXI wieku ze wspomnianego wyżej zbioru HTR-United, z dodatkiem małej próbki hiszpańskich listów z XIX wieku i XX wiecznych rękopisów angielskich.
+Each model in the collection has its own sub-page, often with information about the collection of manuscripts on which it was trained. For example, the model 'HTR-United - Manu McFrench V1 (Manuscripts of Modern and Contemporaneous French)' (https://zenodo.org/record/6657809#.Y6LfDtLMJKs) was prepared based on the 17th- to 21st-century French collection from the aforementioned HTR-United collection, with the addition of a small sample of 19th-century Spanish letters and 20th-century English manuscripts.
 
-Modele przechowywane są w plikach binarnych z rozszerzeniem *.mlmodel (format wprowadzony przez Apple w ramach frameworku CoreML, do integracji metod uczenia maszynowego w aplikacjach, zob. https://apple.github.io/coremltools/mlmodel/index.html) i można je pobrać z sekcji 'Files' podstrony danego modelu. Wielkość modelu to zazwyczaj od kilkunastu do parudziesięciu megabajtów. Po pobraniu na dysk lokalny można taki model zaimportować do eScriptorium, korzystając z funkcji 'Upload a model' w oknie z listą modeli widoczną po przejściu do menu 'My Models' u góry ekranu aplikacji.
+The models are stored in binary files with the extension *.mlmodel (a format introduced by Apple as part of the CoreML framework, for integrating machine learning methods into applications, see https://apple.github.io/coremltools/mlmodel/index.html) and can be downloaded from the 'Files' section of the model's subpage. The size of the model is usually between a dozen and a few tens of megabytes. Once downloaded to a local drive, such a model can be imported into eScriptorium using the 'Upload a model' function in the model list window visible when navigating to the 'My Models' menu at the top of the application screen.
 
-W przypadku bezpośredniego korzystania z programu Kraken posiada on wbudowaną obsługę pobierania modeli z repozytorium zenodo, służą do tego polecenia `kraken list`, `kraken show` i `kraken get`, opisane w dokumentacji w sekcji [Model Repository](https://kraken.re/master/advanced.html#querying-and-model-retrieval).
+When used directly, Kraken has built-in support for downloading models from the zenodo repository, using the `kraken list', `kraken show' and `kraken get' commands, described in the documentation under [Model Repository](https://kraken.re/master/advanced.html#querying-and-model-retrieval).
 
 ### Menu My Models
 
