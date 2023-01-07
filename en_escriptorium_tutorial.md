@@ -25,7 +25,7 @@ eScriptorium is a web-based application designed to work on historical manuscrip
   - [Assigning labels to parts of the image](#assigning-labels-to-parts-of-the-image)
 - [Entering a manual transcription](#entering-a-manual-transcription)
   - [Virtual keyboard](#virtual-keyboard)
-  - [Kolejność wierszy](#kolejno%C5%9B%C4%87-wierszy)
+  - [Order of lines](#order-of-lines)
 - [Modele, import modeli dostępnych publicznie](#modele-import-modeli-dost%C4%99pnych-publicznie)
   - [Menu My Models](#menu-my-models)
   - [Zakładka Models w dokumencie](#zak%C5%82adka-models-w-dokumencie)
@@ -64,7 +64,7 @@ The eScriptorium is not a public platform where you can create an account. To us
 
 ## Login to the application and its main window
 
-Logging in to the eScriptorium instance requires a username and password. The login window is displayed by selecting the Login button in the top right corner of the application screen.
+To log in to the eScriptorium instance, you must enter your username and password. The login window is displayed by selecting the Login button in the top right corner of the application screen.
 <figure>
   <img src="image/login.png" width="300">
 </figure>
@@ -381,14 +381,14 @@ The virtual keyboard function was introduced to make it easier to enter special 
 </figure>
 
 
-### Kolejność wierszy
+### Order of lines
 
-Kolejność wierszy wyznaczona automatycznie może być wyświetlona w panelu segmentacji przez ikonę ze strzałką w dół i cyframi 1-9.
+The order of the rows determined automatically can be displayed in the segmentation panel, via the icon in the panel toolbar (icon with arrow symbol and numbers).
 <figure>
   <img src="image/kolejnosc_wierszy_segmentacja.png" width="450">
 </figure>
 
-Kolejność wierszy można modyfikować po włączeniu trybu sortowania ikoną ze strzałkami w panelu 4 - Text. Aplikacja umożliwia wówczas przesuwanie wierszy w panelu tekstowym za pomocą myszy. Należy zwrócić uwagę, że eScriptorium ma skłonność do automatycznego korygowania kolejności po dodaniu linii manualnie przez użytkownika, a przypadkowe dodanie linii zdarza się dość łatwo.
+The order of the rows can be modified in the 'Text' panel after activating the sorting mode (with the arrow icon). The application then allows you to move the lines in the text panel using the mouse cursor. Note that eScriptorium tends to automatically correct the order when lines are added manually by the user, and accidentally adding lines happens quite easily.
 <figure>
   <img src="image/sortowanie_panel_text.png" width="450">
 </figure>
