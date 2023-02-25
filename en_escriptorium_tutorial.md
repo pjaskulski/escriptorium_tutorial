@@ -412,10 +412,10 @@ In the main menu of the application (located in the upper right corner of the wi
 
 The list of models displays basic information for each model, such as its type (whether it can be used for transcription as 'Recognize' or for segmentation as 'Segmentation'), its size in megabytes, whether it is already trained or in training, and its best accuracy ('Accuracy'). For models trained in a current instance of eScriptorium, users can also view the number of incorrect and all characters identified during post-training validation. The last column indicates whether the model is 'owned' by the current user ('Owner') or is available to the user ('User', 'Public'). Tool icons are located behind the information columns, and the number of icons displayed depends on whether the model is 'ours' and whether it has been trained in eScriptorium:
 
-- zielona ikona z symbolem pliku pozwala na pobranie modelu na dysk lokalny (plik *.mlmodel)
-- niebieska ikona z zakrzywioną strzałką pozwala na udostępnienie 'naszego' modelu innym użytkownikom
-- czerwona ikona z koszem na śmieci pozwala na usunięcie modelu - ale nie modelu udostępnionego
-- ikona w niebieskim-morskim kolorze umożliwia - tylko dla modeli trenowanych w danej instancji eSCriptorium - na przełączenie na inną wersję modelu (jedną z wersji pośrednich stworzonych podczas uczenia)
+- The green icon with a file symbol allows you to download the model to your local disk (*.mlmodel file).
+- The blue icon with a curved arrow allows you to share 'our' model with other users.
+- the red trashcan icon allows you to delete the model - but not the shared model
+- the blue-maroon icon allows - only for models trained in a given eScriptorium instance - to switch to another version of the model (one of the intermediate versions created during learning).
 
 
 ### Zakładka Models w dokumencie
