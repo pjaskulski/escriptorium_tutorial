@@ -408,75 +408,77 @@ When used directly, Kraken has built-in support for downloading models from the 
 
 ### Menu My Models
 
-W głównym menu aplikacji (górny prawy róg okna), menu 'My Models' otwiera okno z listą modeli dostępnych dla użytkownika (zaimportowanych, wytrenowanych przez użytkownika lub udostępnionych użytkownikowi). Duży zielony przycisk 'Upload a model' służy właśnie do zaimportowania modelu pobranego np. z serwisu zenodo.org (plik w formacie *.mlmodel). **Uwaga:** aplikacja domyślnie proponuje nazwę modelu zgodną z nazwą pliku, można ją zmodyfikować, ale po zatwierdzeniu importu nie można już jej zmienić (w obecnej wersji eScriptorium).
+In the main application menu (upper right corner of the window), the 'My Models' menu opens a window with a list of models available to the user (imported, trained by the user, or shared with the user). The large green 'Upload a model' button is used to import a model downloaded, for example, from the zenodo.org service (file in *.mlmodel format). **Note**: The application suggests a model name by default, based on the file name. You can modify it, but once the import is confirmed, you can no longer change it (in the current version of eScriptorium).
 
-Lista modeli wyświetla podstawowe informacje o każdym z nich: typie (model może służyć do transkrypcji 'Recognize', lub segmentacji 'Segmentation'), wielkości w megabajtach, czy jest to model już wytrenowany (czy trwa trenowanie), jaka jest jego najlepsza dokładność ('Accuracy'). W przypadku modeli trenowanych w danej instancji eScriptorium widoczna jest także liczba błędych/wszystkich znaków określona podczas walidacji po trenowaniu. Ostatnia kolumna informuje czy jest to model będący 'własnością' bieżącego użytkownika ('Owner') czy też został mu udostępniony ('User', 'Public'). Za kolumnami z informacjami znajdują się ikony narzędzi, których liczba zależy właśnie od tego czy jest to 'nasz' model i czy był trenowany w eScriptorium:
+The list of models displays basic information about each of them: type (the model can be used for transcription 'Recognize', or segmentation 'Segmentation'), size in megabytes, whether it is an already trained model (or training is in progress), and its best accuracy ('Accuracy'). For models trained in a given eScriptorium instance, the number of incorrect/total characters determined during validation after training is also visible. The last column indicates whether the model is the 'property' of the current user ('Owner') or has been shared with them ('User', 'Public'). Beyond the columns with information, there are tool icons whose number depends on whether it is 'our' model and whether it was trained in eScriptorium:
 
-- zielona ikona z symbolem pliku pozwala na pobranie modelu na dysk lokalny (plik *.mlmodel)
-- niebieska ikona z zakrzywioną strzałką pozwala na udostępnienie 'naszego' modelu innym użytkownikom
-- czerwona ikona z koszem na śmieci pozwala na usunięcie modelu - ale nie modelu udostępnionego
-- ikona w niebieskim-morskim kolorze umożliwia - tylko dla modeli trenowanych w danej instancji eSCriptorium - na przełączenie na inną wersję modelu (jedną z wersji pośrednich stworzonych podczas uczenia)
+- the green icon with the file symbol allows you to download the model to your local disk (the *.mlmodel file)
+- the blue icon with a curved arrow allows you to share 'our' model with other users
+- the red icon with a trash bin allows you to delete the model - but not a shared one
+- the sea-blue icon enables - only for models trained in a given eScriptorium instance - to switch to another version of the model (one of the intermediate versions created during training)
 
 
-### Zakładka Models w dokumencie
+### The Models tab in the document
 
-Zakładka 'Models' w dokumencie wyświetla podobną listę do tej z menu 'My Models'. Są tam jednak widoczne tylko modele związane z bieżącym dokumentem. Np. użyte do transkrypcji automatycznej, czy wytrenowane na bazie plików z dokumentu. W tym oknie nie można usuwać modeli, widoczna jest jednak żółta ikona z symbolem kosza na śmieci - to narzędzie powoduje jedynie usunięcie modelu z listy modeli dokumentu.
+The 'Models' tab in the document displays a similar list to the one in the 'My Models' menu. However, only models related to the current document are visible there, e.g., used for automatic transcription or trained based on files from the document. You cannot delete models in this window, but there is a yellow icon with a trash bin symbol - this tool only removes the model from the document's models list.
 <figure>
   <img src="image/document_models.png" width="450">
 </figure>
 
 
-## Transkrypcja automatyczna
+## Automatic transcription
 
-Po zaimportowaniu plików z obrazami (skanami), wykonaniu segmentacji, zweryfikowaniu segmentacji i zakładając, że istnieje model (zaimportowany lub wytrenowany) pasujący do rękopisów w obrazach, można przystąpić do wykorzystania jednej z najważniejszych funkcji eScriptorium czyli automatycznej transkrypcji. Aplikacja wykorzystuje w tym celu program Kraken. Do przeprowadzenia transkrypcji należy uprzednio zaznaczyć choć jeden obraz z listy obrazów bieżącego dokumentu. Przycisk 'Transcribe' w pasku narzędzi uruchamia procedurę wyświetlając okno dialogowe z parametrami transkrypcji - właściwie jednym parametrem, należy bowiem wybrać jeden z listy dostępnych modeli.
+After importing files with images (scans), performing segmentation, verifying segmentation, and assuming that there is a model (imported or trained) suitable for the manuscripts in the images, you can proceed to use one of eScriptorium's most important features - automatic transcription. The application uses the Kraken program for this purpose. To perform the transcription, you must first select at least one image from the list of images in the current document. The 'Transcribe' button in the toolbar starts the procedure, displaying a dialog box with transcription parameters - actually, just one parameter, as you need to choose one from the list of available models.
 <figure>
   <img src="image/transcribe.png" width="400">
 </figure>
 
-Proces transkrypcji, zależnie od zakresu (jeden czy kilkaset obrazów) może zająć dłuższą chwilę i odbywa się w tle, na serwerze z eScritptorium. Po zakończeniu transkrypcji aplikacja wyświetla odpowiednie powiadomienie w górnym prawym rogu ekranu.
-Aby ocenić jakość transkrypcji należy wówczas wejść w tryb edycji obrazu (poprzez ikonę na tle miniatury skanu) lub wejść w zakładkę Edit w oknie dokumentu. Nowa transkrypcja będzie widoczna w panelu 3 - 'Transciption' oraz jako tekst w panelu 4 - 'Text'.
-W górnym prawym rogu ekranu, powyżej ikon włączających/wyłączających panele widoczna jest lista wersji transkrypcji, jeżeli domyślnie wyświetlona została inna, można tu odnaleźć i ustawić nowo przygotowaną transkrypcję.
+The transcription process, depending on the scope (one or several hundred images), may take a longer time and is performed in the background on the eScriptorium server. After the transcription is completed, the application displays a notification in the top right corner of the screen.
+To assess the quality of the transcription, you should then enter the image editing mode (through the icon on the thumbnail background) or go to the Edit tab in the document window. The new transcription will be visible in panel 3 - 'Transcription' and as text in panel 4 - 'Text'.
+In the top right corner of the screen, above the icons for enabling/disabling panels, there is a list of transcription versions. If a different version is displayed by default, you can find and set the newly prepared transcription here.
 <figure>
   <img src="image/lista_transkrypcji_skanu.png" width="500">
 </figure>
 
 
-### Wersje transkrypcji
+### Transcription versions
 
-Przycisk z symbolem koła zębatego znajdujący się obok listy wersji transkrypcji wyświetla okno zarządzania wersjami transkrypcji, z którego można usunąć wybrane wersje. Uwaga: nie można usuwać transkrypcji manualnej ('manual') oraz bieżącej, aktualnie wyświetlanej transkrypcji. Usuwanie wersji transkrypcji dotyczy wszystkich obrazów dokumentu, nie tylko bieżącego obrazu.
+The button with the gear symbol located next to the list of transcription versions displays the transcription version management window, from which you can delete selected versions. Note: you cannot delete manual transcriptions ('manual') or the current, currently displayed transcription. Deleting transcription versions applies to all document images, not just the current image.
 <figure>
   <img src="image/wersje_transkrypcji.png" width="400">
 </figure>
 
-Zaznaczenie w tym samym oknie paru pól wyboru (po lewej stronie nazwy wersji transkrypcji) pozwoli na wyświetlenie porównania transkrypcji (na poziomie wiersza). Po zamknięciu okna wersji, kliknięciu w wybrany wiersz transkrypcji (w panelu transkrypcji) wyświetlony zostanie edytor linii, tym razem w dolnej części okienka edytora widoczna będzie opcja 'Toggle transcription comparison'. Włączenie jej wyświetli warianty bieżącego wiersza z zaznaczonych wcześniej transkrypcji.
+Selecting multiple checkboxes in the same window (to the left of the transcription version name) will allow you to display a comparison of transcriptions (on a line-by-line basis). After closing the version window and clicking on the selected line of transcription (in the transcription panel), the line editor will be displayed, this time with the 'Toggle transcription comparison' option visible in the lower part of the editor window. Turning it on will display the current line variants from the transcriptions previously selected.
 <figure>
   <img src="image/porownanie_wersji_transkrypcji.png" width="500">
 </figure>
 
 
-## Automatic alignment - funkcja wyrównywania tekstu
+## Automatic alignment
 
-Funkcja Align jest nowością wprowadzoną w wersji 0.13 eScriptorium, mechanizm ten jest jeszcze dopracowywany, dlatego należy traktować go jako wersję beta. Wykorzystuje program PASSIM Davida Smitha do porównywania dostarczonego pliku txt z wybraną warstwą OCR/HTR. Na podstawie podziału na strony i podziału na linie w warstwie OCR funkcja ta jest w stanie dopasować plik txt do skanów/obrazów, podzielić na wiersze zgodnie z podziałem w rękopisie i zapisać wynik jako kolejną warstwę OCR. Mając wystarczająco dobre wyniki OCR/HTR można w ten sposób wykorzystać je do wczytania jako warstwy np. tekstu z opracowania krytycznego danego rękopisu, nawet gdy tekst ten nie zachowuje oryginalnego układu z rękopisu.
+The Align function is a novelty introduced in version 0.13 of eScriptorium and is still being refined, so it should be considered as a beta version. It uses David Smith's PASSIM program to compare the provided txt file with the selected OCR/HTR layer. Based on the page divisions and line divisions in the OCR layer, this function is able to match the txt file to the scans/images, divide it into lines according to the manuscript's layout, and save the result as another OCR layer. With sufficiently good OCR/HTR results, you can use this method to load, for example, text from a critical edition of a manuscript as a layer, even when the text does not retain the original manuscript layout.
 <figure>
   <img src="image/align.png" width="400">
 </figure>
 
-Przed uruchomieniem funkcji należy przede wszystkim zaznaczyć 1 lub więcej skanów, które będą podlegały przetwarzaniu, w innym przypadku kliknięcie przycisku 'Align' na pasku narzędzi wywoła przypominający o tym komunikat. Okno parametrów funkcji 'Align' jest jednym z bardziej rozbudowanych w aplikacji eScriptorium. Należy w nim wskazać warstwę transkrypcji, z którą będzie porównywany plik tekstowy, wskazać lokalny plik tekstowy (lub wybrać z listy jeżeli był już użyty - eScriptorium zapamiętuje pliki). W sekcji 'Settings' okna należy wprowadzić nazwę nowej warstwy, parametr 'Use full transcribed document' określa czy porównywana będzie cała zawartość warstwy transkrypcji, czy każda strona osobo. Można też wskazać jakie typy regionów skanu będą brane pod uwagę (domyślnie wszystkie). Domyślnie odznaczona jest opcja 'Merge aligned text with existing transcription', która powoduje uzupełnienie wynikowej warstwy tekstem wskazanej warstwy transkrypcji gdy system nie zdoła dopasować odpowiednich fragmentów (jeżeli opcja nie jest użyta takie niedopasowane wiersze tekstu będą puste). Możliwe jest ograniczenie analizy do wskazanych typów regionów - domyślnie wybrane są wszystkie. Okno posiada jeszcze grupę parametrów ukrytych - zaawansowanych: kliknięcie 'Show/hide advanced settigns' wyświetla blok technicznych parametrów funkcji Align, ich krótki opis znajduje się w tym samym oknie poniżej każdego z nich, dodatkowych informacji należy szukać w dokumentacji programu Passim (https://github.com/dasmiq/passim).
+Before starting the function, you should first select 1 or more scans that will be subject to processing; otherwise, clicking the 'Align' button on the toolbar will trigger a reminder message. The parameters window for the 'Align' function is one of the more extensive ones in the eScriptorium application. You need to indicate the transcription layer that will be compared to the text file, specify the local text file (or select it from the list if it has already been used - eScriptorium remembers files). In the 'Settings' section of the window, you must enter the name of the new layer, and the 'Use full transcribed document' parameter determines whether the entire content of the transcription layer will be compared or each page individually. You can also specify which types of scan regions will be considered (by default, all are included).
+
+By default, the 'Merge aligned text with existing transcription' option is unchecked, which results in the output layer being supplemented with the text from the specified transcription layer if the system fails to match the appropriate segments (if the option is not used, such unmatched text lines will be empty). It is possible to limit the analysis to specified region types - by default, all are selected. The window also has a group of hidden, advanced parameters: clicking 'Show/hide advanced settings' displays a block of technical parameters for the Align function, with a brief description below each one in the same window. For additional information, refer to the Passim program documentation (https://github.com/dasmiq/passim).
 <figure>
   <img src="image/align_techniczne.png" width="400">
 </figure>
 
-Warto zauważyć, że 'wyrównywany' tekst np. z edycji krytycznej może nie tylko nie zachowywać podziału na strony i wiersze, ale również zawierać więcej tekstu niż poddane przetwarzaniu skany. Np. przy przetwarzaniu skanu z listem Corticellego poddanego transkrypcji modelem o 89% dokładności i 'wyrównywanego' z tekstem przygotowanym manualnie przez ekspertów zawierającym treść wielu listów, funkcja _Align_ dopasowała praktycznie idealnie właściwy fragment, podzieliła go też poprawnie na wiersze.
+It is worth noting that the 'aligned' text, for example from a critical edition, may not only fail to maintain the division into pages and lines but also contain more text than the processed scans. For instance, when processing a scan of Corticelli's letter subjected to transcription by a model with 89% accuracy and 'aligned' with text manually prepared by experts containing the content of many letters, the Align function matched the appropriate fragment almost perfectly and also correctly divided it into lines.
 <figure>
   <img src="image/aling_dzialanie.png" width="600">
 </figure>
 
-**Uwaga:** ponieważ jest to funkcjonalność w fazie 'beta' nie jest dostępna automatycznie, aby funkcja Align była widoczna i działała poprawnie należy ustawić zmienną środowiskową `TEXT_ALIGNMENT=True` oraz uruchomić dodatkowy kontener dockera: celery-jvm.
+**Note**: Since this functionality is in the 'beta' phase, it is not available automatically. To make the Align function visible and working correctly, you need to set the environment variable `TEXT_ALIGNMENT=True` and run an additional Docker container: celery-jvm.
 
 
-## Strategia trenowania modeli
+## Strategy for training models
 
-Utworzenie i wytrenowanie nowego modelu od podstaw wymaga solidnej wielkości materiału treningowego a także sporej ilości czasu i mocy komputera do przeprowadzenia procesu uczenia. Typowe, dostępne publicznie modele pisma ręcznego zostały utworzone na podstawie kilkunastu do kilkudziesięciu tysięcy wierszy 'ground truth' (zob. [lectaurep](https://github.com/lectaurep/lectaurep_base_model)). Przygotowanie takiego materiału (o 100% poprawności zweryfikowanej przez ekspertów) jest najbardziej pracochłonnym etapem pracy nad modelem.
+Creating and training a new model from scratch requires a substantial amount of training material, as well as a considerable amount of time and computing power to carry out the learning process. Typical, publicly available handwritten text models have been created based on tens of thousands of lines of 'ground truth' (see [lectaurep](https://github.com/lectaurep/lectaurep_base_model)). Preparing such material (with 100% accuracy verified by experts) is the most labor-intensive stage of working on a model.
 
 Proces uczenia może być łatwiejszy jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. _transfer learning_ ('uczenie transferowe', zob. https://en.wikipedia.org/wiki/Transfer_learning), przy użyciu dużo mniejszej liczby wierszy _ground truth_ - np. od kilkuset do paru tysięcy. Douczanie (inaczej: dostrajanie) modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw.
 > "Korzystanie z wcześniej wytrenowanych modeli jest najważniejszą metodą, dzięki której możemy trenować kolejne, dokładniejsze modele, przy czym cała operacja odbywa się szybciej, z użyciem mniejszej ilości danych oraz w krótszym czasie, a także przy mniejszym poziomie kosztów"
