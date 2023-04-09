@@ -480,44 +480,42 @@ It is worth noting that the 'aligned' text, for example from a critical edition,
 
 Creating and training a new model from scratch requires a substantial amount of training material, as well as a considerable amount of time and computing power to carry out the learning process. Typical, publicly available handwritten text models have been created based on tens of thousands of lines of 'ground truth' (see [lectaurep](https://github.com/lectaurep/lectaurep_base_model)). Preparing such material (with 100% accuracy verified by experts) is the most labor-intensive stage of working on a model.
 
-Proces uczenia może być łatwiejszy jeżeli posiadamy dostęp do modelu wytrenowanego na materiale zbliżonym do naszych rękopisów. Możliwe jest wówczas trenowanie na bazie istniejącego modelu, czyli wykorzystanie mechanizmu tzw. _transfer learning_ ('uczenie transferowe', zob. https://en.wikipedia.org/wiki/Transfer_learning), przy użyciu dużo mniejszej liczby wierszy _ground truth_ - np. od kilkuset do paru tysięcy. Douczanie (inaczej: dostrajanie) modelu jest (do pewnego stopnia) skuteczne także w przypadku różnic w alfabecie między modelem bazowym, a materiałem treningowym którym douczamy ten model, kiedy to w trakcie uczenia model musi 'poznać' zupełnie nowe znaki. Proces douczania - fine tuning - jest znacznie szybszy niż uczenie modelu od podstaw.
-> "Korzystanie z wcześniej wytrenowanych modeli jest najważniejszą metodą, dzięki której możemy trenować kolejne, dokładniejsze modele, przy czym cała operacja odbywa się szybciej, z użyciem mniejszej ilości danych oraz w krótszym czasie, a także przy mniejszym poziomie kosztów"
+The learning process can be easier if we have access to a model trained on material similar to our manuscripts. In this case, it is possible to train based on an existing model, using the so-called transfer learning mechanism (see https://en.wikipedia.org/wiki/Transfer_learning), with a much smaller number of ground truth lines - e.g., from several hundred to a few thousand. Fine-tuning (otherwise known as adjusting) the model is (to some extent) also effective in cases where there are differences in the alphabet between the base model and the training material used to fine-tune the model when the model must 'learn' entirely new characters during training. The fine-tuning process is much faster than training a model from scratch.
+
+> "Using pre-trained models is the most important method by which we can train subsequent, more accurate models, while the entire operation takes place faster, using less data and in a shorter time, as well as at a lower cost."
 >
 > Jeremy Howard, Sylvain Gugger, _Deep Learning dla programistów_, 2021, str. 52
 
-Jeżeli jednak nie istnieje żaden model, który mógłby pełnić rolę modelu bazowego dla przetwarzanych rękopisów, pozostaje ścieżka trenowania 'od zera'. Ponieważ praca bezpośrednio z Krakenem daje możliwości modyfikacji parametrów uczenia, czego nie można zrobić z poziomu eScriptorium, wydaje się że taki sposób trenowania jest lepszym podejściem. Wymaga to jednak opanowania obsługi Krakena z linii komend, czyli zapoznania się z dokumentacją polecenia [ketos train](https://kraken.re/master/ketos.html), czy zapoznania się z opisem [VGSL](https://kraken.re/master/vgsl.html#vgsl) dotyczącym architektury sieci neuronowych. Bardzo ciekawą lekturą będzie też dwuczęściowy artykuł opisujący doświadczenia podczas trenowania modelu opartego na francuskich rękopisach notarialnych z lat 1742-1928: [część 1](https://lectaurep.hypotheses.org/475), [część 2](https://lectaurep.hypotheses.org/488).
+However, if there is no model that could serve as a base model for the processed manuscripts, the path of training 'from scratch' remains. Since working directly with Kraken allows for modifying learning parameters, which cannot be done at the eScriptorium level, it seems that such a training method is a better approach. However, this requires mastering the command line interface of Kraken, getting familiar with the documentation of the [ketos train command](https://kraken.re/master/ketos.html), and acquainting oneself with the description of [VGSL](https://kraken.re/master/vgsl.html#vgsl) concerning neural network architecture. A very interesting read will also be a two-part article describing experiences during the training of a model based on French notarial manuscripts from the years 1742-1928: [part 1](https://lectaurep.hypotheses.org/475), [part 2](https://lectaurep.hypotheses.org/488).
 
+## Training your own model in eScriptorium
 
-## Trenowanie własnego modelu w eScriptorium
-
-eScriptorium zintegrowane jest z programem Kraken i pozwala nie tylko na rozpoznawanie pisma przygotowanymi wcześniej modelami, ale także na utworzenie całkowicie nowego modelu, lub douczenie (fine tuning) istniejącego. Proces trenowania można uruchomić w oknie dokumentu, w zakładce edycji. Jeden z widocznych w pasku narzędzi przycisków - 'Train', uruchamia trenowanie modelu segmentacji (Train -> Segmentator), lub - co jest częściej wykorzystywane - modelu transkrypcji (Train -> Recognizer). Pierwszym krokiem jest zaznaczenie co najmniej jednego skanu. Wybór narzędzia
-Train -> Recognizer wyświetla okno parametrów trenowania modelu transkrypcji. Uwaga: narzędzie 'Train' może nie być widoczne dla wszystkich użytkowników, jego dostępność zależy od przyznanych uprawnień w panelu administracyjnym (zob. [Administracja systemem](#administracja-systemem-escriptorium)).
+eScriptorium is integrated with the Kraken program and allows not only for the recognition of writing using pre-prepared models but also for the creation of entirely new models or fine-tuning of existing ones. The training process can be started in the document window, in the editing tab. One of the visible toolbar buttons - 'Train', launches the training of a segmentation model (Train -> Segmentator) or - more commonly used - a transcription model (Train -> Recognizer). The first step is to select at least one scan. Choosing the Train -> Recognizer tool displays the transcription model training parameters window. Note: The 'Train' tool may not be visible to all users, and its availability depends on the permissions granted in the administrative panel (see [System Administration](#administracja-systemem-escriptorium)).
 
 <figure>
   <img src="image/trenowanie_w_escriptorium.png" width="300">
 </figure>
 
-Należy w nim wskazać warstwę transkrypcji, która będzie użyta w procesie uczenia,
-model bazowy (jeżeli chcemy oprzeć się na istniejącym modelu, który będzie douczany) oraz nazwę wynikowego modelu. Trenowanie z poziomu eScriptorium nie pozwala na ustawienie bardziej zaawansowanych opcji uczenia, które są dostępne podczas trenowania bezpośrednio w aplikacji Kraken.
+In this window, you should indicate the transcription layer that will be used in the learning process, the base model (if we want to rely on an existing model that will be fine-tuned), and the name of the resulting model. Training from within eScriptorium does not allow for setting more advanced learning options that are available when training directly in the Kraken application.
 
 
-## Trenowanie modelu bezpośrednio w Krakenie
+## Training the model directly in the Kraken application
 
-Oprócz trenowania modelu z poziomu eScriptorium możliwe jest uruchomienie tego procesu z bezpośrednim użyciem programu Kraken z linii komend. Trzeba jednak pamiętać, że Kraken działa na systemach Linux i MacOS (na procesorach x64 i ARM, aczkolwiek w przypadku nowych komputerów Apple z procesorami M1 czyli z architekturą ARM Kraken nie umie na razie wykorzystać ich procesora graficznego), w przypadku systemu Windows można ewentualnie wypróbować WSL - Windows Subsystem for Linux.
+Apart from training the model from within eScriptorium, it is possible to launch this process using the Kraken program directly from the command line. However, it should be noted that Kraken works on Linux and macOS systems (on x64 and ARM processors, although in the case of new Apple computers with M1 processors, i.e., ARM architecture, Kraken cannot yet utilize their graphics processor). For Windows systems, you can potentially try WSL - Windows Subsystem for Linux.
 
-Kraken jest aplikacją napisaną w języku Python i potrzebuje do działania zainstalowanej wersji 3 tego interpretera (najlepiej 3.8 lub nowszą). Instalacja opisana została na stronie programu: https://kraken.re/master/index.html
+Kraken is an application written in Python and requires an installed version 3 of the interpreter (preferably 3.8 or newer) to function. The installation is described on the program's website: https://kraken.re/master/index.html
 
-Po zainstalowaniu użytkownik dysponuje poleceniami: `kraken` i `ketos` do rozpoznawania OCR/HTR i trenowania modeli.
+After installation, the user has access to the commands `kraken` and `ketos` for OCR/HTR recognition and model training.
 
-Dane do uczenia można pobrać z eScriptorium (skany oraz pliki XML), mogą też pochodzić z Transkribusa - w tym przypadku zalecany format to PAGE XML a przed trenowaniem zalecane jest przetworzenie segmentacji w eScriptorium (opcja Segmentation steps = 'Only Line Mask')
+Training data can be downloaded from eScriptorium (scans and XML files) or obtained from Transkribus - in this case, the recommended format is PAGE XML, and before training, it is recommended to process the segmentation in eScriptorium (Segmentation steps option = 'Only Line Mask').
 
-Aby nieco przyspieszyć proces uczenia z plików xml i skanów można przygotować tzw. binarny dataset poleceniem `ketos compile` (parametr `--random-split` decyduje o losowym podziale próbki - 80% uczenie, 10% walidacja podczas uczenia, 10% test; parametr `-f page` informuje o formacie plików wejściowych: PAGE XML; parametr `--workers` określa ile wątków - rdzeni CPU może być zajęte przez proces kompilacji, praca wielowątkowa znacznie przyspiesza przetwarzanie):
+To slightly speed up the learning process from XML files and scans, you can prepare a so-called binary dataset using the `ketos compile` command (the `--random-split` parameter determines the random division of the sample - 80% learning, 10% validation during learning, 10% test; the `-f page` parameter informs about the input file format: PAGE XML; the `--workers` parameter specifies how many threads - CPU cores can be occupied by the compilation process, multi-threaded work significantly speeds up processing):
 
     ketos compile --workers 3 --random-split 0.8 0.1 0.1 -f page -o name_dataset.arrow *.xml
 
-zakładając, że polecenie uruchamiane jest w katalogu z plikami xml i skanami.
+assuming that the command is run in the directory with XML files and scans.
 
-Przygotowany w ten sposób plik *.arrow posłuży np. do douczania (fine tuning - https://kraken.re/4.2.0/ketos.html#fine-tuning) istniejącego modelu (parametr `-i` wskazuje nazwę pliku z modelem bazowym, bez podania tego parametru kraken będzie trenował model od podstaw; parametr `--resize` jest istotny w przypadku różnicy alfabetu między modelem bazowym a danymi treningowymi, informuje Krakena co zrobić w przypadku napotkania nieznanych znaków w materiale treningowym):
+The prepared *.arrow file can be used, for example, for fine-tuning (https://kraken.re/4.2.0/ketos.html#fine-tuning) an existing model (the `-i` parameter indicates the name of the base model file; without specifying this parameter, Kraken will train a model from scratch; the `--resize` parameter is significant in case of differences in the alphabet between the base model and the training data, informing Kraken what to do when encountering unknown characters in the training material):
 
     ketos train -i base_model.mlmodel --resize add --workers 3 --output new_model_name -f binary name_dataset.arrow
 
@@ -525,136 +523,133 @@ Przygotowany w ten sposób plik *.arrow posłuży np. do douczania (fine tuning 
   <img src="image/trenowanie_kraken.png" width="600">
 </figure>
 
-Na ekranie powyżej widoczne są kolejne iteracje - epoki treningowe (_epoka_ to pełne przetworzenie treningowego zbioru danych) wraz z walidacją po procesie uczenia, uczenie trwa dopóki wyniki się poprawiają, jeżeli 5 kolejnych epok (tym parametrem można sterować) nie przyniesie poprawy Kraken kończy procedurę uczenia zwracając najlepszy z dotychczasowych modeli pod nazwą `{new_model_name}_best.mlmodel` gdzie 'new_model_name' to nazwa podana przez użytkownika poprzez parametr `--output`.
+In the screenshot above, you can see the successive iterations - training epochs (an epoch is a full processing of the training data set) along with validation after the learning process. The training continues as long as the results improve; if 5 consecutive epochs (this parameter can be controlled) do not bring improvement, Kraken ends the learning procedure, returning the best model so far under the name `{new_model_name}_best.mlmodel`, where 'new_model_name' is the name provided by the user through the `--output` parameter.
 
-Do przetestowania modelu można użyć polecenia: `ketos test`, podając jako parametry model do testów i dane trenowania np. w formie binarnego datasetu - pliku *.arrow utworzonego powyżej (taki zestaw danych zawiera zwykle zarówno dane treningowe, walidacyjne jak i dane testowe, nie używane podczas trenowania):
+To test the model, you can use the command: `ketos test`, providing the model for testing and training data, for example, in the form of a binary dataset - a *.arrow file created above (such a data set usually contains both training, validation, and test data, not used during training):
 
     ketos test -m name_model.mlmodel -f binary name_dataset.arrow
 
-Przykładowy wynik:
-
+Example of result:
+``
     === report  ===
     84685     Characters
     1142      Errors
     98.65%    Accuracy``
 
-Gdzie 'Accuracy' (dokładność) to wskaźnik mierzący jakość rozpoznania przez model - procent poprawnie rozpoznanych znaków. Ten sam wskaźnik jest podawany po każdej epoce trenowania modelu (val_accuracy)
-podczas weryfikacji wyników na próbce walidacyjnej danych (tam w formie ułamka np. 0.83).
+Where 'Accuracy' is an indicator measuring the recognition quality of the model - the percentage of correctly recognized characters. The same indicator is given after each epoch of model training (val_accuracy) during the verification of results on a validation data sample (there in the form of a fraction, e.g., 0.83).
 
-Polecenie uruchamiające trenowanie modelu od podstaw, z modyfikacją architektury sieci neuronowej (parametr `-s`) oraz _learning rate_ (parametr `-r`) oparte na przykładzie z [artykułu](https://lectaurep.hypotheses.org/488):
+The command to start training a model from scratch, with modification of the neural network architecture (the `-s` parameter) and learning rate (the `-r` parameter) based on an example from the [article](https://lectaurep.hypotheses.org/488):
 
     ketos train --augment -u NFD -s '[1,120,0,1 Cr3,13,32 Do0.1,2 Mp2,2 Cr3,13,32 Do0.1,2 Mp2,2 Cr3,9,64 Do0.1,2 Mp2,2 Cr3,9,64 Do0.1,2 S1(1x0)1,3 Lbx200 Do0.1,2 Lbx200 Do.1,2 Lbx200 Do]' --output poniatowski_from_scratch --lag 5 --workers 2 -r 0.0001 -f binary poniatowski.arrow
 
-Szczegółowy opis procesu i parametrów trenowania znajduje się na stronie:
+A detailed description of the training process and parameters can be found at:
 https://kraken.re/master/training.html
 
-Model wytrenowany bezpośrednio w Krakenie (plik *.mlmodel) może zostać później zaimportowany do eScriptorium. Można też model dobrej jakości, który warto udostępnić publicznie, umieścić w repozytorium zenodo.org. Kraken umożliwia opublikowanie modelu z poziomu linii komend poleceniem: `ketos publish`, procedura wymaga posiadania konta w serwisie zenodo i jest opisana na stronie: https://kraken.re/master/advanced.html
+A model trained directly in Kraken (a *.mlmodel file) can later be imported into eScriptorium. If you have a high-quality model that is worth sharing publicly, you can also place it in the zenodo.org repository. Kraken allows you to publish a model from the command line with the command: `ketos publish`. The procedure requires having an account on the Zenodo service and is described at: https://kraken.re/master/advanced.html
+
+## Cooperation with other users
+
+The application has the ability to share both projects and documents or models with other users.
 
 
-## Współpraca z innymi użytkownikami
+### Sharing projects
 
-Aplikacja posiada możliwość współdzielenia zarówno projektów jak i dokumentów czy modeli z innymi użytkownikami.
-
-
-### Udostępnianie projektów
-
-Aby udostępnić projekt innemu użytkownikowi należy w oknie projektu odnaleźć niebieską ikonę 'Share this Project' w górnym prawym rogu okna. Wyświetlone zostanie wówczas okno dialogowe, w którym należy wprowadzić login użytkownika, któremu chcemy udostępnić projekt. Po zatwierdzeniu system wyświetli powiadomienie o udanym udostępnieniu a docelowy użytkownik powinien zobaczyć projekt na swojej liście.
+To share a project with another user, you need to find the blue 'Share this Project' icon in the top right corner of the project window. A dialog box will then be displayed, in which you need to enter the username of the person you want to share the project with. After confirmation, the system will display a notification of successful sharing, and the target user should see the project on their list.
 <figure>
   <img src="image/share_project.png" width="400">
 </figure>
 
-Alternatywnie, jeżeli w naszej instancji eScriptorium utworzone zostały grupy użytkowników, zamiast udostępniać projekt pojedynczym osobom można udostępnić go całej grupie (tworzenie grup i przypisywanie użytkowników do grup jest dostępne w panelu administracyjnym aplikacji).
+Alternatively, if user groups have been created in our eScriptorium instance, instead of sharing the project with individual people, you can share it with an entire group (creating groups and assigning users to groups is available in the application's administrative panel).
 
-Użytkownik może zrezygnować z projektu który został mu udostępniony. Na liście projektów te stworzone przez inną osobę i udostępnione posiadają z prawej strony żółtą ikonę z czarnym symbolem koszta na śmieci ('Remove from list'). Użycie tego narzędzia nie spowoduje usunięcia projektu w ogóle, ale usunie jedynie projekt z naszej listy projektów.
+A user can opt out of a project that has been shared with them. On the list of projects, those created by someone else and shared have a yellow icon with a black trash can symbol ('Remove from list') on the right side. Using this tool will not delete the project entirely but will only remove it from our list of projects.
 
 
-### Udostępnianie dokumentu
+### Sharing the document
 
-Możliwe jest także udostępnienie konkretnego dokumentu. W oknie dokumentu (jeżeli aktywna jest zakładka Description!) w górnym prawym rogu ekranu widoczne są ikony dotyczące wykonywania operacji na bieżącym dokumencie. Jedną z nich jest ikona udostępniania dokumentu innym użytkownikom. Kliknięcie na nią wyświetla okno dialogowe udostępniania.
+It is also possible to share a specific document. In the document window (if the Description tab is active!), icons related to performing operations on the current document are visible in the top right corner of the screen. One of them is the icon for sharing the document with other users. Clicking on it displays the sharing dialog box.
 <figure>
   <img src="image/dokument_operacje.png" width="600">
 </figure>
 
-W oknie tym należy wskazać grupy użytkowników lub konkretnych użytkowników, którzy mają mieć dostęp do naszego dokumentu.
+In this window, you need to indicate user groups or specific users who should have access to our document.
 <figure>
   <img src="image/share_dokument.png" width="400">
 </figure>
 
 
-### Przenoszenie dokumentu do innego projektu
+### Moving a document to another project
 
-Ciekawą opcją jest możliwość przeniesienia dokumentu do innego projektu. W górnym prawym rogu ekranu dokumentu (podczas pracy w zakładce Description), obok ikony uruchamiającej udostępnianie dokumentu widoczna jest ikona narzędzia przenoszenia dokumentu ('Migrate to another project'). W oknie dialogowym przenoszenia widoczne są dwa pola, w pierwszym polu z listą rozwijaną należy wskazać docelowy projekt, zaś widoczne poniżej pole wyboru decyduje o tym czy wraz z dokumentem przenieść jego tagi (chodzi o tagi przypisane na poziomie dokumentu narzędziem Assign Tag widocznym na liście dokumentów projektu - niebieska ikona z etykietami).
+An interesting option is the ability to move a document to another project. In the top right corner of the document screen (while working in the Description tab), next to the icon for initiating document sharing, there is an icon for the document moving tool ('Migrate to another project'). In the migration dialog box, there are two fields. In the first field with a dropdown list, you need to indicate the target project, while the checkbox below determines whether to move the document's tags along with it (referring to the tags assigned at the document level using the Assign Tag tool visible on the project's document list - a blue icon with labels).
 <figure>
   <img src="image/migrate_to_another_project.png" width="400">
 </figure>
 
-Po potwierdzeniu przyciskiem 'Migrate' aplikacja wyświetli odpowiednie powiadomienie o skutecznym zakończeniu operacji a nasz dokument będzie od tej pory częścią innego projektu.
+After confirming with the 'Migrate' button, the application will display an appropriate notification about the successful completion of the operation, and our document will now be part of another project.
 
 <figure>
   <img src="image/powiadomienie_migracja.png" width="300">
 </figure>
 
-### Eksport, udostępnienie i usunięcie modelu
+### Export, sharing, and deleting a model
 
-Modele przechowywane w eScriptorium można wyeksportować, np. w celu umieszczenia w repozytorium zenodo.org lub użycia bezpośrednio w programie Kraken. Na liście modeli (menu 'My Models'), z prawej strony okna widoczne są kolorowe ikony pozwalające na eksport (pobranie) modelu - zielona ikona pliku ze strzałką w dół, usunięcie modelu - czerwona ikona z symbolem kosza, oraz udostępnienie modelu - niebieska ikona z zakrzywioną strzałką. Uwaga: usuwanie modelu następuje natychmiast, bez dodatkowego pytania, podobnie pobranie (eksport) modelu od razy uruchamia procedurę pobierania pliku *.mlmodel.
+Models stored in eScriptorium can be exported, for example, to be placed in the zenodo.org repository or used directly in the Kraken program. On the list of models (menu 'My Models'), there are colorful icons on the right side of the window that allow you to export (download) the model - a green file icon with a downward arrow, delete the model - a red icon with a trash symbol, and share the model - a blue icon with a curved arrow. Note: Deleting a model occurs immediately, without additional questions, and similarly, downloading (exporting) a model immediately initiates the *.mlmodel file download procedure.
 <figure>
   <img src="image/export_modelu.png" width="600">
 </figure>
 
-Z kolei udostępnianie modelu wyświetla dodatkowe okno programu, w którym można zdecydować którym użytkownikom lub grupom użytkowników udostępniamy nasz model, można też udostępnienie dla danego użytkownika/grupy usunąć.
+In turn, sharing a model displays an additional program window in which you can decide which users or groups of users to share our model with, and you can also remove sharing for a given user/group.
 <figure>
   <img src="image/udostepnianie_modelu.png" width="600">
 </figure>
 
 
-## Eksport transkrypcji
+## Exporting transcriptions
 
-Przygotowane w eScriptorium transkrypcje skanów można zapisać w formie plików XML, w formatach ALTO lub PAGE, a także w postaci zwykłego pliku TXT. Eksport dostępny jest podczas pracy z dokumentem, w zakładce 'Images' po zaznaczeniu choć jednego skanu/obrazu. Przycisk 'Export' w pasku narzędzi (powyżej listy miniatur skanów) wyświetla okno dialogowe, w którym należy określić warstwę transkrypcji (skany mogły być rozpoznawane przez wiele modeli OCR/HTR), oczekiwany format danych (ALTO, PAGE. TXT), czy eksport ma zawierać oryginalne skany/obrazy. Po zatwierdzeniu okna system wygeneruje paczkę zip z plikami i wyświetli w górnym prawym roku ekranu powiadomienie. Powiadomienie będzie zawierało link do pobrania pliku zip z danymi. Jeżeli system został poprawnie skonfigurowany eScriptorium wyśle także użytkownikowi e-mail z informacją o przygotowaniu pliku zip i linkiem do pobrania (w przypadku większych kolekcji skanów, przygotowanie danych może zająć dłuższą chwilę).
+Transcriptions prepared in eScriptorium can be saved as XML files in ALTO or PAGE formats, as well as in the form of a plain TXT file. Exporting is available while working with a document in the 'Images' tab after selecting at least one scan/image. The 'Export' button in the toolbar (above the list of scan thumbnails) displays a dialog window in which you need to specify the transcription layer (scans could have been recognized by multiple OCR/HTR models), the expected data format (ALTO, PAGE, TXT), and whether the export should include the original scans/images. After confirming the window, the system will generate a zip package with files and display a notification in the top right corner of the screen. The notification will contain a link to download the zip file with data. If the system has been correctly configured, eScriptorium will also send the user an email with information about the prepared zip file and a download link (for larger scan collections, preparing data may take longer).
 <figure>
   <img src="image/escriptorium_export.png" width="450">
 </figure>
 
 
-## Raporty
+## Reports
 
-Zarówno projekty jak i dokumenty posiadają zakładki 'Reports' z informacjami statystycznymi na temat zawartości projektu czy dokumentu. Dotyczą one np. liczby obrazów, liczby rozpoznanych regionów  i wierszy, liczby słów i znaków w transkrypcjach. Osobną część stanowi sekcja Vocabulary gdzie po odświeżeniu wyświetlana jest aktualna częstotliwość występowania poszczególnych znaków. W zakładce 'Reports' dla dokumentu podawana jest także przeciętna pewność transkrypcji.
+Both projects and documents have 'Reports' tabs with statistical information about the content of the project or document. They concern, for example, the number of images, the number of recognized regions and lines, the number of words and characters in transcriptions. A separate section is the Vocabulary section, where after refreshing, the current frequency of occurrence of individual characters is displayed. In the 'Reports' tab for the document, the average transcription confidence is also provided.
 <figure>
   <img src="image/projekt_raporty.png" width="600">
 </figure>
 
 
-## Administracja systemem eScriptorium
+## eScriptorium system administration
 
-Administrator eScriptorium i każdy użytkownik o odpowiednich uprawnieniach ma dostęp do panelu administracyjnego systemu poprzez menu 'Hello {USER}' -> Site administration w górnym prawym rogu okna eScriptorium. Uruchomienie tej funkcji wyświetla typowy dla aplikacji stworzonych w technologii Django panel w którym można zarządzać użytkownikami systemu, ich uprawnieniami, tworzyć nowe konta, grupy użytkowników, tokeny do współpracy z eScriptorium przez API. Administrator z poziomu panelu może nadawać lub odbierać uprawnienia do modeli OCR/HTR a także do dokumentów ze skanami i transkrypcjami, może również usuwać dokumenty i projekty.
+The eScriptorium administrator and any user with appropriate permissions have access to the system administration panel through the 'Hello {USER}' -> Site administration menu in the upper right corner of the eScriptorium window. Launching this function displays a typical panel for applications created in Django technology, in which you can manage system users, their permissions, create new accounts, user groups, tokens for cooperation with eScriptorium via the API. The administrator can grant or revoke permissions to OCR/HTR models and to documents with scans and transcriptions from the panel, and can also delete documents and projects.
 <figure>
   <img src="image/site_administration.png" width="500">
 </figure>
 
 
 ## API (REST) eScriptorium
+eScriptorium has an API interface (using Django REST framework), which is visible at https://{SERVER}/api/ (where {SERVER} is the domain or IP address of the server running eScriptorium). A working version of the API documentation is available in the form of a Google document: https://docs.google.com/document/d/1tl48eXHq36KJ1zyXq0dMwYEzdnQYUm_MKfzMat9vjPc/edit#heading=h.j2ygnbgnoruv
 
-eScriptorium posiada interfejs API (wykorzystuje Django REST framework), który widoczny jest pod adresem https://{SERWER}/api/ (gdzie {SERWER} to domena lub ip serwera, na którym działa eScriptorium). Robocza wersja dokumentacji API dostępna jest w formie dokumentu google: https://docs.google.com/document/d/1tl48eXHq36KJ1zyXq0dMwYEzdnQYUm_MKfzMat9vjPc/edit#heading=h.j2ygnbgnoruv
-
-Użytkownik posiadający uprawnienia i wygenerowany token (w panelu administracyjnym aplikacji) może poprzez API, np. z wykorzystaniem connectora dla języka python (https://gitlab.com/sofer_mahir/escriptorium_python_connector) uruchomić niektóre funkcje eScriptorium. Przykłady we wspomnianej wyżej dokumentacji. 
+A user with permissions and a generated token (in the application administration panel) can run some eScriptorium functions through the API, for example, using a connector for the Python language (https://gitlab.com/sofer_mahir/escriptorium_python_connector). Examples are provided in the aforementioned documentation.
 <figure>
   <img src="image/api.png" width="450">
 </figure>
 
 
-## Fora dyskusyjne, kody źródłowe, licencje
+## Discussion forums, source codes, licenses
 
-Techniczne forum eScriptorium, związane bardziej z rozwojem tej aplikacji, dostępne jest na gitterze:
-https://gitter.im/escripta/escriptorium , dość często jednak zdarzają się tam pytania (i odpowiedzi) zwykłych użytkowników systemu.
+The technical eScriptorium forum, more related to the development of this application, is available on Gitter:
+https://gitter.im/escripta/escriptorium, although quite often there are questions (and answers) from regular users of the system.
 
-Kod źródłowy aplikacji przechowywany jest w serwisie gitlab - https://gitlab.com/scripta/escriptorium/ , tam też znajduje się lista błędów i propozycji rozwojowych: https://gitlab.com/scripta/escriptorium/-/issues/?sort=created_date&state=opened&first_page_size=100
+The source code of the application is stored on GitLab - https://gitlab.com/scripta/escriptorium/, where you can also find a list of errors and development proposals: https://gitlab.com/scripta/escriptorium/-/issues/?sort=created_date&state=opened&first_page_size=100
 
-eScriptorium udostępnione zostało na otwartej licencji własnej (https://gitlab.com/scripta/escriptorium/-/blob/develop/LICENSE).
+eScriptorium has been released under an open proprietary license (https://gitlab.com/scripta/escriptorium/-/blob/develop/LICENSE).
 
-Program Kraken rozwijany jest na innej platformie - github: https://github.com/mittagessen/
-a udostępniony został na licencji Apache 2.0.
+The Kraken program is developed on a different platform - GitHub: https://github.com/mittagessen/
+and has been released under the Apache 2.0 license.
 
-## Dodatkowe informacje
+## Additional information
 
-Zrzuty ekranu prezentowane w niniejszym wprowadzeniu pochodzą z wersji 0.13.2 eScriptorium. Fragmenty skanów rękopisów widoczne na niektórych zrzutach pochodzą z testów aplikacji eScriptorium i Kraken prowadzonych w 2022 roku w Instytucie Historii PAN związanych z próbami przygotowania modeli HTR dla XVIII wiecznych rękopisów w języku polskim, na bazie korespondencji króla Stanisława Augusta Poniatowskiego.
+The screenshots presented in this introduction come from eScriptorium version 0.13.2. Fragments of manuscript scans visible in some screenshots come from tests of the eScriptorium and Kraken applications conducted in 2022 at the Institute of History of the Polish Academy of Sciences, related to attempts to prepare HTR models for 18th-century manuscripts in Polish, based on the correspondence of King Stanisław August Poniatowski.
 
-Osobom zainteresowanym samą korespondencją należy polecić wydaną kilka lat temu publikację: "Korespondencja polityczna Stanisława Augusta. Wiedeń", (tom I 1788-1790, tom II 1791-1792), opracowanie Monika Jusupović i Adam Danilczyk, Warszawa 2016, dostępną w [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045). Oryginały korespondencji znajdują się w zbiorach Archiwum Głównym Akt Dawnych w Warszawie.
+For those interested in the correspondence itself, it is recommended to refer to the publication released a few years ago: "Korespondencja polityczna Stanisława Augusta. Wiedeń" (Political Correspondence of Stanisław August. Vienna), (volume I 1788-1790, volume II 1791-1792), edited by Monika Jusupović and Adam Danilczyk, Warsaw 2016, available on [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045). The original correspondence is kept in the collections of the Central Archives of Historical Records in Warsaw.
