@@ -28,23 +28,24 @@ eScriptorium is a web-based application designed to work on historical manuscrip
   - [Order of lines](#order-of-lines)
 - [Models, import of publicly available models](#models-import-of-publicly-available-models)
   - [Menu My Models](#menu-my-models)
-  - [Zakładka Models w dokumencie](#zak%C5%82adka-models-w-dokumencie)
-- [Transkrypcja automatyczna](#transkrypcja-automatyczna)
-  - [Wersje transkrypcji](#wersje-transkrypcji)
-- [Automatic alignment - funkcja wyrównywania tekstu](#automatic-alignment---funkcja-wyr%C3%B3wnywania-tekstu)
-- [Trenowanie własnego modelu w eScriptorium](#trenowanie-w%C5%82asnego-modelu-w-escriptorium)
-- [Trenowanie modelu bezpośrednio w Krakenie](#trenowanie-modelu-bezpo%C5%9Brednio-w-krakenie)
-- [Strategia trenowania modeli](#strategia-trenowania-modeli)
-- [Współpraca z innymi użytkownikami](#wsp%C3%B3%C5%82praca-z-innymi-u%C5%BCytkownikami)
-  - [Udostępnianie projektów](#udost%C4%99pnianie-projekt%C3%B3w)
-  - [Udostępnianie dokumentu](#udost%C4%99pnianie-dokumentu)
-  - [Przenoszenie dokumentu do innego projektu](#przenoszenie-dokumentu-do-innego-projektu)
-  - [Eksport, udostępnienie i usunięcie modelu](#eksport-udost%C4%99pnienie-i-usuni%C4%99cie-modelu)
-- [Eksport transkrypcji](#eksport-transkrypcji)
-- [Raporty](#raporty)
-- [Administracja systemem eScriptorium](#administracja-systemem-escriptorium)
+  - [The Models tab in the document](#the-models-tab-in-the-document)
+- [Automatic transcription](#automatic-transcription)
+  - [Transcription versions](#transcription-versions)
+- [Automatic alignment](#automatic-alignment)
+- [Strategy for training models](#strategy-for-training-models)
+- [Training your own model in eScriptorium](#training-your-own-model-in-escriptorium)
+- [Training the model directly in the Kraken application](#training-the-model-directly-in-the-kraken-application)
+- [Cooperation with other users](#cooperation-with-other-users)
+  - [Sharing projects](#sharing-projects)
+  - [Sharing the document](#sharing-the-document)
+  - [Moving a document to another project](#moving-a-document-to-another-project)
+  - [Export, sharing, and deleting a model](#export-sharing-and-deleting-a-model)
+- [Exporting transcriptions](#exporting-transcriptions)
+- [Reports](#reports)
+- [eScriptorium system administration](#escriptorium-system-administration)
 - [API (REST) eScriptorium](#api-rest-escriptorium)
-- [Fora dyskusyjne, kody źródłowe, licencje](#fora-dyskusyjne-kody-%C5%BAr%C3%B3d%C5%82owe-licencje)
+- [Discussion forums, source codes, licenses](#discussion-forums-source-codes-licenses)
+- [Additional information](#additional-information)
 
 
 ## Acknowledgements
@@ -652,4 +653,4 @@ and has been released under the Apache 2.0 license.
 
 The screenshots presented in this introduction come from eScriptorium version 0.13.2. Fragments of manuscript scans visible in some screenshots come from tests of the eScriptorium and Kraken applications conducted in 2022 at the Institute of History of the Polish Academy of Sciences, related to attempts to prepare HTR models for 18th-century manuscripts in Polish, based on the correspondence of King Stanisław August Poniatowski.
 
-For those interested in the correspondence itself, it is recommended to refer to the publication released a few years ago: "Korespondencja polityczna Stanisława Augusta. Wiedeń" (Political Correspondence of Stanisław August. Vienna), (volume I 1788-1790, volume II 1791-1792), edited by Monika Jusupović and Adam Danilczyk, Warsaw 2016, available on [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045). The original correspondence is kept in the collections of the Central Archives of Historical Records in Warsaw.
+For those interested in the correspondence itself, it is recommended to refer to the publication released a few years ago: "Korespondencja polityczna Stanisława Augusta. Wiedeń" (Political Correspondence of Stanisław August. Vienna), (volume I 1788-1790, volume II 1791-1792), edited by Monika Jusupović and Adam Danilczyk, Warsaw 2016, available on [RCIN](https://rcin.org.pl/dlibra/publication/158432/edition/128045). The original correspondence is kept in the collections of the Central Archives of Historical Records in Warsaw (https://agad.gov.pl/).
